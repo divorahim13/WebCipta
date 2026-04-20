@@ -8,11 +8,9 @@ import { Button } from "@/components/ui/Button";
 import FadeUp from "@/components/motion/FadeUp";
 import StaggerContainer, { StaggerItem } from "@/components/motion/StaggerContainer";
 import { EASE_OUT, fadeUpVariant, scaleUpVariant } from "@/components/motion/variants";
-import { useIsClient } from "@/hooks/useIsClient";
 
 export default function Home() {
   const shouldReduce = useReducedMotion();
-  const isClient = useIsClient();
 
   // Hero stagger timing
   const heroContainer = {
@@ -75,7 +73,7 @@ export default function Home() {
               className="lg:col-span-6 max-w-2xl"
               variants={heroContainer}
               initial="hidden"
-              animate={isClient ? "visible" : "hidden"}
+              animate="visible"
             >
               {/* Eyebrow badge */}
               <motion.div variants={heroItem}>
@@ -142,7 +140,7 @@ export default function Home() {
               <motion.div
                 variants={heroVisual}
                 initial="hidden"
-                animate={isClient ? "visible" : "hidden"}
+                animate="visible"
                 className="absolute top-[10%] right-[10%] w-[80%] h-[80%] bg-[#0F172A] rounded-md border border-gray-800 shadow-2xl transform rotate-y-[-10deg] rotate-z-[2deg] translate-x-12 -translate-z-20 opacity-80 overflow-hidden flex flex-col"
               >
                 <div className="h-6 bg-[#1E293B] flex items-center px-3 gap-1.5 border-b border-gray-800 shrink-0">
@@ -163,7 +161,7 @@ export default function Home() {
               <motion.div
                 variants={heroVisual}
                 initial="hidden"
-                animate={isClient ? "visible" : "hidden"}
+                animate="visible"
                 className="absolute top-[20%] left-0 w-[95%] h-[85%] bg-white rounded-md border border-gray-200/60 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.2)] transform rotate-y-[-4deg] translate-z-10 overflow-hidden flex flex-col overflow-y-hidden"
                 style={{ animationDelay: "0.1s" }}
               >
@@ -200,7 +198,7 @@ export default function Home() {
               <motion.div
                 variants={heroCard}
                 initial="hidden"
-                animate={isClient ? "visible" : "hidden"}
+                animate="visible"
                 className="absolute bottom-[5%] right-0 bg-white p-4 rounded-sm border border-gray-200 shadow-[0_8px_30px_rgb(0,0,0,0.08)] transform translate-z-30 flex items-center gap-4 float-gentle"
                 style={{ animationDelay: "1s" }}
               >

@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MoveRight, Code2, Users, Rocket, ShieldCheck, LineChart, MonitorSmartphone, Lock, Webhook } from "lucide-react";
+import FadeUp from "@/components/motion/FadeUp";
+import StaggerContainer, { StaggerItem } from "@/components/motion/StaggerContainer";
+import { EASE_OUT } from "@/components/motion/variants";
 
 export const metadata = {
   title: "Tentang Kami",
@@ -14,15 +17,19 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(to_bottom,white,transparent)] -z-10 opacity-60"></div>
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="max-w-4xl pt-8">
-            <h1 className="text-5xl md:text-7xl font-black font-heading text-[#18181A] mb-8 leading-[1.05] tracking-tight">
-              Di Balik <span className="text-[var(--color-accent)] relative inline-block">
-                 Kode.
-                 <svg className="absolute -bottom-2 md:-bottom-3 left-0 w-full h-3 md:h-4 text-gray-200 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="transparent"/></svg>
-              </span>
-            </h1>
-            <p className="text-xl md:text-2xl text-[#52525B] leading-relaxed font-light mt-12 max-w-2xl">
-              Sebuah observasi sederhana: Mayoritas pemilik bisnis kecil terjebak di persimpangan antara solusi yang terlalu murahan (namun lambat), atau terlalu eksklusif (dan sangat mahal).
-            </p>
+            <FadeUp inView={false}>
+              <h1 className="text-5xl md:text-7xl font-black font-heading text-[#18181A] mb-8 leading-[1.05] tracking-tight">
+                Di Balik <span className="text-[var(--color-accent)] relative inline-block">
+                   Kode.
+                   <svg className="absolute -bottom-2 md:-bottom-3 left-0 w-full h-3 md:h-4 text-gray-200 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="transparent"/></svg>
+                </span>
+              </h1>
+            </FadeUp>
+            <FadeUp inView={false} delay={0.1}>
+              <p className="text-xl md:text-2xl text-[#52525B] leading-relaxed font-light mt-12 max-w-2xl">
+                Sebuah observasi sederhana: Mayoritas pemilik bisnis kecil terjebak di persimpangan antara solusi yang terlalu murahan (namun lambat), atau terlalu eksklusif (dan sangat mahal).
+              </p>
+            </FadeUp>
           </div>
         </div>
       </section>
@@ -56,7 +63,7 @@ export default function AboutPage() {
 
               <div className="md:col-span-1 border-hidden"></div>
 
-              <div className="md:col-span-6 order-1 md:order-2">
+              <FadeUp className="md:col-span-6 order-1 md:order-2">
                  <h2 className="text-[11px] font-bold tracking-[0.2em] text-[var(--color-highlight)] uppercase mb-6 block">Koneksi Manusia</h2>
                  <h3 className="text-3xl lg:text-4xl font-bold font-heading text-[#18181A] mb-8 leading-tight">
                    Tidak Ada Penengah.<br/>Tidak Ada Alasan.
@@ -68,7 +75,7 @@ export default function AboutPage() {
                  <div className="text-[14px] text-[#94A3B8] italic font-serif">
                    "Kecepatan hadir saat pembuat keputusan dan pelaksana berdiam dalam pikiran yang sama."
                  </div>
-              </div>
+              </FadeUp>
            </div>
         </div>
       </section>
@@ -79,7 +86,7 @@ export default function AboutPage() {
           
           <div className="grid lg:grid-cols-12 gap-0 border border-gray-200 shadow-sm">
             {/* The Agency Core Problem */}
-            <div className="lg:col-span-6 p-10 md:p-16 border-b lg:border-b-0 lg:border-r border-gray-200 bg-[#FCFBF9]">
+            <FadeUp className="lg:col-span-6 p-10 md:p-16 border-b lg:border-b-0 lg:border-r border-gray-200 bg-[#FCFBF9]">
               <h2 className="text-[11px] font-bold tracking-[0.2em] text-[#94A3B8] uppercase mb-10 block">Realita Industri</h2>
               <div className="space-y-8">
                  <div>
@@ -92,10 +99,10 @@ export default function AboutPage() {
                    <p className="text-[#52525B] leading-relaxed font-light text-[15px]">Menyewa tim corporate. Memang indah dan sempurna, namun bisnis rintisan serta UMKM tidak memiliki budget senilai puluhan hingga ratusan juta untuk sekadar mendapatkan visibilitas digital dasar.</p>
                  </div>
               </div>
-            </div>
+            </FadeUp>
             
             {/* The Solo Dev Answer */}
-            <div className="lg:col-span-6 p-10 md:p-16 bg-white relative overflow-hidden">
+            <FadeUp delay={0.15} className="lg:col-span-6 p-10 md:p-16 bg-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-[var(--color-secondary-bg)] rounded-bl-full opacity-50"></div>
               <h2 className="text-[11px] font-bold tracking-[0.2em] text-[var(--color-highlight)] uppercase mb-10 block">Format WebCipta</h2>
               <h3 className="text-3xl lg:text-4xl font-bold font-heading text-[#18181A] mb-6 leading-tight">
@@ -107,7 +114,7 @@ export default function AboutPage() {
               <p className="text-[#52525B] leading-relaxed font-light">
                 Sebagai gantinya, Anda mendapatkan akses dan komunikasi langsung dengan eksekutor teknis. Kami merancang desain berkelas, mengimplementasikan standar keamanan, dan menerapkan fondasi performa tinggi secara rasional.
               </p>
-            </div>
+            </FadeUp>
           </div>
 
         </div>

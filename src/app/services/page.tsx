@@ -222,18 +222,20 @@ export default function ServicesPage() {
           </div>
 
           {/* Stats bar */}
-          <div className="grid grid-cols-3 gap-6 mt-16 max-w-xl">
+          <StaggerContainer className="grid grid-cols-3 gap-6 mt-16 max-w-xl" inView={false} delayChildren={0.3}>
             {[
               { num: "10", label: "Jenis Layanan" },
               { num: "1–4", label: "Minggu Pengerjaan" },
               { num: "100%", label: "Transparan & Diskusi Langsung" },
             ].map((s) => (
-              <div key={s.label} className="border-l border-gray-300 pl-4">
-                <div className="text-2xl font-black font-heading text-[#18181A]">{s.num}</div>
-                <div className="text-[11px] text-[#94A3B8] font-medium mt-0.5">{s.label}</div>
-              </div>
+              <StaggerItem key={s.label}>
+                <div className="border-l border-gray-300 pl-4">
+                  <div className="text-2xl font-black font-heading text-[#18181A]">{s.num}</div>
+                  <div className="text-[11px] text-[#94A3B8] font-medium mt-0.5">{s.label}</div>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -260,20 +262,22 @@ export default function ServicesPage() {
       {/* Process CTA Band */}
       <section className="py-20 bg-[#18181A]">
         <div className="container mx-auto px-6 max-w-5xl">
-          <div className="grid md:grid-cols-3 gap-10 mb-16">
+          <StaggerContainer className="grid md:grid-cols-3 gap-10 mb-16" inView={true}>
             {[
               { step: "01", title: "Konsultasi Gratis", desc: "Ceritakan kebutuhan dan kondisi bisnis Anda. Tanpa biaya, tanpa komitmen." },
               { step: "02", title: "Proposal & Harga", desc: "Kami susun spesifikasi dan estimasi biaya secara transparan dan terperinci." },
               { step: "03", title: "Pengerjaan & Launch", desc: "Website dibangun, direvisi bersama, lalu diluncurkan sesuai tenggat waktu." },
             ].map((p) => (
-              <div key={p.step} className="border-l border-[#333] pl-6">
-                <div className="text-[10px] font-bold text-[#94A3B8] uppercase tracking-widest mb-3">{p.step}</div>
-                <h4 className="font-bold text-white text-[15px] mb-2">{p.title}</h4>
-                <p className="text-[#94A3B8] text-[13px] font-light leading-relaxed">{p.desc}</p>
-              </div>
+              <StaggerItem key={p.step}>
+                <div className="border-l border-[#333] pl-6 h-full">
+                  <div className="text-[10px] font-bold text-[#94A3B8] uppercase tracking-widest mb-3">{p.step}</div>
+                  <h4 className="font-bold text-white text-[15px] mb-2">{p.title}</h4>
+                  <p className="text-[#94A3B8] text-[13px] font-light leading-relaxed">{p.desc}</p>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+          </StaggerContainer>
+          <FadeUp className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6" delay={0.2}>
             <div>
               <h3 className="text-2xl font-bold font-heading text-white mb-2">Belum yakin pilih layanan mana?</h3>
               <p className="text-[#94A3B8] text-[14px] font-light">Ceritakan gambaran kasarnya — kami bantu tentukan yang paling tepat.</p>
@@ -285,7 +289,7 @@ export default function ServicesPage() {
               Konsultasi Gratis
               <MoveRight className="w-4 h-4" />
             </Link>
-          </div>
+          </FadeUp>
         </div>
       </section>
     </>

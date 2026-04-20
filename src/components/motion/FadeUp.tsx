@@ -10,7 +10,6 @@ import {
   Y_HERO,
   VIEWPORT_ONCE,
 } from "./variants";
-import { useIsClient } from "@/hooks/useIsClient";
 
 interface FadeUpProps {
   children: ReactNode;
@@ -33,15 +32,9 @@ export default function FadeUp({
   inView = true,
 }: FadeUpProps) {
   const shouldReduce = useReducedMotion();
-  const isClient = useIsClient();
 
   const dur = speed === "slow" ? DUR_SLOW : speed === "fast" ? 0.28 : DUR_BASE;
   const yDist = shouldReduce ? 0 : (distance ?? (speed === "slow" ? Y_HERO : Y_BASE));
-
-  // Before client hydration — render children as-is (no animation, no flash)
-  if (!isClient) {
-    return <div className={className}>{children}</div>;
-  }
 
   const variant = {
     hidden: { opacity: 0, y: yDist },

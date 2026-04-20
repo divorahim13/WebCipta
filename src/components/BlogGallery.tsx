@@ -5,6 +5,8 @@ import { blogPosts, blogCategories, BlogCategory } from "@/lib/blog-data";
 import BlogCard from "./BlogCard";
 import { Button } from "./ui/Button";
 import { motion, AnimatePresence } from "framer-motion";
+import StaggerContainer, { StaggerItem } from "./motion/StaggerContainer";
+import FadeUp from "./motion/FadeUp";
 
 export default function BlogGallery() {
   const [activeCategory, setActiveCategory] = useState<BlogCategory>("All");
@@ -16,36 +18,32 @@ export default function BlogGallery() {
   return (
     <>
       {/* Category Filters */}
-      <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
+      <StaggerContainer className="flex flex-wrap items-center justify-center gap-4 mb-16" inView={false}>
         {blogCategories.map((category) => (
-          <Button
-            key={category}
-            variant={activeCategory === category ? "default" : "outline"}
-            onClick={() => setActiveCategory(category)}
-            className="rounded-full"
-          >
-            {category}
-          </Button>
+          <StaggerItem key={category}>
+            <Button
+              variant={activeCategory === category ? "default" : "outline"}
+              onClick={() => setActiveCategory(category)}
+              className="rounded-full"
+            >
+              {category}
+            </Button>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerContainer>
 
       {/* Blog Grid */}
-      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <AnimatePresence>
+      <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" inView={true}>
+        <AnimatePresence mode="popLayout">
           {filteredPosts.map((post) => (
-            <motion.div
-              layout
-              key={post.id}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ duration: 0.3 }}
-            >
-              <BlogCard post={post} />
-            </motion.div>
+            <StaggerItem key={post.id}>
+              <FadeUp>
+                <BlogCard post={post} />
+              </FadeUp>
+            </StaggerItem>
           ))}
         </AnimatePresence>
-      </motion.div>
+      </StaggerContainer>
       
       {filteredPosts.length === 0 && (
         <div className="text-center py-20 text-muted">

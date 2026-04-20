@@ -6,6 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { X, ExternalLink } from "lucide-react";
 import { Button } from "./ui/Button";
+import StaggerContainer, { StaggerItem } from "./motion/StaggerContainer";
+import FadeUp from "./motion/FadeUp";
 
 type Category = "All" | "Web Design" | "E-commerce" | "AI Solutions";
 
@@ -89,63 +91,62 @@ export default function PortfolioGallery() {
   return (
     <div>
       {/* Filters */}
-      <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
+      <StaggerContainer className="flex flex-wrap items-center justify-center gap-4 mb-16" inView={false}>
         {categories.map((category) => (
-          <Button
-            key={category}
-            variant={activeCategory === category ? "default" : "outline"}
-            onClick={() => setActiveCategory(category)}
-            className="rounded-full"
-          >
-            {category}
-          </Button>
+          <StaggerItem key={category}>
+            <Button
+              variant={activeCategory === category ? "default" : "outline"}
+              onClick={() => setActiveCategory(category)}
+              className="rounded-full"
+            >
+              {category}
+            </Button>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerContainer>
 
       {/* Grid */}
-      <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <AnimatePresence>
+      <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" inView={true}>
+        <AnimatePresence mode="popLayout">
           {filteredProjects.map((project) => (
-            <motion.div
-              key={project.id}
-              layout
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3 }}
-              onClick={() => setSelectedProject(project)}
-              className="group relative rounded-2xl overflow-hidden border border-muted/20 bg-muted/5 flex flex-col cursor-pointer"
-            >
-              {/* Image Container */}
-              <div className="relative h-64 overflow-hidden bg-muted/10">
-                <Image 
-                  src={project.imageUrl} 
-                  alt={project.title + " - " + project.category + " Project Mockup"} 
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-background/0 group-hover:bg-background/40 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <span className="bg-background text-foreground font-medium px-4 py-2 rounded-full flex items-center shadow-lg">
-                    View Details <ExternalLink size={16} className="ml-2" />
-                  </span>
+            <StaggerItem key={project.id}>
+              <FadeUp>
+                <div
+                  onClick={() => setSelectedProject(project)}
+                  className="group relative rounded-2xl overflow-hidden border border-muted/20 bg-muted/5 flex flex-col cursor-pointer h-full"
+                >
+                  {/* Image Container */}
+                  <div className="relative h-64 overflow-hidden bg-muted/10">
+                    <Image 
+                      src={project.imageUrl} 
+                      alt={project.title + " - " + project.category + " Project Mockup"} 
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-background/0 group-hover:bg-background/40 transition-colors duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                      <span className="bg-background text-foreground font-medium px-4 py-2 rounded-full flex items-center shadow-lg">
+                        View Details <ExternalLink size={16} className="ml-2" />
+                      </span>
+                    </div>
+                  </div>
+                  
+                  {/* Content Container */}
+                  <div className="p-6 flex-1 flex flex-col">
+                    <span className="text-xs font-semibold text-[var(--color-accent)] uppercase tracking-wider mb-2 block">
+                      {project.category}
+                    </span>
+                    <h3 className="text-xl font-bold mb-3 text-foreground">{project.title}</h3>
+                    <p className="text-muted text-sm leading-relaxed mb-4 flex-1">
+                      {project.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-              
-              {/* Content Container */}
-              <div className="p-6 flex-1 flex flex-col">
-                <span className="text-xs font-semibold text-[var(--color-accent)] uppercase tracking-wider mb-2 block">
-                  {project.category}
-                </span>
-                <h3 className="text-xl font-bold mb-3 text-foreground">{project.title}</h3>
-                <p className="text-muted text-sm leading-relaxed mb-4 flex-1">
-                  {project.description}
-                </p>
-              </div>
-            </motion.div>
+              </FadeUp>
+            </StaggerItem>
           ))}
         </AnimatePresence>
-      </motion.div>
+      </StaggerContainer>
 
       {/* Lightbox / Modal */}
       <AnimatePresence>

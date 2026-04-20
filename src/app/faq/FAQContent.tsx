@@ -111,15 +111,12 @@ export default function FAQContent() {
         <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(to_bottom,white,transparent)] -z-10 opacity-70" />
         <div className="container mx-auto px-6 max-w-7xl pt-8">
           <div className="max-w-4xl">
-            <motion.h1
-              className="text-5xl md:text-7xl font-black font-heading text-[#18181A] mb-8 leading-[1.05] tracking-tight"
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, ease: EASE_OUT }}
-            >
-              Jawaban Dari <br />
-              <span className="text-[var(--color-highlight)]">Pertanyaan Seputar.</span>
-            </motion.h1>
+            <FadeUp inView={false}>
+              <h1 className="text-5xl md:text-7xl font-black font-heading text-[#18181A] mb-8 leading-[1.05] tracking-tight">
+                Jawaban Dari <br />
+                <span className="text-[var(--color-highlight)]">Pertanyaan Seputar.</span>
+              </h1>
+            </FadeUp>
           </div>
         </div>
       </section>
