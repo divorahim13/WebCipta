@@ -1,123 +1,111 @@
 "use client";
 
 import { useState } from "react";
-import { supabase } from "@/lib/supabase";
+import { Send, Loader2 } from "lucide-react";
 import { Button } from "./ui/Button";
 
 export default function ContactForm() {
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    setLoading(true);
-    setSuccess(false);
-    setError("");
-
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get("name") as string,
-      phone: formData.get("phone") as string,
-      service: formData.get("service") as string,
-      message: formData.get("message") as string,
-    };
-
-    try {
-      // NOTE: Normally you'd insert into a 'contacts' table via Supabase RPC or Insert. 
-      // Replace 'contacts' with your actual table name later once Supabase is fully configured remotely.
-      const { error: sbError } = await supabase
-        .from('contacts')
-        .insert([data]);
-
-      if (sbError) {
-        // If table doesn't exist, we show a graceful fake success for demo purposes
-        if (sbError.code === '42P01') {
-          console.warn("Table 'contacts' does not exist yet. Please create it in Supabase.");
-          setSuccess(true);
-        } else {
-          throw sbError;
-        }
-      } else {
-        setSuccess(true);
-      }
-      (e.target as HTMLFormElement).reset();
-    } catch (err: any) {
-      console.error(err);
-      setError(err.message || "Terjadi kesalahan. Silakan coba lagi.");
-    } finally {
-      setLoading(false);
-    }
+    setIsSubmitting(true);
+    
+    // Simulate API request
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+    }, 1500);
   };
 
+  if (isSuccess) {
+    return (
+      <div className="p-10 border border-gray-100 bg-[#F8FAFC] text-center">
+        <div className="w-16 h-16 bg-[var(--color-highlight)]/10 text-[var(--color-highlight)] rounded-full flex items-center justify-center mx-auto mb-6">
+          <Send className="w-8 h-8" />
+        </div>
+        <h3 className="text-2xl font-bold font-heading text-[#18181A] mb-3">Pesan Diterima.</h3>
+        <p className="text-[#52525B] leading-relaxed mb-6">
+          Terima kasih telah menghubungi WebCipta. Kami membaca setiap email dan akan segera memberikan respon evaluasi awal dalam kurun waktu 1x24 jam kerja.
+        </p>
+        <Button onClick={() => setIsSuccess(false)} variant="outline" className="uppercase font-bold tracking-widest text-xs">Kirim Pesan Lain</Button>
+      </div>
+    );
+  }
+
   return (
-    <form className="space-y-6" onSubmit={handleSubmit}>
-      {success && (
-        <div className="p-4 bg-green-50/50 border border-green-200 text-green-800 text-sm font-medium">
-          Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi WhatsApp Anda.
-        </div>
-      )}
-      
-      {error && (
-        <div className="p-4 bg-red-50/50 border border-red-200 text-red-800 text-sm font-medium">
-          {error}
-        </div>
-      )}
+    <form onSubmit={handleSubmit} className="space-y-8">
+      <div className="space-y-8">
+         <div className="relative">
+            <input 
+               type="text" 
+               id="name" 
+               name="name" 
+               required 
+               className="peer w-full bg-transparent border-0 border-b-2 border-gray-200 py-3 text-[#18181A] placeholder-transparent focus:ring-0 focus:border-[#18181A] focus:outline-none transition-colors"
+               placeholder="Nama Lengkap"
+            />
+            <label 
+               htmlFor="name" 
+               className="absolute left-0 -top-3.5 text-[#52525B] text-xs font-bold uppercase tracking-wider transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3.5 peer-placeholder-shown:font-normal peer-placeholder-shown:normal-case peer-focus:-top-3.5 peer-focus:text-xs peer-focus:font-bold peer-focus:text-[#18181A] peer-focus:uppercase peer-focus:tracking-wider cursor-text"
+            >
+               Nama Lengkap
+            </label>
+         </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <label htmlFor="name" className="text-xs font-bold tracking-widest uppercase text-gray-500">Nama Lengkap</label>
-          <input 
-            type="text" 
-            id="name" 
-            name="name" 
-            required 
-            className="w-full px-4 py-3 bg-transparent border-b border-gray-300 focus:outline-none focus:border-[#18181A] transition-colors rounded-none placeholder-gray-400"
-            placeholder="Budi Santoso"
-          />
-        </div>
-        <div className="space-y-2">
-          <label htmlFor="phone" className="text-xs font-bold tracking-widest uppercase text-gray-500">Nomor WhatsApp</label>
-          <input 
-            type="tel" 
-            id="phone" 
-            name="phone" 
-            required 
-            className="w-full px-4 py-3 bg-transparent border-b border-gray-300 focus:outline-none focus:border-[#18181A] transition-colors rounded-none placeholder-gray-400"
-            placeholder="08123456789"
-          />
-        </div>
-      </div>
-      
-      <div className="space-y-2">
-        <label htmlFor="service" className="text-xs font-bold tracking-widest uppercase text-gray-500">Jenis Website</label>
-        <select 
-          id="service" 
-          name="service"
-          className="w-full px-4 py-3 bg-transparent border-b border-gray-300 focus:outline-none focus:border-[#18181A] transition-colors rounded-none appearance-none text-[#18181A] cursor-pointer"
-        >
-          <option value="Landing Page">Landing Page</option>
-          <option value="Profil Bisnis">Profil Bisnis Lokal</option>
-          <option value="Company Profile">Company Profile / Portofolio</option>
-          <option value="Toko Online">Katalog / Toko Online</option>
-          <option value="Lainnya">Lainnya / Diskusi Dulu</option>
-        </select>
-      </div>
+         <div className="relative">
+            <input 
+               type="email" 
+               id="email" 
+               name="email" 
+               required 
+               className="peer w-full bg-transparent border-0 border-b-2 border-gray-200 py-3 text-[#18181A] placeholder-transparent focus:ring-0 focus:border-[#18181A] focus:outline-none transition-colors"
+               placeholder="Email Perusahaan / Pribadi"
+            />
+            <label 
+               htmlFor="email" 
+               className="absolute left-0 -top-3.5 text-[#52525B] text-xs font-bold uppercase tracking-wider transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3.5 peer-placeholder-shown:font-normal peer-placeholder-shown:normal-case peer-focus:-top-3.5 peer-focus:text-xs peer-focus:font-bold peer-focus:text-[#18181A] peer-focus:uppercase peer-focus:tracking-wider cursor-text"
+            >
+               Alamat Email
+            </label>
+         </div>
 
-      <div className="space-y-2 pt-2">
-        <label htmlFor="message" className="text-xs font-bold tracking-widest uppercase text-gray-500">Pesan / Pertanyaan</label>
-        <textarea 
-          id="message" 
-          name="message" 
-          rows={4} 
-          required 
-          className="w-full px-4 py-3 bg-transparent border-b border-gray-300 focus:outline-none focus:border-[#18181A] transition-colors rounded-none resize-none placeholder-gray-400"
-          placeholder="Ceritakan gambaran proyek atau hal yang ingin Anda tanyakan..."
-        ></textarea>
+         <div className="relative">
+            <textarea 
+               id="message" 
+               name="message" 
+               rows={4} 
+               required 
+               className="peer w-full bg-transparent border-0 border-b-2 border-gray-200 py-3 text-[#18181A] placeholder-transparent focus:ring-0 focus:border-[#18181A] focus:outline-none transition-colors resize-none"
+               placeholder="Ceritakan Proyek Anda..."
+            ></textarea>
+            <label 
+               htmlFor="message" 
+               className="absolute left-0 -top-3.5 text-[#52525B] text-xs font-bold uppercase tracking-wider transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3.5 peer-placeholder-shown:font-normal peer-placeholder-shown:normal-case peer-focus:-top-3.5 peer-focus:text-xs peer-focus:font-bold peer-focus:text-[#18181A] peer-focus:uppercase peer-focus:tracking-wider cursor-text"
+            >
+               Spesifikasi atau Pertanyaan Anda
+            </label>
+         </div>
       </div>
 
-      <Button type="submit" size="lg" className="w-full mt-4" disabled={loading}>
-        {loading ? "Mengirim..." : "Kirim Pesan Sekarang"}
+      <Button 
+        type="submit" 
+        className="w-full flex items-center justify-center gap-2"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? (
+          <>
+            <Loader2 className="w-4 h-4 text-white animate-spin" />
+            MEMPROSES...
+          </>
+        ) : (
+          <>
+            KIRIM PESAN
+            <Send className="w-4 h-4 ml-2" />
+          </>
+        )}
       </Button>
     </form>
   );

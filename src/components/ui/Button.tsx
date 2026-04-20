@@ -12,16 +12,16 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-semibold tracking-wide ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer active:scale-[0.98]",
+          "inline-flex items-center justify-center whitespace-nowrap rounded-[2px] text-sm font-bold tracking-widest uppercase ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-pointer active:scale-[0.99]",
           {
-            "bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-hover)] shadow-sm hover:shadow": variant === "default",
-            "border border-[var(--color-muted)]/30 bg-transparent hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/5 hover:text-[var(--color-accent)]": variant === "outline",
-            "hover:bg-[var(--color-muted)]/10 hover:text-[var(--color-foreground)]": variant === "ghost",
+            "bg-[var(--color-accent)] text-white hover:bg-[var(--color-accent-hover)] shadow-sm": variant === "default",
+            "border border-[var(--color-muted)]/40 bg-transparent hover:border-[#18181A] text-[#18181A] hover:bg-transparent": variant === "outline",
+            "hover:bg-[var(--color-muted)]/5 text-[#52525B] hover:text-[#18181A]": variant === "ghost",
             "text-[var(--color-accent)] font-medium underline-offset-4 hover:underline": variant === "link",
-            "h-11 px-6 py-2": size === "default",
-            "h-9 rounded-md px-4 text-xs font-medium": size === "sm",
-            "h-12 rounded-xl px-10 text-base": size === "lg",
-            "h-11 w-11": size === "icon",
+            "h-12 px-8 py-3": size === "default",
+            "h-10 px-5 text-[11px]": size === "sm",
+            "h-14 px-10 text-sm": size === "lg",
+            "h-12 w-12": size === "icon",
           },
           className
         )}

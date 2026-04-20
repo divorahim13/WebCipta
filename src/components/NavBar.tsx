@@ -19,30 +19,31 @@ export default function NavBar() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled ? "bg-background/90 backdrop-blur-xl shadow-[0_1px_2px_rgba(0,0,0,0.02)] border-b border-muted/10 py-1" : "bg-transparent py-3"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-white/95 backdrop-blur-md border-b border-gray-100 py-2 shadow-sm" : "bg-transparent py-4"
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6 h-16 flex items-center justify-between max-w-7xl">
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="text-2xl font-black font-heading tracking-tight text-foreground">WebCipta<span className="text-[var(--color-accent)]">.</span></span>
+      <div className="container mx-auto px-6 h-14 flex items-center justify-between max-w-7xl">
+        <Link href="/" className="flex items-center">
+          <span className="text-xl font-bold font-heading tracking-tight text-[#18181A]">WebCipta<span className="text-[var(--color-highlight)]">.</span></span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-foreground/80">
-          <Link href="/" className="hover:text-foreground transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--color-accent)] after:transition-all hover:after:w-full">Home</Link>
-          <Link href="/about" className="hover:text-foreground transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--color-accent)] after:transition-all hover:after:w-full">Tentang</Link>
-          <Link href="/services" className="hover:text-foreground transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--color-accent)] after:transition-all hover:after:w-full">Layanan</Link>
-          <Link href="/pricing" className="hover:text-foreground transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--color-accent)] after:transition-all hover:after:w-full">Harga</Link>
-          <Link href="/faq" className="hover:text-foreground transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-[var(--color-accent)] after:transition-all hover:after:w-full">FAQ</Link>
+        <nav className="hidden md:flex items-center gap-10 text-[13px] font-bold uppercase tracking-widest text-[#52525B]">
+          <Link href="/" className="hover:text-[#18181A] transition-colors relative after:absolute after:-bottom-4 after:left-0 after:w-0 after:h-0.5 after:bg-[#18181A] after:transition-all hover:after:w-full">Home</Link>
+          <Link href="/about" className="hover:text-[#18181A] transition-colors relative after:absolute after:-bottom-4 after:left-0 after:w-0 after:h-0.5 after:bg-[#18181A] after:transition-all hover:after:w-full">Tentang</Link>
+          <Link href="/services" className="hover:text-[#18181A] transition-colors relative after:absolute after:-bottom-4 after:left-0 after:w-0 after:h-0.5 after:bg-[#18181A] after:transition-all hover:after:w-full">Layanan</Link>
+          <Link href="/pricing" className="hover:text-[#18181A] transition-colors relative after:absolute after:-bottom-4 after:left-0 after:w-0 after:h-0.5 after:bg-[#18181A] after:transition-all hover:after:w-full">Harga</Link>
+          <Link href="/faq" className="hover:text-[#18181A] transition-colors relative after:absolute after:-bottom-4 after:left-0 after:w-0 after:h-0.5 after:bg-[#18181A] after:transition-all hover:after:w-full">FAQ</Link>
+          
           <Link href="/contact" className="ml-2">
-            <Button size="sm" className="font-semibold tracking-wide">Konsultasi Gratis</Button>
+            <Button size="sm" className="font-bold tracking-widest uppercase">Mulai Proyek</Button>
           </Link>
         </nav>
 
         {/* Mobile Nav Toggle */}
         <button
-          className="md:hidden p-2 text-foreground"
+          className="md:hidden p-2 text-[#18181A]"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -51,16 +52,18 @@ export default function NavBar() {
 
       {/* Mobile Nav Menu */}
       {isOpen && (
-        <div className="md:hidden bg-background border-b border-muted/20 absolute w-full left-0">
-          <div className="flex flex-col px-4 py-4 space-y-4 shadow-lg">
-            <Link href="/" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">Home</Link>
-            <Link href="/about" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">Tentang</Link>
-            <Link href="/services" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">Layanan</Link>
-            <Link href="/pricing" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">Harga</Link>
-            <Link href="/faq" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">FAQ</Link>
-            <Link href="/contact" onClick={() => setIsOpen(false)} className="block py-2">
-              <Button className="w-full">Konsultasi Gratis</Button>
-            </Link>
+        <div className="md:hidden bg-white border-b border-gray-100 absolute w-full left-0 top-full shadow-lg">
+          <div className="flex flex-col px-6 py-6 space-y-5">
+            <Link href="/" onClick={() => setIsOpen(false)} className="block text-sm font-bold uppercase tracking-wider text-[#18181A]">Home</Link>
+            <Link href="/about" onClick={() => setIsOpen(false)} className="block text-sm font-bold uppercase tracking-wider text-[#18181A]">Tentang</Link>
+            <Link href="/services" onClick={() => setIsOpen(false)} className="block text-sm font-bold uppercase tracking-wider text-[#18181A]">Layanan</Link>
+            <Link href="/pricing" onClick={() => setIsOpen(false)} className="block text-sm font-bold uppercase tracking-wider text-[#18181A]">Harga</Link>
+            <Link href="/faq" onClick={() => setIsOpen(false)} className="block text-sm font-bold uppercase tracking-wider text-[#18181A]">FAQ</Link>
+            <div className="pt-4 mt-2 border-t border-gray-100">
+              <Link href="/contact" onClick={() => setIsOpen(false)}>
+                <Button className="w-full">Mulai Proyek</Button>
+              </Link>
+            </div>
           </div>
         </div>
       )}
