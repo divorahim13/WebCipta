@@ -1,64 +1,73 @@
+import { MoveRight } from "lucide-react";
+import Link from "next/link";
+
 export const metadata = {
-  title: "FAQ - Pertanyaan Umum",
-  description: "Pertanyaan yang sering diajukan seputar jasa pembuatan website, biaya hosting, dan waktu pengerjaan.",
+  title: "FAQ",
+  description: "Pertanyaan yang sering diajukan terkait jasa WebCipta.",
 };
 
-export default function FAQPage() {
-  const faqs = [
-    {
-      q: "Berapa lama proses pembuatan website?",
-      a: "Tergantung tingkat kerumitan dan kelengkapan materi dari Anda (teks, logo, foto). Untuk landing page atau website profil bisnis standar, biasanya selesai dalam 3-7 hari kerja sejak materi lengkap kami terima."
-    },
-    {
-      q: "Apakah biaya Rp 550.000 itu per tahun?",
-      a: "Tidak! Biaya pembuatan website dari WebCipta adalah satu kali bayar (One-time payment). Tidak ada biaya maintenance bulanan dari kami. Anda mendapatkan layanan gratis hosting dari Vercel/Netlify seumur hidup untuk tipe website statis (landing page / company profile)."
-    },
-    {
-      q: "Apakah saya harus beli domain sendiri?",
-      a: "Secara default Anda akan mendapat subdomain gratis (contoh: namabisnis.vercel.app). Namun, untuk kredibilitas, sangat disarankan Anda memiliki domain sendiri (.com / .id / .co.id). Biaya sewa domain ini dibayarkan langsung ke penyedia domain (biasanya kisaran Rp 150rb - 300rb per tahun) dan menjadi milik Anda sepenuhnya."
-    },
-    {
-      q: "Apakah bisa request desain yang sangat spesifik?",
-      a: "Tentu. Kami tidak menggunakan template instant yang 'plek-ketiplek'. Semua layout dibangun dan diatur ulang manual dengan kode (menggunakan framework Next.js & Tailwind). Karena itu, kami bisa menyesuaikan desain agar selaras dengan identitas brand Anda."
-    },
-    {
-      q: "Bagaimana jika ada fitur tambahan? Misalnya toko online/keranjang belanja?",
-      a: "Paket dasar difokuskan pada landing page informatif dan profil perusahaan. Jika Anda butuh sistem dinamis seperti keranjang belanja, kalkulator biaya, payment gateway, atau sistem blog, kami akan menghitung biayanya terpisah sesuai kompleksitas. Silahkan hubungi kami dengan list fitur Anda."
-    },
-    {
-      q: "Kenapa harganya lebih murah dari agensi lain?",
-      a: "Karena WebCipta berbentuk 'Solo Developer Agency'. Tidak ada biaya sewa kantor mewah, tak ada puluhan karyawan yang harus digaji, dan tidak ada account manager. Anda memesan dan berkomunikasi langsung dengan pemrogram yang merancang website Anda. Kami juga memanfaatkan teknologi AI modern untuk memangkas jam kerja secara drastis."
-    }
-  ];
+const faqs = [
+  {
+    k: "Apakah Rp550k benar-benar pembayaran sekali untuk selamanya?",
+    j: "Ya, untuk ongkos pengembangan dan desain *source code*. Website Anda bisa hidup berkat teknologi 'Serverless/Edge' yang menyediakan kuota gratis yang sangat besar untuk profil bisnis. Anda hanya perlu memikirkan biaya domain tahunan (seperti .com atau .id)."
+  },
+  {
+    k: "Bagaimana jika saya belum punya logo dan foto profsional?",
+    j: "Tidak masalah. Kami akan menggunakan stok aset legal tak berbayar yang relevan dengan ranah bisnis Anda terlebih dahulu, dipadu padankan dengan tipografi identitas (text-logo) yang tajam."
+  },
+  {
+    k: "Kenapa website tidak dikembangkan menggunakan WordPress?",
+    j: "Banyak corporate mengeluhkan WordPress yang berat karena dihinggapi segudang plugin tambalan lama kelamaan. WebCipta menggunakan kode kustom langsung (React/Next.js) yang jauh lebih kebal tehadap peretasan murah, dan kecepatannya sanggup menembus skor 95+ di Google Pagespeed."
+  },
+  {
+    k: "Masa pengerjaan estimasinya berapa lama?",
+    j: "Bergantung kecepatan Anda menyerahkan draf teks dan materi. Rata-rata berkisar di waktu 4–7 hari kerja sejak titik penyepakatan struktur. Ini lebih lambat dari template instan, tapi jauh lebih teliti karena desain ditata manual."
+  },
+];
 
+export default function FAQPage() {
   return (
-    <section className="pt-32 pb-24 bg-[var(--color-secondary-bg)] min-h-screen">
-      <div className="container mx-auto px-6 max-w-4xl">
-        <h1 className="text-4xl md:text-5xl font-black font-heading text-[#18181A] mb-8 tracking-tight">Klarifikasi Awal.</h1>
-        <p className="text-xl text-[#52525B] mb-16 font-light leading-relaxed">
-          Beberapa pertanyaan umum seputar cara kerja, harga, dan batasan layanan kami.
-        </p>
-        
-        <div className="border-t border-gray-300/50">
-          {faqs.map((faq, index) => (
-            <details key={index} className="group border-b border-gray-300/50 [&_summary::-webkit-details-marker]:hidden">
-              <summary className="flex cursor-pointer items-start justify-between py-6 md:py-8 font-bold font-heading text-lg md:text-xl text-[#18181A] transition-colors focus:outline-none">
-                <span className="pr-8">{faq.q}</span>
-                <span className="ml-6 flex h-6 w-6 shrink-0 items-center justify-center rounded-sm bg-white border border-gray-200 mt-1">
-                  <svg className="h-3 w-3 text-[#18181A] transition-transform duration-300 group-open:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </span>
-              </summary>
-              <div className="pb-8 -mt-2 pr-8 md:pr-12">
-                <p className="text-[#52525B] leading-relaxed text-[15px] md:text-base">
-                  {faq.a}
-                </p>
-              </div>
-            </details>
-          ))}
+    <>
+      <section className="relative pt-32 pb-24 bg-[#FCFBF9] overflow-hidden border-b border-gray-200/50">
+        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(to_bottom,white,transparent)] -z-10 opacity-70"></div>
+        <div className="container mx-auto px-6 max-w-7xl pt-8">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl md:text-7xl font-black font-heading text-[#18181A] mb-8 leading-[1.05] tracking-tight">
+              Jawaban Dari <br/>
+              <span className="text-[var(--color-highlight)]">Pertanyaan Seputar.</span>
+            </h1>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <div className="space-y-4">
+            {faqs.map((faq, i) => (
+              <details key={i} className="group bg-white border border-gray-200 p-8 cursor-pointer shadow-sm open:bg-[#F9F9FB] transition-colors">
+                <summary className="font-bold text-lg md:text-xl text-[#18181A] outline-none font-heading flex justify-between items-center pr-4">
+                  <span>{faq.k}</span>
+                  <div className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center shrink-0 group-open:border-[var(--color-highlight)] group-open:bg-[var(--color-highlight)] group-open:text-white transition-all">
+                     <span className="group-open:hidden">+</span>
+                     <span className="hidden group-open:inline">-</span>
+                  </div>
+                </summary>
+                <div className="w-12 h-[1px] bg-[var(--color-highlight)] my-6 opacity-0 group-open:opacity-100 transition-opacity"></div>
+                <p className="text-[#52525B] leading-relaxed font-light text-[15px]">{faq.j}</p>
+              </details>
+            ))}
+          </div>
+
+          <div className="mt-24 p-10 bg-[var(--color-secondary-bg)] border border-gray-200/50 text-center relative overflow-hidden">
+             <h3 className="text-2xl font-bold font-heading text-[#18181A] mb-4">Punya Pertanyaan Spesifik?</h3>
+             <p className="text-[#52525B] mb-8 font-light">Jangan ragu menghubungi secara langsung.</p>
+             <Link href="/contact" className="inline-flex items-center gap-3 font-bold uppercase tracking-[0.1em] text-[13px] text-[#18181A] hover:text-[var(--color-accent)] transition-colors group">
+               <span className="border-b border-[#18181A] group-hover:border-[var(--color-accent)] pb-1 transition-colors">Menuju Halaman Kontak</span>
+               <MoveRight className="w-4 h-4 text-[var(--color-highlight)]" />
+             </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

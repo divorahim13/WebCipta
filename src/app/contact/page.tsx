@@ -1,77 +1,82 @@
-import { Mail, MapPin, Phone } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
+import { Mail, Clock, MapPin } from "lucide-react";
 
 export const metadata = {
-  title: "Tanya Jawab & Kontak",
-  description: "Hubungi WebCipta untuk memulai diskusi mengenai kebutuhan website, pembuatan landing page, dan konsultasi SEO.",
+  title: "Konsultasi & Kontak",
+  description: "Bicarakan visi digital brand Anda. Bebas komitmen sebelum kesepakatan.",
 };
 
 export default function ContactPage() {
   return (
-    <section className="pt-32 pb-24 bg-white relative">
-      <div className="absolute top-0 left-0 w-full h-1/2 bg-[var(--color-secondary-bg)] -z-10"></div>
-      
-      <div className="container mx-auto px-6 max-w-7xl">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
-          
-          {/* Left Text */}
-          <div>
-            <h1 className="text-4xl md:text-5xl font-black font-heading text-[#18181A] mb-8 tracking-tight leading-tight">
-              Akses Langsung ke<br/>
-              <span className="text-[var(--color-accent)]">Tim Pengembang.</span>
+    <>
+      <section className="relative pt-32 pb-24 bg-[#FCFBF9] overflow-hidden">
+        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(to_bottom,white,transparent)] -z-10 opacity-70"></div>
+        <div className="container mx-auto px-6 max-w-7xl pt-8">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl md:text-7xl font-black font-heading text-[#18181A] mb-8 leading-[1.05] tracking-tight">
+              Buka Jalur <br/>
+              <span className="text-[var(--color-highlight)]">Komunikasi.</span>
             </h1>
-            <p className="text-lg text-[#52525B] mb-12 font-light leading-relaxed">
-              Kirimkan brief proyek Anda atau sekadar bertanya. Kami usahakan merespon dalam waktu maksimal 24 jam dengan estimasi harga dan jadwal transparan.
-            </p>
+          </div>
+        </div>
+      </section>
 
-            <div className="space-y-8">
-              <div className="flex items-start gap-4 p-6 bg-white border border-gray-100 shadow-sm">
-                <div className="w-10 h-10 border border-gray-200 bg-[#F8FAFC] flex items-center justify-center shrink-0">
-                   <Mail className="w-5 h-5 text-[#18181A]" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-sm uppercase tracking-wider mb-1 text-[#18181A]">Alamat Email</h3>
-                  <a href="mailto:halo@webcipta.com" className="text-[#52525B] hover:text-[var(--color-accent)] transition-colors">
-                    halo@webcipta.com
-                  </a>
-                </div>
-              </div>
+      {/* Split Contact Board */}
+      <section className="py-16 bg-white relative">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="flex flex-col lg:flex-row shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-200">
+            
+            {/* Context Panel Left */}
+            <div className="lg:w-5/12 bg-[#1C1B1A] p-10 md:p-16 text-white flex flex-col justify-between relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[var(--color-highlight)] to-transparent"></div>
               
-              <div className="flex items-start gap-4 p-6 bg-white border border-gray-100 shadow-sm">
-                <div className="w-10 h-10 border border-gray-200 bg-[#F8FAFC] flex items-center justify-center shrink-0">
-                   <Phone className="w-5 h-5 text-[#18181A]" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-sm uppercase tracking-wider mb-1 text-[#18181A]">Telepon / WhatsApp</h3>
-                  <a href="https://wa.me/62811xxxx" target="_blank" rel="noreferrer" className="text-[#52525B] hover:text-[var(--color-accent)] transition-colors">
-                    +62 811 XXXX XXXX
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4 p-6 bg-[#0F172A] text-white shadow-lg">
-                <div className="w-10 h-10 border border-[#334155] bg-[#1E293B] flex items-center justify-center shrink-0">
-                   <MapPin className="w-5 h-5 text-[var(--color-highlight)]" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-sm uppercase tracking-wider mb-1 text-white">Area Operasional</h3>
-                  <p className="text-[#94A3B8]">
-                    Berpusat di Cibubur.<br/>
-                    Remote ke seluruh Indonesia.
-                  </p>
+              <div>
+                <h2 className="text-[11px] font-bold tracking-[0.2em] text-[#94A3B8] uppercase mb-10 block">Prinsip Respons</h2>
+                <h3 className="text-3xl font-bold font-heading mb-6 leading-tight">Tak Ada Pertanyaan yang Terlalu Dini.</h3>
+                <p className="text-[#94A3B8] leading-relaxed mb-12 font-light text-[15px]">
+                  Banyak calon klien menghubungiku hanya bermodalkan gagasan kasar dan catatan coretan tangan. Formulir ini dirancang untuk memulai perbincangan awal yang mendalam, santai, dan tanpa ikatan biaya apapun di depan.
+                </p>
+                <div className="w-12 h-[1px] bg-[#334155] mb-12"></div>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                     <div className="w-10 h-10 border border-[#334155] flex items-center justify-center shrink-0 bg-[#0F172A]">
+                       <Mail className="w-4 h-4 text-[var(--color-highlight)]" />
+                     </div>
+                     <div>
+                       <div className="text-[10px] font-bold uppercase tracking-wider text-[#64748B] mb-1">E-mail Personal</div>
+                       <div className="font-medium text-[#E2E8F0]">hello@webcipta.id</div>
+                     </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                     <div className="w-10 h-10 border border-[#334155] flex items-center justify-center shrink-0 bg-[#0F172A]">
+                       <MapPin className="w-4 h-4 text-[var(--color-highlight)]" />
+                     </div>
+                     <div>
+                       <div className="text-[10px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Wilayah Basis</div>
+                       <div className="font-medium text-[#E2E8F0]">Kawasan Cibubur - Jawa Barat</div>
+                     </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                     <div className="w-10 h-10 border border-[#334155] flex items-center justify-center shrink-0 bg-[#0F172A]">
+                       <Clock className="w-4 h-4 text-[var(--color-highlight)]" />
+                     </div>
+                     <div>
+                       <div className="text-[10px] font-bold uppercase tracking-wider text-[#64748B] mb-1">Jendela Respon</div>
+                       <div className="font-medium text-[#E2E8F0]">Maksimal 1 x 24 Jam Kerja</div>
+                     </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Right Form Component */}
-          <div className="bg-white lg:mt-32">
-            <h2 className="text-2xl font-bold font-heading text-[#18181A] mb-8">Sapa Kami Secara Digital</h2>
-            <ContactForm />
-          </div>
+            {/* Form Panel Right */}
+            <div className="lg:w-7/12 bg-white p-10 md:p-16 relative">
+              <ContactForm />
+            </div>
 
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

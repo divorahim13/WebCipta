@@ -1,132 +1,156 @@
 import Link from "next/link";
-import { ArrowRight, Globe, Layers, Search, RefreshCcw, Smartphone, Zap, Code, Shield, Headphones } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { MoveRight, Monitor, Search, HandHeart, Briefcase } from "lucide-react";
 
 export const metadata = {
   title: "Layanan Website",
-  description: "Daftar layanan pembuatan dan pengembangan website dari WebCipta yang berfokus pada kecepatan, SEO, dan konversi.",
+  description: "Cakupan layanan dan kemampuan teknis WebCipta membantu bisnis lokal berkembang.",
 };
 
-export default function ServicesPage() {
-  const servicesList = [
-    {
-      title: "Landing Page Bisnis",
-      desc: "Halaman konversi tinggi yang dirancang khusus untuk kampanye marketing, peluncuran produk, atau profil utama layanan Anda.",
-      icon: <Globe className="w-5 h-5" />,
-    },
-    {
-      title: "Optimasi SEO Basic",
-      desc: "Implementasi struktur tag, meta description, dan hierarki heading yang sesuai dengan standar Google Core Web Vitals.",
-      icon: <Search className="w-5 h-5" />,
-    },
-    {
-      title: "Redesign & Modernisasi",
-      desc: "Memberikan nafas baru untuk website lama Anda. Kami memperbaiki layout, kecepatan, dan menambahkan responsivitas penuh.",
-      icon: <RefreshCcw className="w-5 h-5" />,
-    },
-    {
-      title: "Sistem Manajemen Konten (CMS)",
-      desc: "Integrasi headless CMS (seperti Sanity atau Supabase) bagi mereka yang butuh kemudahan mengubah konten secara mandiri.",
-      icon: <Layers className="w-5 h-5" />,
-    },
-    {
-      title: "Mobile-First Architecture",
-      desc: "Bukan sekadar responsif, tapi benar-benar dirancang dari awal untuk pengalaman native terbaik di layar smartphone.",
-      icon: <Smartphone className="w-5 h-5" />,
-    },
-  ];
+const domainExpertiseCategories = [
+  {
+    title: "Profil Perusahaan (Company Profile)",
+    description: "Merupakan wajah digital entitas B2B. Dirancang untuk menanamkan kredibilitas kepada mitra bisnis, inverstor, dan prospek besar.",
+    features: ["Halaman 'Mengenai Kami' yang kuat", "Skema Warna Kepercayaan", "Formulir Kontak Responsif", "Bagian Sejarah & Tim"],
+  },
+  {
+    title: "Etalase Bisnis Lokal & Jasa",
+    description: "Untuk klinik, restoran, konsultan, atau agensi UMKM. Berpusat pada konversi pengunjung menjadi pelanggan lokal nyata.",
+    features: ["Integrasi Maps/Lokasi", "Tombol Klik-Untuk-WA", "Galeri Kualitas Tinggi", "Testimoni & Review"],
+  },
+  {
+    title: "Personal Branding & Portofolio",
+    description: "Desain sangat personal untuk seniman, pengacara, fotografer, maupun freelancer elite yang harus tampil berbeda.",
+    features: ["Estetika Asimetris/Unik", "Showcase Resolusi Tinggi", "Integrasi Media Sosial", "Blog Mini Tersertakan"],
+  },
+];
 
+export default function ServicesPage() {
   return (
     <>
-      {/* Header */}
-      <section className="pt-32 pb-16 bg-white border-b border-gray-100">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-black font-heading text-[#18181A] mb-6 tracking-tight leading-tight">
-              Keahlian Teknis. <br/>
-              Pemahaman Bisnis.
+      <section className="relative pt-32 pb-24 bg-[#FCFBF9] overflow-hidden">
+        {/* Deep grid background layer */}
+        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(to_bottom,white,transparent)] -z-10 opacity-70"></div>
+        <div className="absolute top-[-100px] right-[-100px] w-96 h-96 bg-[var(--color-secondary-bg)] rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+
+        <div className="container mx-auto px-6 max-w-7xl pt-8">
+          <div className="max-w-4xl">
+            <h1 className="text-5xl md:text-7xl font-black font-heading text-[#18181A] mb-8 leading-[1.05] tracking-tight">
+              Kapabilitas <br/>
+              <span className="text-[var(--color-highlight)]">Pengembangan.</span>
             </h1>
-            <p className="text-lg text-[#52525B] leading-relaxed font-light">
-              Kami tidak sekadar memasang template. Kami membangun infrastruktur digital yang cepat, aman, dan bekerja otomatis untuk menyaring klien potensial Anda.
+            <p className="text-xl md:text-2xl text-[#52525B] leading-relaxed font-light mt-12 max-w-2xl">
+              Kami tidak membangun portal berita 1000 halaman atau sistem e-commerce raksasa. Kami sangat mahir membangun "Website Representasi" berkinerja tinggi untuk brand Anda.
             </p>
           </div>
         </div>
       </section>
 
-      {/* The Catalog Layout (Not Cards) */}
-      <section className="py-20 bg-[var(--color-secondary-bg)]">
-        <div className="container mx-auto px-6 max-w-7xl">
-            <h2 className="text-sm font-bold tracking-widest text-[#94A3B8] uppercase mb-16 px-4">Direktori Layanan</h2>
-            
-            <div className="border-t border-gray-300/50">
-              {servicesList.map((srv, idx) => (
-                <div key={idx} className="group grid grid-cols-1 md:grid-cols-12 gap-6 items-start py-10 md:py-12 border-b border-gray-300/50 hover:bg-white/50 transition-colors px-4 md:px-8">
-                  <div className="md:col-span-1 pt-1 opacity-50 group-hover:opacity-100 group-hover:text-[var(--color-accent)] transition-all">
-                    {srv.icon}
-                  </div>
-                  <div className="md:col-span-4">
-                    <h3 className="text-xl font-bold font-heading text-[#18181A]">{srv.title}</h3>
-                  </div>
-                  <div className="md:col-span-7 md:pl-8">
-                    <p className="text-[#52525B] leading-relaxed">
-                      {srv.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-        </div>
-      </section>
+      {/* Directory Style List Instead of Cards */}
+      <section className="py-24 bg-white relative">
+        <div className="container mx-auto px-6 max-w-5xl">
+          <div className="mb-16 border-b border-[#1C1B1A] pb-4">
+             <h2 className="text-[11px] font-bold tracking-[0.2em] text-[#18181A] uppercase">Fokus Resolusi</h2>
+          </div>
 
-      {/* Tech Stack */}
-      <section className="py-24 bg-[#0F172A] text-white overflow-hidden">
-        <div className="container mx-auto px-6 max-w-7xl relative">
-          <div className="grid md:grid-cols-2 gap-16">
-             <div>
-                <h2 className="text-sm font-bold tracking-widest text-[#64748B] uppercase mb-6">Peralatan Bengkel Kami</h2>
-                <h3 className="text-3xl font-bold font-heading mb-8 leading-tight">
-                  Teknologi Modern,<br/>Untuk Kecepatan Maksimal.
-                </h3>
-                <p className="text-[#94A3B8] leading-relaxed font-light mb-8 max-w-sm">
-                  Berbeda dengan agensi tradisional yang menggunakan platform builder lawas yang berat. Kami menggunakan tumpukan teknologi modern untuk skor kecepatan 99+ di Google Lighthouse.
-                </p>
-             </div>
-             <div className="grid grid-cols-2 gap-x-8 gap-y-10">
-                <div>
-                   <Code className="w-5 h-5 text-[var(--color-highlight)] mb-4" />
-                   <h4 className="font-bold text-sm uppercase tracking-wider mb-2">Next.js & React</h4>
-                   <p className="text-[#64748B] text-sm">Standar emas industri modern untuk framework UI yang cepat dan skalabel.</p>
+          <div className="space-y-0">
+            {domainExpertiseCategories.map((cat, idx) => (
+              <div 
+                key={idx} 
+                className="group grid md:grid-cols-12 gap-8 md:gap-12 py-12 md:py-16 border-b border-gray-100 hover:bg-[#F9F9FB] transition-colors -mx-6 px-6 relative"
+              >
+                {/* Subtle side indicator */}
+                <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-[var(--color-highlight)] scale-y-0 origin-top group-hover:scale-y-100 transition-transform duration-300"></div>
+                
+                <div className="md:col-span-1 hidden md:block">
+                  <div className="text-[10px] font-bold text-[#94A3B8] tracking-widest uppercase mt-2">0{idx + 1}</div>
                 </div>
-                <div>
-                   <Zap className="w-5 h-5 text-[var(--color-highlight)] mb-4" />
-                   <h4 className="font-bold text-sm uppercase tracking-wider mb-2">Tailwind CSS</h4>
-                   <p className="text-[#64748B] text-sm">Sistem styling yang ringan via utility-first class, memangkas overhead pemuatan gaya.</p>
+                
+                <div className="md:col-span-5">
+                  <h3 className="text-2xl lg:text-3xl font-bold font-heading text-[#18181A] leading-tight mb-4">
+                    {cat.title}
+                  </h3>
+                  <div className="w-12 h-[1px] bg-gray-300 hidden md:block mt-8"></div>
                 </div>
-                <div>
-                   <Shield className="w-5 h-5 text-[var(--color-highlight)] mb-4" />
-                   <h4 className="font-bold text-sm uppercase tracking-wider mb-2">Vercel</h4>
-                   <p className="text-[#64748B] text-sm">Edge network global memastikan website instan diakses dari Jakarta hingga belahan dunia manapun.</p>
+                
+                <div className="md:col-span-6">
+                  <p className="text-[15px] text-[#52525B] leading-relaxed mb-8 font-light">
+                    {cat.description}
+                  </p>
+                  <ul className="grid sm:grid-cols-2 gap-y-3 gap-x-6">
+                    {cat.features.map((feature, fIdx) => (
+                      <li key={fIdx} className="flex items-center gap-2 text-[13px] text-[#1C1B1A] font-medium">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-highlight)] shrink-0"></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <div>
-                   <Headphones className="w-5 h-5 text-[var(--color-highlight)] mb-4" />
-                   <h4 className="font-bold text-sm uppercase tracking-wider mb-2">AI Tooling</h4>
-                   <p className="text-[#64748B] text-sm">Implementasi cerdas Cursor dan LLM untuk memangkas jam kerja sintaks rutin.</p>
-                </div>
-             </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
-      
-      {/* Bottom CTA */}
-      <section className="py-24 bg-white text-center">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold font-heading text-[#18181A] mb-8">Punya kebutuhan diluar daftar ini?</h2>
-          <p className="text-[#52525B] max-w-xl mx-auto mb-10 leading-relaxed">
-            Karena kami tidak menggunakan template kaku, fitur-fitur custom sangat memungkinkan untuk dikerjakan. Ceritakan fitur ide spesifik Anda.
-          </p>
-          <Link href="/contact">
-            <Button size="lg">Ayo Diskusikan Ide Anda</Button>
-          </Link>
+
+      {/* Standar Inklusi - Layered Panel Contrast */}
+      <section className="py-24 bg-[var(--color-secondary-bg)] shadow-[inset_0_1px_0_rgba(255,255,255,1)]">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="text-center mb-20">
+            <h2 className="text-[11px] font-bold tracking-[0.2em] text-[#94A3B8] uppercase mb-4">Protokol Bawaan</h2>
+            <h3 className="text-3xl md:text-5xl font-bold font-heading text-[#18181A]">
+              Pondasi Tanpa<br/>Biaya Ekstra.
+            </h3>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-10 md:p-12 border border-gray-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)]">
+              <div className="w-12 h-12 bg-[#F8FAFC] border border-gray-100 flex items-center justify-center mb-8">
+                <Search className="w-5 h-5 text-[#18181A]" />
+              </div>
+              <h4 className="text-lg font-bold font-heading mb-4 text-[#18181A]">Technical SEO</h4>
+              <p className="text-[14px] text-[#52525B] leading-relaxed font-light">
+                *Meta tags*, *Open Graph* (agar pratinjau link WA rapi), peta situs (sitemap), dan pemampatan gambar otomatis langsung dari kerangka Next.js bawaan.
+              </p>
+            </div>
+
+            <div className="bg-white p-10 md:p-12 border border-gray-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)]">
+              <div className="w-12 h-12 bg-[#F8FAFC] border border-gray-100 flex items-center justify-center mb-8">
+                <Monitor className="w-5 h-5 text-[#18181A]" />
+              </div>
+              <h4 className="text-lg font-bold font-heading mb-4 text-[#18181A]">Mobile-First Responsiveness</h4>
+              <p className="text-[14px] text-[#52525B] leading-relaxed font-light">
+                Bukan sekadar mengecilkan tampilan PC. Kami menata ulang antarmuka (huruf, jarak, urutan tombol) khusus agar pengalaman pengguna nyaman di layar *smartphone*.
+              </p>
+            </div>
+
+            <div className="bg-white p-10 md:p-12 border border-gray-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.02)]">
+              <div className="w-12 h-12 bg-[#F8FAFC] border border-gray-100 flex items-center justify-center mb-8">
+                <Briefcase className="w-5 h-5 text-[#18181A]" />
+              </div>
+              <h4 className="text-lg font-bold font-heading mb-4 text-[#18181A]">Dukungan Lepas Landas</h4>
+              <p className="text-[14px] text-[#52525B] leading-relaxed font-light">
+                Revisi pasca-launching untuk bagian teks/warna dan panduan manajemen domain/hosting di bulan pertama memastikan bisnis Anda bisa *"Take Off"* tanpa hambatan teknis.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Visual Break / Deep Solid CTA */}
+      <section className="py-24 bg-[#0F172A] relative overflow-hidden">
+        {/* Noise/Texture element (fake map / line art) */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm20 20h20v20H20V20zM0 20h20v20H0V20z' fill='%23ffffff' fill-rule='evenodd'/%3E%3C/svg%3E\")"}}></div>
+        
+        <div className="container mx-auto px-6 max-w-5xl text-center relative z-10">
+           <h2 className="text-3xl md:text-5xl font-bold font-heading text-white mb-8">
+             Kuat di Spesialisasi.
+           </h2>
+           <p className="text-[#94A3B8] text-lg max-w-2xl mx-auto mb-12 font-light">
+             Punya proyek yang tak terklasifikasi? Mari bahas batasannya.
+           </p>
+           <Link href="/contact" className="inline-flex items-center gap-3 font-bold uppercase tracking-[0.1em] text-[13px] text-white hover:text-[var(--color-highlight)] transition-colors group">
+             <span className="border-b border-white group-hover:border-[var(--color-highlight)] pb-1 transition-colors">Diskusikan Kebutuhan</span>
+             <MoveRight className="w-4 h-4" />
+           </Link>
         </div>
       </section>
     </>
