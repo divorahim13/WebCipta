@@ -336,13 +336,15 @@ export default function PricingPage() {
           <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#94A3B8] mb-6">Catatan Penting</h3>
           <div className="grid md:grid-cols-2 gap-4">
             {[
-              { icon: "💡", text: "Biaya domain (.com/.id) tidak termasuk dalam paket — dibayar langsung ke registrar, sekitar Rp120–180rb/tahun." },
-              { icon: "📋", text: "Harga final disampaikan setelah diskusi kebutuhan. Tidak ada perubahan harga mendadak di tengah proyek." },
-              { icon: "🔧", text: "Fitur tambahan yang tidak ada dalam paket standar akan dikalkulasi dan diinformasikan sebelum dikerjakan." },
-              { icon: "💬", text: "Konsultasi awal sepenuhnya gratis — tidak ada kewajiban untuk melanjutkan ke tahap proyek." },
+              { icon: "/icons/ui/note-domain.svg", text: "Biaya domain (.com/.id) tidak termasuk dalam paket — dibayar langsung ke registrar, sekitar Rp120–180rb/tahun." },
+              { icon: "/icons/ui/note-price.svg", text: "Harga final disampaikan setelah diskusi kebutuhan. Tidak ada perubahan harga mendadak di tengah proyek." },
+              { icon: "/icons/ui/note-feature.svg", text: "Fitur tambahan yang tidak ada dalam paket standar akan dikalkulasi dan diinformasikan sebelum dikerjakan." },
+              { icon: "/icons/ui/note-consult.svg", text: "Konsultasi awal sepenuhnya gratis — tidak ada kewajiban untuk melanjutkan ke tahap proyek." },
             ].map((note, i) => (
               <div key={i} className="flex gap-4 p-5 bg-white border border-gray-200">
-                <span className="text-lg shrink-0">{note.icon}</span>
+                <span className="shrink-0 mt-0.5">
+                  <Image src={note.icon} alt="Note icon" width={20} height={20} />
+                </span>
                 <p className="text-[13px] text-[#52525B] leading-relaxed font-light">{note.text}</p>
               </div>
             ))}
