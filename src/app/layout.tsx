@@ -16,10 +16,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "WebCipta | Your Partner for Stunning Websites",
+    default: "WebCipta | Jasa Pembuatan Website Profesional di Cibubur",
     template: "%s | WebCipta",
   },
-  description: "WebCipta is a professional website development agency specializing in modern, high-performance, AI-enhanced web solutions.",
+  description: "WebCipta adalah jasa pembuatan website profesional untuk bisnis lokal, UMKM, dan personal brand.",
 };
 
 export default function RootLayout({

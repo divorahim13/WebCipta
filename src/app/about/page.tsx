@@ -47,8 +47,8 @@ export default function AboutPage() {
                           <Code2 className="w-4 h-4 text-[#52525B]" />
                        </div>
                        <div>
-                          <h5 className="font-bold text-[#1C1B1A] text-sm md:text-base">Eksekutor Tunggal</h5>
-                          <p className="text-[10px] md:text-[11px] text-[#94A3B8] uppercase tracking-wider font-bold">Tanpa Birokrasi Agensi</p>
+                          <h5 className="font-bold text-[#1C1B1A] text-sm md:text-base">Fokus Eksekusi</h5>
+                          <p className="text-[10px] md:text-[11px] text-[#94A3B8] uppercase tracking-wider font-bold">Tanpa Birokrasi Berbelit</p>
                        </div>
                     </div>
                  </div>
@@ -62,7 +62,7 @@ export default function AboutPage() {
                    Tidak Ada Penengah.<br/>Tidak Ada Alasan.
                  </h3>
                  <p className="text-[#52525B] leading-relaxed mb-6 font-light text-lg">
-                   Banyak agensi memisahkan proses penjualan dan pengerjaan teknis. Saat Anda menghubungi saya, Anda sedang berbicara dengan orang yang sama yang akan mendesain *layout* dan memprogram *logika* bisnis Anda menggunakan React & Next.js.
+                   Banyak agensi yang memisahkan proses penjualan dan eksekusi teknis sehingga komunikasi menjadi lambat. Saat Anda bekerja sama dengan WebCipta, Anda berbicara langsung dengan tim teknis ahli yang akan merancang visual dan menulis instruksi kode fungsional bisnis Anda.
                  </p>
                  <div className="w-16 h-1 mt-10 mb-8 bg-gray-200"></div>
                  <div className="text-[14px] text-[#94A3B8] italic font-serif">
@@ -84,7 +84,7 @@ export default function AboutPage() {
               <div className="space-y-8">
                  <div>
                    <h3 className="font-bold font-heading text-xl text-[#18181A] mb-3">Opsi A: Template Menyesatkan</h3>
-                   <p className="text-[#52525B] leading-relaxed font-light text-[15px]">Membangun sendiri menggunakan 'Template Builder' gratisan memang tampak mudah. Namun hasil akhirnya seringkali generik, membengkak secara ukuran *file*, dan dikalahkan kompetitor pada sisi kecepatan SEO.</p>
+                   <p className="text-[#52525B] leading-relaxed font-light text-[15px]">Membangun sendiri menggunakan layanan massal gratisan memang tampak mudah. Namun hasil akhirnya seringkali generik, performa memuat aplikasi lambat, dan dikalahkan kompetitor pada sisi peringkat pencarian Google.</p>
                  </div>
                  <div className="w-8 h-[1px] bg-gray-300"></div>
                  <div>
@@ -99,13 +99,13 @@ export default function AboutPage() {
               <div className="absolute top-0 right-0 w-40 h-40 bg-[var(--color-secondary-bg)] rounded-bl-full opacity-50"></div>
               <h2 className="text-[11px] font-bold tracking-[0.2em] text-[var(--color-highlight)] uppercase mb-10 block">Format WebCipta</h2>
               <h3 className="text-3xl lg:text-4xl font-bold font-heading text-[#18181A] mb-6 leading-tight">
-                Standar Tinggi via Struktur Agensi Minimalis.
+                Standar Premium via Alur Kerja Strategis.
               </h3>
               <p className="text-[#52525B] leading-relaxed mb-6 font-light">
-                Saya mengonsep WebCipta sebagai bentuk pertengahan. Layaknya *Boutique Studio* mandiri, pendekatan saya menghapus *overhead* birokrasi, gaji divisi berlapis, maupun biaya operasional kantor mewah.
+                Kami merancang WebCipta sebagai solusi mutakhir. Layaknya sebuah agensi butik mandiri, pendekatan kami menghapus birokrasi, gaji divisi berlapis, maupun penambahan biaya tersembunyi yang berlebihan.
               </p>
               <p className="text-[#52525B] leading-relaxed font-light">
-                Sebagai gantinya, Anda mendapatkan akses dan komunikasi langsung kepada eksekutor yang membangun, merancang tata letak, serta mengimplementasi algoritme SEO yang biasa dipakai di arsitektur web raksasa. Kualitas *corporate*, dalam harga rasional.
+                Sebagai gantinya, Anda mendapatkan akses dan komunikasi langsung dengan eksekutor teknis. Kami merancang desain berkelas, mengimplementasikan standar keamanan, dan menerapkan fondasi performa tinggi secara rasional.
               </p>
             </div>
           </div>
@@ -136,7 +136,7 @@ export default function AboutPage() {
                  <Rocket className="w-4 h-4 text-[#18181A]" />
               </div>
               <h4 className="font-bold font-heading mb-3 uppercase tracking-wider text-[13px] text-[#18181A]">Kecepatan Mutlak</h4>
-              <p className="text-[14px] text-[#52525B] leading-relaxed font-light">Konversi mati pada loading lambat. Setiap kerangka desain dirancang untuk lolos persyaratan *Core Web Vitals*.</p>
+              <p className="text-[14px] text-[#52525B] leading-relaxed font-light">Konversi terhambat jika website memuat terlalu lambat. Anda mendapatkan kecepatan maksimal standar industri modern.</p>
             </div>
             
             <div className="lg:px-8">
@@ -144,7 +144,7 @@ export default function AboutPage() {
                  <ShieldCheck className="w-4 h-4 text-[#18181A]" />
               </div>
               <h4 className="font-bold font-heading mb-3 uppercase tracking-wider text-[13px] text-[#18181A]">Struktur Bersih</h4>
-              <p className="text-[14px] text-[#52525B] leading-relaxed font-light">Tidak ada kode yang membengkak karena modifikasi tema. Seluruh sintaks dan tata letak dirancang spesifik.</p>
+              <p className="text-[14px] text-[#52525B] leading-relaxed font-light">Tidak ada kode yang membengkak. Seluruh sistem dibuat rapi dan mudah dirawat untuk jangka panjang.</p>
             </div>
             
             <div className="lg:px-8">
@@ -152,15 +152,15 @@ export default function AboutPage() {
                  <Users className="w-4 h-4 text-[#18181A]" />
               </div>
               <h4 className="font-bold font-heading mb-3 uppercase tracking-wider text-[13px] text-[#18181A]">Empati Pengguna</h4>
-              <p className="text-[14px] text-[#52525B] leading-relaxed font-light">Penekanan pada spasi, navigasi sentuhan jari, serta *readability* yang mencegah pengguna kabur prematur.</p>
+              <p className="text-[14px] text-[#52525B] leading-relaxed font-light">Penekanan pada spasi, panduan sentuhan ukuran memadai, serta membaca nyaman yang mencegah pengunjung kabur.</p>
             </div>
             
             <div className="lg:pl-8">
               <div className="w-10 h-10 border border-gray-200 bg-[var(--color-secondary-bg)] flex items-center justify-center mb-6 shadow-sm">
                  <Code2 className="w-4 h-4 text-[#18181A]" />
               </div>
-              <h4 className="font-bold font-heading mb-3 uppercase tracking-wider text-[13px] text-[#18181A]">Alat Bantu Cerdas</h4>
-              <p className="text-[14px] text-[#52525B] leading-relaxed font-light">Penerapan AI dalam alur kerja digunakan murni untuk memangkas jam operasional koding—menjadi potongan harga bagi *client*.</p>
+              <h4 className="font-bold font-heading mb-3 uppercase tracking-wider text-[13px] text-[#18181A]">Efisien & Tepat Guna</h4>
+              <p className="text-[14px] text-[#52525B] leading-relaxed font-light">Seluruh alur dikerjakan secara cermat untuk memangkas jam kerja tanpa mengurangi standar premium pengerjaan.</p>
             </div>
           </div>
         </div>
@@ -171,7 +171,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-6 max-w-2xl">
           <h2 className="text-2xl md:text-4xl font-bold font-heading text-white mb-6">Mulai Transformasi Berkelas.</h2>
           <p className="text-[#A1A1AA] mb-12 leading-relaxed font-light text-[15px]">
-            Konsultasikan rancangan website Anda tanpa obligasi atau komitmen apapun. Saya selalu siap mendiskusikan visi bisnis Anda.
+            Konsultasikan rancangan website Anda tanpa obligasi atau komitmen di awal. Kami selalu siap mendiskusikan visi bisnis Anda.
           </p>
           <Link href="/contact" className="inline-flex items-center gap-3 font-bold uppercase tracking-[0.1em] text-[13px] text-white hover:text-[var(--color-highlight)] transition-colors group">
             <span className="border-b border-white group-hover:border-[var(--color-highlight)] pb-1 transition-colors">Booking Sesi Pertemuan</span>

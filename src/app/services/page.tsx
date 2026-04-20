@@ -151,7 +151,7 @@ export default function ServicesPage() {
               <span className="text-[var(--color-highlight)]">KatalisATOR.</span>
             </h1>
             <p className="text-xl md:text-2xl text-[#52525B] leading-relaxed font-light mt-12 max-w-2xl">
-              Kami mentranslasikan kebutuhan spesifik bisnis Anda (dari *landing page* hardsell hingga *company profile* korporat) ke dalam wujud digital yang fungsional, terukur, dan elegan.
+              Kami mentranslasikan kebutuhan spesifik bisnis Anda (dari landing page hardsell hingga company profile korporat) ke dalam wujud digital yang fungsional, terukur, dan elegan.
             </p>
           </div>
         </div>
@@ -182,7 +182,7 @@ export default function ServicesPage() {
                   <div>
                     <h3 className="text-[11px] font-bold uppercase tracking-widest text-[#94A3B8] mb-4">Bukti Implementasi</h3>
                     <h4 className="text-3xl font-bold font-heading text-[#18181A] mb-4">Landing Page Konversi Tinggi</h4>
-                    <p className="text-[#52525B] font-light leading-relaxed">Arsitektur halaman tunggal berfokus meminimalkan *bouncing rate* dan langsung menggiring konsumen ke gerbang pendaftaran/WA. Efisien, langsung pada poin nilai utama usaha Anda.</p>
+                    <p className="text-[#52525B] font-light leading-relaxed">Arsitektur halaman tunggal berfokus meminimalkan bouncing rate dan langsung menggiring konsumen ke gerbang pendaftaran/WA. Efisien, langsung pada poin nilai utama usaha Anda.</p>
                   </div>
                </div>
             </div>
@@ -196,7 +196,7 @@ export default function ServicesPage() {
                   <div className="order-2 md:order-1">
                     <h3 className="text-[11px] font-bold uppercase tracking-widest text-[#94A3B8] mb-4">Bukti Implementasi</h3>
                     <h4 className="text-3xl font-bold font-heading text-[#18181A] mb-4">Company Profile Korporat</h4>
-                    <p className="text-[#52525B] font-light leading-relaxed">Website tidak melulu tentang berjualan langsung. Seringkali, kredibilitas B2B divalidasi mutlak dari presentasi digital sebuah *brand*. Tampilan *off-white* formal dan struktur tata letak simetris murni.</p>
+                    <p className="text-[#52525B] font-light leading-relaxed">Website tidak melulu tentang berjualan langsung. Seringkali, kredibilitas B2B divalidasi mutlak dari presentasi digital sebuah brand. Tampilan off-white formal dan struktur tata letak simetris murni.</p>
                   </div>
                   <div className="order-1 md:order-2 relative aspect-[4/3] bg-white rounded-sm overflow-hidden shadow-xl border border-gray-200">
                     <div className="absolute top-0 left-0 w-full h-8 bg-[#F8FAFC] border-b border-gray-200 flex items-center px-4 z-10 hidden sm:flex">
@@ -225,7 +225,7 @@ export default function ServicesPage() {
              Masih Ragu Memilih?
            </h2>
            <p className="text-[#94A3B8] text-lg max-w-2xl mx-auto mb-12 font-light">
-             Tidak perlu khawatir menebak. Ceritakan gambaran kasarnya, dan saya akan merumuskan spesifikasi mana yang tidak mubazir untuk diinvestasikan *budget*-nya hari ini.
+             Tidak perlu khawatir menebak. Ceritakan gambaran kasarnya kepada kami, dan tim kami akan merumuskan spesifikasi mana yang tidak mubazir untuk diinvestasikan budget-nya hari ini.
            </p>
            <Link href="/contact" className="inline-flex items-center gap-3 font-bold uppercase tracking-[0.1em] text-[13px] text-white hover:text-[var(--color-highlight)] transition-colors group">
              <span className="border-b border-white group-hover:border-[var(--color-highlight)] pb-1 transition-colors">Dapatkan Panduan Gratis</span>

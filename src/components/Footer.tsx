@@ -12,7 +12,7 @@ export default function Footer() {
             <h2 className="text-2xl font-black font-heading tracking-tight">WebCipta<span className="text-[var(--color-highlight)]">.</span></h2>
           </div>
           <p className="text-[#94A3B8] leading-relaxed mb-10 max-w-sm">
-            Jasa pembuatan website profesional untuk bisnis lokal, UMKM, dan personal brand. Dikerjakan langsung oleh solo developer, hasil cepat dan terjangkau.
+            WebCipta adalah jasa pembuatan website profesional untuk bisnis lokal, UMKM, dan personal brand.
           </p>
           <div className="flex gap-4">
             <a href="#" aria-label="WhatsApp" className="w-10 h-10 border border-[#334155] rounded flex items-center justify-center hover:border-white hover:bg-white hover:text-[#0F172A] transition-all">
@@ -73,7 +73,7 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-[#1E293B] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#64748B]">
-        <p>&copy; {new Date().getFullYear()} WebCipta Studio. Dikelola sebagai solo developer agency.</p>
+        <p>&copy; {new Date().getFullYear()} WebCipta Studio. Seluruh hak cipta dilindungi.</p>
         <div className="flex gap-6 font-medium">
           <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
           <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>

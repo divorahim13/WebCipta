@@ -20,15 +20,12 @@ export default function Home() {
                 Tersedia untuk proyek baru
               </div>
               <h1 className="text-5xl md:text-[68px] font-black font-heading text-[#18181A] leading-[1.05] tracking-tight mb-8">
-                Desainer <br/>
-                Sekaligus <br/>
-                <span className="text-[var(--color-accent)] relative inline-block">
-                  Pengembang.
+                Website yang Rapi, Cepat, dan Siap Meningkatkan <span className="text-[var(--color-accent)] relative inline-block">Kepercayaan.
                   <svg className="absolute -bottom-2 md:-bottom-3 left-0 w-full h-3 md:h-4 text-[var(--color-highlight)] opacity-30" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="transparent"/></svg>
                 </span>
               </h1>
               <p className="text-lg text-[#52525B] mb-10 leading-relaxed font-light">
-                WebCipta adalah studio independen di Cibubur. Kami tidak menggunakan template massal. Kami mendesain visual yang menjalin kepercayaan, dan menulis struktur kode yang mempercepat konversi bisnis Anda.
+                WebCipta adalah agensi pembuatan website profesional di Cibubur. Kami merancang website yang tampil meyakinkan, fungsional, dan dioptimalkan untuk menarik pelanggan bisnis lokal Anda.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/contact">
@@ -165,6 +162,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Technology Stack Section Compact */}
+      <section className="py-20 bg-[#F8FAFC] border-t border-b border-gray-200/80">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-[11px] font-bold tracking-[0.2em] text-[var(--color-highlight)] uppercase mb-4">Fondasi Website</h2>
+            <h3 className="text-3xl font-bold font-heading text-[#18181A] mb-4">Teknologi yang Kami Gunakan</h3>
+            <p className="text-[#52525B] font-light">WebCipta membangun website dengan teknologi modern yang ringan, cepat, dan relevan untuk kebutuhan bisnis saat ini.</p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+            {["Next.js", "React", "Tailwind CSS", "TypeScript", "Vercel", "Technical SEO"].map((tech) => (
+              <div key={tech} className="px-6 py-3 bg-white border border-gray-200 shadow-sm rounded-sm text-sm font-semibold text-[#1C1B1A]">
+                {tech}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Solo Developer Identity Section (SPLIT HUMANISED LAYOUT) */}
       <section className="py-24 bg-white relative border-b border-gray-100">
         <div className="container mx-auto px-6 max-w-7xl">
@@ -188,8 +203,8 @@ export default function Home() {
                     <Code2 className="w-5 h-5 text-[#52525B]" />
                  </div>
                  <div>
-                    <h5 className="font-bold text-[#1C1B1A]">Divo Rahim</h5>
-                    <p className="text-[12px] text-[#94A3B8] uppercase tracking-wider font-bold">Pendiri & Lead Developer</p>
+                    <h5 className="font-bold text-[#1C1B1A]">Di Balik WebCipta</h5>
+                    <p className="text-[12px] text-[#94A3B8] uppercase tracking-wider font-bold">Fokus Kualitas</p>
                  </div>
               </div>
             </div>
@@ -198,27 +213,27 @@ export default function Home() {
             <div className="order-1 lg:order-2">
               <h2 className="text-[11px] font-bold tracking-[0.2em] text-[var(--color-highlight)] uppercase mb-6 flex items-center gap-3">
                 <span className="w-8 h-[1px] bg-[var(--color-highlight)]"></span>
-                Pesan Tim Inti
+                Pendekatan Kami
               </h2>
               <h3 className="text-3xl md:text-4xl font-bold font-heading text-[#18181A] leading-tight mb-8">
-                Satu Titik Kontak.<br/>Satu Standar Kualitas.
+                Kualitas Premium.<br/>Alur Kerja Profesional.
               </h3>
               <p className="text-[#52525B] leading-relaxed mb-6 font-light text-lg">
-                Sebagai agensi pengembang independen, saya menghapus kerumitan berlapis antara klien dan eksekutor. Anda berbicara langsung dengan spesialis yang mendesain visual, menulis kode React/Next.js, dan meluncurkan proyek Anda ke dunia digital.
+                Sebagai agensi website butik yang berfokus pada hasil praktis, WebCipta memastikan setiap proyek ditangani dengan standar yang tinggi—tanpa birokrasi berbelit. Kepastian biaya, kejelasan struktur, dan hasil akhir yang solid adalah janji kami kepada setiap klien bisnis lokal.
               </p>
               
               <ul className="space-y-4 mt-8 pt-8 border-t border-gray-100">
                 <li className="flex gap-3">
                    <Check className="w-5 h-5 text-[var(--color-highlight)] shrink-0 mt-0.5" />
-                   <span className="text-[#18181A] font-medium">Bespoke Design, tidak menggunakan template pasaran.</span>
+                   <span className="text-[#18181A] font-medium">Bespoke Design, tidak menggunakan template murahan.</span>
                 </li>
                 <li className="flex gap-3">
                    <Check className="w-5 h-5 text-[var(--color-highlight)] shrink-0 mt-0.5" />
-                   <span className="text-[#18181A] font-medium">Penggunaan AI hanya untuk percepat *coding*, sehingga harga tertekan.</span>
+                   <span className="text-[#18181A] font-medium">Struktur yang efisien agar website dimuat dengan cepat.</span>
                 </li>
                 <li className="flex gap-3">
                    <Check className="w-5 h-5 text-[var(--color-highlight)] shrink-0 mt-0.5" />
-                   <span className="text-[#18181A] font-medium">SEO Dasar terintegrasi dalam kode, bukan sebagai plugin tempelan.</span>
+                   <span className="text-[#18181A] font-medium">Technical SEO dasar disertakan secara bawaan.</span>
                 </li>
               </ul>
             </div>
