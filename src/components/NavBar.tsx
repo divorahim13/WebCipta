@@ -34,6 +34,7 @@ export default function NavBar() {
           <Link href="/about" className="hover:text-[var(--color-accent)] transition-colors">About</Link>
           <Link href="/services" className="hover:text-[var(--color-accent)] transition-colors">Services</Link>
           <Link href="/portfolio" className="hover:text-[var(--color-accent)] transition-colors">Portfolio</Link>
+          <Link href="/blog" className="hover:text-[var(--color-accent)] transition-colors">Blog</Link>
           <Link href="/contact">
             <Button size="sm">Get Started</Button>
           </Link>
@@ -56,6 +57,7 @@ export default function NavBar() {
             <Link href="/about" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">About</Link>
             <Link href="/services" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">Services</Link>
             <Link href="/portfolio" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">Portfolio</Link>
+            <Link href="/blog" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">Blog</Link>
             <Link href="/contact" onClick={() => setIsOpen(false)} className="block py-2">
               <Button className="w-full">Get Started</Button>
             </Link>

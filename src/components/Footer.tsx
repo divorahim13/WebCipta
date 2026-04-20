@@ -35,7 +35,7 @@ export default function Footer() {
             <li><Link href="/services" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Services</Link></li>
             <li><Link href="/portfolio" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Portfolio</Link></li>
             <li><Link href="/contact" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Contact</Link></li>
-            <li><Link href="#" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Blog</Link></li>
+            <li><Link href="/blog" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Blog</Link></li>
           </ul>
         </div>
 
