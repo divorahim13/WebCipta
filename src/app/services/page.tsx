@@ -174,15 +174,15 @@ const serviceData = [
     id: "10",
     icon: "/icons/services/svc-maintenance.svg",
     title: "Maintenance & Update",
-    tag: "",
-    desc: "Website yang sudah online perlu dirawat. Kami pastikan konten tetap segar, performa terjaga, dan tidak ada hal yang rusak tanpa Anda sadari.",
-    target: "Klien eksisting yang ingin website tetap terawat tanpa repot",
+    tag: "Opsional",
+    desc: "Layanan perawatan fleksibel untuk jangka panjang. Anda bebas melakukan update konten sendiri (gratis) atau menyerahkannya kepada kami agar Anda bisa tetap fokus sepenuhnya pada bisnis.",
+    target: "Klien yang ingin website tetap prima tanpa repot teknis",
     includes: [
       "Update konten teks & gambar",
       "Perbaikan minor & bug fix",
       "Monitoring performa dasar",
       "Backup berkala",
-      "Laporan singkat kondisi website",
+      "Bisa dilakukan mandiri atau via jasa kami",
     ],
     setup: "Mengikuti server yang sudah ada",
     price: "Mulai Rp 200.000 / bulan",
@@ -207,7 +207,11 @@ const ServiceCard = ({ data }: { data: typeof serviceData[0] }) => (
         <div className="flex flex-col items-end gap-2">
           <span className="text-[10px] font-bold text-[#94A3B8] tracking-widest uppercase">{data.id}</span>
           {data.tag && (
-            <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 bg-[#18181A] text-white">
+            <span className={`font-bold uppercase tracking-wider px-2.5 py-1 ${
+              data.tag === "Opsional" 
+                ? "text-[12px] bg-[var(--color-highlight)] text-white" 
+                : "text-[10px] bg-[#18181A] text-white"
+            }`}>
               {data.tag}
             </span>
           )}

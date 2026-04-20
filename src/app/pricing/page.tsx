@@ -178,14 +178,14 @@ const pricingPackages = [
     icon: "/icons/services/svc-maintenance.svg",
     color: "bg-white",
     highlight: false,
-    tag: "",
-    short: "Website tetap terurus tanpa repot",
+    tag: "Opsional",
+    short: "Bisa dikelola sendiri (gratis) atau via kami",
     includes: [
       "Update konten teks & gambar",
       "Bug fix & perbaikan minor",
       "Monitoring performa",
       "Backup berkala",
-      "Laporan kondisi website",
+      "Manajemen mandiri didukung",
     ],
   },
 ];
@@ -265,7 +265,13 @@ export default function PricingPage() {
                 className={`relative border ${pkg.highlight ? "border-[#18181A] shadow-[0_0_0_1px_#18181A]" : "border-gray-200 hover:border-gray-300"} ${pkg.color} transition-all hover:shadow-md flex flex-col group`}
               >
                 {pkg.tag && (
-                  <div className={`absolute -top-3 left-6 text-[10px] font-bold uppercase tracking-widest px-3 py-1 ${pkg.tag === "Terpopuler" ? "bg-[#18181A] text-white" : "bg-[#F8FAFC] text-[#52525B] border border-gray-200"}`}>
+                  <div className={`absolute -top-3 left-6 font-bold uppercase tracking-widest px-3 py-1 ${
+                    pkg.tag === "Terpopuler" 
+                      ? "text-[10px] bg-[#18181A] text-white" 
+                      : pkg.tag === "Opsional"
+                        ? "text-[12px] bg-[var(--color-highlight)] text-white shadow-sm"
+                        : "text-[10px] bg-[#F8FAFC] text-[#52525B] border border-gray-200"
+                  }`}>
                     {pkg.tag}
                   </div>
                 )}
