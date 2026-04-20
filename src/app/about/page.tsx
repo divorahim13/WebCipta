@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MoveRight, Code2, Users, Rocket, ShieldCheck, LineChart, MonitorSmartphone, Lock, Webhook } from "lucide-react";
-import { NextJsIcon, ReactIcon, TailwindIcon, TypescriptIcon, VercelIcon, SupabaseIcon, GithubIcon, WhatsAppIcon, NodeJsIcon, PostgreSqlIcon, PrismaIcon } from "@/components/TechIcons";
 
 export const metadata = {
   title: "Tentang Kami",
@@ -134,14 +133,14 @@ export default function AboutPage() {
                <h4 className="text-[13px] font-bold uppercase tracking-widest text-[#94A3B8] mb-6 border-b border-gray-200 pb-2">Frontend</h4>
                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                  {[
-                    { brand: "Next.js", icon: <NextJsIcon className="w-7 h-7 text-[#18181A]" />, desc: "untuk website yang cepat, modern, dan stabil" },
-                    { brand: "React", icon: <ReactIcon className="w-7 h-7" />, desc: "untuk tampilan website yang interaktif dan fleksibel" },
-                    { brand: "Tailwind CSS", icon: <TailwindIcon className="w-7 h-7" />, desc: "untuk antarmuka yang rapi, ringan, dan konsisten" },
-                    { brand: "TypeScript", icon: <TypescriptIcon className="w-6 h-6" />, desc: "untuk pengembangan yang lebih rapi dan scalable" }
+                    { brand: "Next.js", icon: "/icons/tech/nextjs.svg", desc: "untuk website yang cepat, modern, dan stabil" },
+                    { brand: "React", icon: "/icons/tech/react.svg", desc: "untuk tampilan website yang interaktif dan fleksibel" },
+                    { brand: "Tailwind CSS", icon: "/icons/tech/tailwindcss.svg", desc: "untuk antarmuka yang rapi, ringan, dan konsisten" },
+                    { brand: "TypeScript", icon: "/icons/tech/typescript.svg", desc: "untuk pengembangan yang lebih rapi dan scalable" }
                  ].map((t) => (
                     <div key={t.brand} className="bg-white border border-gray-200/80 p-6 shadow-sm hover:shadow-md hover:border-gray-300 transition-all rounded-md group flex flex-col justify-between">
                        <div className="mb-4">
-                          {t.icon}
+                          <Image src={t.icon} width={28} height={28} alt={t.brand} className="opacity-90" />
                        </div>
                        <div>
                          <h5 className="font-bold text-[#18181A] text-[15px] mb-1.5">{t.brand}</h5>
@@ -157,16 +156,16 @@ export default function AboutPage() {
                <h4 className="text-[13px] font-bold uppercase tracking-widest text-[#94A3B8] mb-6 border-b border-gray-200 pb-2">Backend & Database</h4>
                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                  {[
-                    { brand: "Node.js", icon: <NodeJsIcon className="w-7 h-7" />, desc: "untuk logika backend dan pengolahan data website" },
-                    { brand: "Supabase", icon: <SupabaseIcon className="w-7 h-7" />, desc: "untuk database, autentikasi, dan sistem data dinamis" },
-                    { brand: "PostgreSQL", icon: <PostgreSqlIcon className="w-7 h-7" />, desc: "untuk database yang stabil dan terstruktur" },
-                    { brand: "Prisma", icon: <PrismaIcon className="w-7 h-7" />, desc: "untuk pengelolaan database yang lebih rapi dan efisien" },
-                    { brand: "Authentication", icon: <Lock className="w-6 h-6 text-slate-700" />, desc: "untuk sistem login dan keamanan akses pengguna" },
-                    { brand: "API Integration", icon: <Webhook className="w-6 h-6 text-slate-700" />, desc: "untuk menghubungkan website dengan layanan atau sistem lain" }
+                    { brand: "Node.js", icon: "/icons/tech/nodejs.svg", desc: "untuk logika backend dan pengolahan data website" },
+                    { brand: "Supabase", icon: "/icons/tech/supabase.svg", desc: "untuk database, autentikasi, dan sistem data dinamis" },
+                    { brand: "PostgreSQL", icon: "/icons/tech/postgresql.svg", desc: "untuk database yang stabil dan terstruktur" },
+                    { brand: "Prisma", icon: "/icons/tech/prisma.svg", desc: "untuk pengelolaan database yang lebih rapi dan efisien" },
+                    { brand: "Authentication", icon: "/icons/ui/key.svg", desc: "untuk sistem login dan keamanan akses pengguna" },
+                    { brand: "API Integration", icon: "/icons/ui/plug.svg", desc: "untuk menghubungkan website dengan layanan atau sistem lain" }
                  ].map((t) => (
                     <div key={t.brand} className="bg-white border border-gray-200/80 p-6 shadow-sm hover:shadow-md hover:border-gray-300 transition-all rounded-md group flex items-start gap-5">
                        <div className="shrink-0 mt-0.5 opacity-90 group-hover:opacity-100 transition-opacity">
-                          {t.icon}
+                          <Image src={t.icon} width={28} height={28} alt={t.brand} className="opacity-90" />
                        </div>
                        <div>
                          <h5 className="font-bold text-[#18181A] text-[15px] mb-1.5">{t.brand}</h5>
@@ -182,15 +181,15 @@ export default function AboutPage() {
                <h4 className="text-[13px] font-bold uppercase tracking-widest text-[#94A3B8] mb-6 border-b border-gray-200 pb-2">Deployment & Workflow</h4>
                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:grid-cols-5 flex-wrap">
                  {[
-                    { brand: "Vercel", icon: <VercelIcon className="w-6 h-6 text-black" />, desc: "untuk deployment dan hosting modern yang cepat" },
-                    { brand: "GitHub", icon: <GithubIcon className="w-6 h-6 text-black" />, desc: "untuk pengelolaan source code yang terstruktur" },
-                    { brand: "Responsive Design", icon: <MonitorSmartphone className="w-6 h-6 text-slate-600" />, desc: "agar website nyaman dibuka di desktop, tablet, dan mobile" },
-                    { brand: "Technical SEO", icon: <LineChart className="w-6 h-6 text-slate-600" />, desc: "agar website lebih siap ditemukan di Google" },
-                    { brand: "WhatsApp Integration", icon: <WhatsAppIcon className="w-6 h-6" />, desc: "untuk memudahkan calon pelanggan menghubungi bisnis" }
+                    { brand: "Vercel", icon: "/icons/tech/vercel.svg", desc: "untuk deployment dan hosting modern yang cepat" },
+                    { brand: "GitHub", icon: "/icons/tech/github.svg", desc: "untuk pengelolaan source code yang terstruktur" },
+                    { brand: "Responsive Design", icon: "/icons/ui/smartphone.svg", desc: "agar website nyaman dibuka di desktop, tablet, dan mobile" },
+                    { brand: "Technical SEO", icon: "/icons/ui/search.svg", desc: "agar website lebih siap ditemukan di Google" },
+                    { brand: "WhatsApp Integration", icon: "/icons/ui/whatsapp.svg", desc: "untuk memudahkan calon pelanggan menghubungi bisnis" }
                  ].map((t) => (
                     <div key={t.brand} className="bg-white border border-gray-200/80 p-6 shadow-sm hover:shadow-md hover:border-gray-300 transition-all rounded-md group flex flex-col justify-between">
                        <div className="mb-4 opacity-90 group-hover:opacity-100 transition-opacity">
-                          {t.icon}
+                          <Image src={t.icon} width={24} height={24} alt={t.brand} className="opacity-90" />
                        </div>
                        <div>
                          <h5 className="font-bold text-[#18181A] text-[14px] mb-1.5">{t.brand}</h5>

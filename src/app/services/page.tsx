@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MoveRight } from "lucide-react";
-import { VercelIcon, SupabaseIcon } from "@/components/TechIcons";
 
 export const metadata = {
   title: "Katalog Layanan",
@@ -11,145 +10,153 @@ export const metadata = {
 const serviceData = [
   {
     id: "01",
+    icon: "/icons/ui/globe.svg",
     title: "Landing Page",
-    desc: "Website 1 halaman untuk promosi jasa, produk, campaign, atau event.",
-    target: "UMKM, pemilik jasa, produk sederhana, promosi cepat.",
-    includes: ["Desain rapi", "Responsif (Mobile-first)", "Basic SEO", "Tombol WhatsApp / form kontak"],
+    desc: "Website 1 halaman untuk promosi jasa, produk, event, atau campaign tertentu.",
+    target: "UMKM, pemilik jasa, produk sederhana, campaign promosi",
+    includes: ["desain rapi, responsif", "basic SEO", "tombol WhatsApp atau form kontak"],
     setup: "Vercel",
     cta: "Mulai dari landing page dulu"
   },
   {
     id: "02",
-    title: "Website Profil Bisnis",
-    desc: "Website untuk menampilkan informasi usaha, layanan, lokasi, kontak, dan keunggulan bisnis.",
-    target: "Usaha lokal, klinik, toko, jasa, kontraktor, bisnis keluarga.",
-    includes: ["Halaman profil", "Daftar layanan", "Kontak", "Info usaha"],
+    icon: "/icons/ui/image.svg",
+    title: "Website Portofolio",
+    desc: "Website untuk menampilkan karya, pengalaman, dan personal brand secara rapi.",
+    target: "freelancer, desainer, fotografer, kreator, developer",
+    includes: ["halaman profil", "showcase project", "kontak"],
     setup: "Vercel",
-    cta: "Buat profil bisnis Anda profesional"
+    cta: "Tampilkan karya Anda dengan lebih meyakinkan"
   },
   {
     id: "03",
-    title: "Website Portofolio",
-    desc: "Website untuk menampilkan karya, pengalaman, dan identitas personal brand secara rapi.",
-    target: "Freelancer, kreator, fotografer, desainer, developer, personal brand.",
-    includes: ["Halaman profil", "Project showcase", "Kontak / Hiring form"],
+    icon: "/icons/ui/briefcase.svg",
+    title: "Website Profil Bisnis",
+    desc: "Website sederhana untuk menampilkan informasi usaha, layanan, lokasi, dan kontak.",
+    target: "usaha lokal, klinik, toko, jasa, kontraktor, bisnis keluarga",
+    includes: ["halaman usaha", "layanan", "kontak, lokasi", "CTA yang jelas"],
     setup: "Vercel",
-    cta: "Tampilkan karya lebih meyakinkan"
+    cta: "Bangun profil bisnis yang lebih profesional"
   },
   {
     id: "04",
+    icon: "/icons/ui/building.svg",
     title: "Website Company Profile",
     desc: "Website formal untuk memperkenalkan perusahaan, layanan, proyek, dan informasi kontak.",
-    target: "Agency, perusahaan kecil-menengah, vendor, B2B service.",
-    includes: ["Struktur hierarki formal", "Halaman layanan", "Proyek unggulan", "Portal kontak"],
-    setup: "Vercel / Supabase (jika butuh data dinamis)",
-    cta: "Bangun citra perusahaan elite"
+    target: "perusahaan kecil-menengah, agency, vendor, jasa B2B",
+    includes: ["struktur profil perusahaan", "layanan", "project", "kontak"],
+    setup: "Vercel atau Vercel + Supabase jika ada data dinamis",
+    cta: "Perkuat citra perusahaan Anda"
   },
   {
     id: "05",
-    title: "Website Blog / Artikel",
-    desc: "Website yang fokus pada konten, edukasi, artikel, dan optimasi SEO jangka panjang.",
-    target: "Personal brand, bisnis edukasi, media kecil, niche affiliate.",
-    includes: ["Halaman struktur artikel", "Kategori konten", "Sistem tipografi rapi"],
-    setup: "Vercel + CMS / Supabase",
-    cta: "Mulai bangun trafik mandiri"
+    icon: "/icons/ui/calendar.svg",
+    title: "Website Event / Pendaftaran",
+    desc: "Website untuk seminar, webinar, workshop, pelatihan, atau event komunitas.",
+    target: "komunitas, event organizer, penyelenggara pelatihan",
+    includes: ["halaman informasi event", "form pendaftaran", "CTA jelas"],
+    setup: "Vercel atau Vercel + Supabase",
+    cta: "Buat event Anda lebih terstruktur secara online"
   },
   {
     id: "06",
-    title: "Website Event / Pendaftaran",
-    desc: "Website untuk seminar, webinar, workshop, pelatihan, atau event komunitas.",
-    target: "Event organizer, komunitas, penyelenggara pelatihan.",
-    includes: ["Informasi penjadwalan", "Form pendaftaran", "Alur CTA yang jelas"],
-    setup: "Vercel / Supabase (untuk rekap database pendaftaran)",
-    cta: "Buat event lebih terstruktur online"
+    icon: "/icons/ui/file-text.svg",
+    title: "Website Blog / Artikel",
+    desc: "Website yang fokus pada konten, artikel, edukasi, dan SEO jangka panjang.",
+    target: "personal brand, bisnis edukasi, media kecil, niche website",
+    includes: ["halaman artikel", "kategori", "struktur konten rapi"],
+    setup: "Vercel + Supabase atau CMS yang ringan",
+    cta: "Mulai bangun trafik lewat konten"
   },
   {
     id: "07",
+    icon: "/icons/ui/box.svg",
     title: "Website Katalog Produk",
-    desc: "Website untuk menampilkan produk online tanpa intervensi checkout kompleks (bisa diarahkan ke WA).",
-    target: "Supplier, distributor, toko spesialis, brand etalase.",
-    includes: ["Galeri gambar produk", "Kategori direktori", "Tampilan produk individual rapi"],
-    setup: "Vercel / Supabase",
-    cta: "Tampilkan produk secara profesional"
+    desc: "Website untuk menampilkan produk secara online tanpa checkout kompleks.",
+    target: "supplier, distributor, toko, brand yang butuh katalog online",
+    includes: ["halaman produk", "kategori", "tampilan produk rapi"],
+    setup: "Vercel atau Vercel + Supabase",
+    cta: "Tampilkan produk Anda dengan lebih profesional"
   },
   {
     id: "08",
+    icon: "/icons/ui/shopping-cart.svg",
     title: "Website Toko Online Sederhana",
-    desc: "Website untuk mulai jualan online dengan tampilan profesional dan alur yang terpusat.",
-    target: "UMKM, brand artisinal, produk handmade, toko mandiri.",
-    includes: ["Halaman detil produk", "Alur pembelian singkat", "Tampilan konversi meyakinkan"],
-    setup: "Vercel + Supabase (disesuaikan kebutuhan)",
-    cta: "Mulai jualan langsung via website"
+    desc: "Website untuk mulai jualan online dengan tampilan profesional dan alur yang sederhana.",
+    target: "UMKM, brand kecil, produk handmade, toko sederhana",
+    includes: ["halaman produk", "alur pembelian sederhana", "tampilan yang meyakinkan"],
+    setup: "Vercel + Supabase",
+    cta: "Mulai jualan online dengan website sendiri"
   },
   {
     id: "09",
+    icon: "/icons/ui/settings.svg",
     title: "Website Custom / Sistem Sederhana",
-    desc: "Sistem ringan yang membutuhkan fitur perhitungan khusus, filter unik, atau dashboard fungsional.",
-    target: "Bisnis yang membutuhkan form kalkulasi, manajemen data ringan, atau logika spesifik.",
-    includes: ["Penyesuaian absolut", "Diskusi arsitektur", "Desain custom layer"],
-    setup: "Vercel + Supabase / VPS (jika butuh backend kompleks)",
-    cta: "Diskusikan kebutuhan arsitektur custom"
+    desc: "Website atau sistem ringan dengan fitur khusus sesuai kebutuhan.",
+    target: "bisnis yang butuh form khusus, dashboard sederhana, alur data ringan",
+    includes: ["fitur yang disesuaikan berdasarkan diskusi kebutuhan"],
+    setup: "Vercel + Supabase atau VPS jika lebih kompleks",
+    cta: "Diskusikan kebutuhan custom Anda"
   },
   {
     id: "10",
+    icon: "/icons/ui/wrench.svg",
     title: "Maintenance / Update Website",
-    desc: "Bantuan pemeliharaan konten, perbaikan minor ekosistem, dan adaptasi performa setelah website online.",
-    target: "Klien eksisting yang sibuk dan ingin websitenya tetap terurus secara profesional.",
-    includes: ["Update konten ringan", "Audit pencegahan error", "Penyesuaian teks/gambar berkala"],
-    setup: "Mengikuti server deployment yang sudah ada",
-    cta: "Pastikan aset digital tetap rapi berlari"
+    desc: "Bantuan update konten, perbaikan minor, dan penyesuaian setelah website online.",
+    target: "klien yang ingin website tetap terurus",
+    includes: ["update ringan", "maintenance minor", "penyesuaian isi"],
+    setup: "mengikuti website yang sudah ada",
+    cta: "Website tetap rapi setelah online"
   }
 ];
 
 // Helper to render the service grid cell
 const ServiceBlock = ({ data }: { data: any }) => (
-  <div className="bg-white border border-gray-200 p-8 md:p-10 hover:border-gray-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all">
-    <div className="text-[10px] font-bold text-[#94A3B8] tracking-widest uppercase mb-4">{data.id}</div>
-    <h3 className="text-2xl font-bold font-heading text-[#18181A] mb-4">{data.title}</h3>
-    <p className="text-[15px] text-[#52525B] leading-relaxed mb-8 font-light h-auto md:h-16">{data.desc}</p>
+  <div className="bg-white border border-gray-200 p-8 md:p-10 hover:border-gray-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all flex flex-col items-start h-full">
+    <div className="mb-6 flex justify-between items-start w-full">
+      <div className="w-12 h-12 bg-[#F8FAFC] border border-gray-100 flex items-center justify-center shrink-0">
+        <Image src={data.icon} alt={data.title} width={24} height={24} className="opacity-80" />
+      </div>
+      <div className="text-[10px] font-bold text-[#94A3B8] tracking-widest uppercase">{data.id}</div>
+    </div>
     
-    <div className="space-y-4 mb-8">
+    <h3 className="text-2xl font-bold font-heading text-[#18181A] mb-4 leading-tight">{data.title}</h3>
+    <p className="text-[14px] text-[#52525B] leading-relaxed mb-8 font-light grow">{data.desc}</p>
+    
+    <div className="space-y-5 mb-8 w-full">
        <div>
-         <div className="text-[11px] font-bold uppercase tracking-wider text-[#94A3B8] mb-1">Cocok Untuk</div>
+         <div className="text-[11px] font-bold uppercase tracking-wider text-[#94A3B8] mb-2 flex items-center gap-1.5 border-b border-gray-100 pb-1">
+           <Image src="/icons/ui/briefcase.svg" width={14} height={14} alt="Cocok Untuk" className="opacity-60" />
+           Cocok Untuk
+         </div>
          <p className="text-[13px] text-[#18181A] font-medium leading-relaxed">{data.target}</p>
        </div>
        <div>
-         <div className="text-[11px] font-bold uppercase tracking-wider text-[#94A3B8] mb-1.5">Yang Didapat</div>
-         <ul className="space-y-1">
+         <div className="text-[11px] font-bold uppercase tracking-wider text-[#94A3B8] mb-2 flex items-center gap-1.5 border-b border-gray-100 pb-1">
+           <Image src="/icons/ui/check.svg" width={14} height={14} alt="Yang Didapat" className="opacity-60" />
+           Yang Didapat
+         </div>
+         <ul className="space-y-1.5">
            {data.includes.map((inc: string, i: number) => (
-             <li key={i} className="flex gap-2 text-[13px] text-[#52525B]">
-               <span className="text-[var(--color-highlight)] mt-0.5">•</span>
-               {inc}
+             <li key={i} className="flex gap-2 text-[13px] text-[#52525B] items-start">
+               <span className="text-[var(--color-highlight)] leading-tight">•</span>
+               <span className="leading-tight">{inc}</span>
              </li>
            ))}
          </ul>
        </div>
        <div>
-         <div className="text-[11px] font-bold uppercase tracking-wider text-[#94A3B8] mb-2">Setup Teknologi</div>
-         <div className="flex flex-wrap gap-2">
-            {data.setup.includes("Vercel") && (
-               <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-white border border-gray-200 text-[#1C1B1A] text-[11px] font-bold rounded shadow-sm">
-                  <VercelIcon className="w-3 h-3 text-black" />
-                  Vercel
-               </span>
-            )}
-            {data.setup.includes("Supabase") && (
-               <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-white border border-gray-200 text-[#1C1B1A] text-[11px] font-bold rounded shadow-sm">
-                  <SupabaseIcon className="w-3.5 h-3.5" />
-                  Supabase
-               </span>
-            )}
-            {!data.setup.includes("Vercel") && !data.setup.includes("Supabase") && (
-               <span className="text-[13px] text-[#18181A] font-medium">{data.setup}</span>
-            )}
-            {/* Show extra context without plain text look if necessary */}
-            {data.setup.includes("jika butuh") && <span className="text-[11px] text-[#94A3B8] mt-1.5 block w-full italic">*(Jika dibutuhkan fungsionalitas kompleks)*</span>}
-            {data.setup.includes("VPS") && <span className="inline-flex items-center px-2 py-1 bg-white border border-gray-200 text-[11px] font-bold rounded shadow-sm">VPS Server</span>}
+         <div className="text-[11px] font-bold uppercase tracking-wider text-[#94A3B8] mb-2 flex items-center gap-1.5 border-b border-gray-100 pb-1">
+           <Image src="/icons/ui/server.svg" width={14} height={14} alt="Setup Teknologi" className="opacity-60" />
+           Setup Teknologi
          </div>
+         <p className="text-[13px] text-[#52525B] leading-relaxed">
+           {data.setup}
+         </p>
        </div>
     </div>
 
-    <div className="pt-6 border-t border-gray-100 mt-auto">
+    <div className="pt-6 border-t border-gray-100 mt-auto w-full">
       <Link href="/pricing" className="inline-flex items-center gap-2 text-[12px] font-bold uppercase tracking-wider text-[#1C1B1A] hover:text-[var(--color-highlight)] transition-colors group">
          <span className="border-b border-white group-hover:border-[var(--color-highlight)] transition-colors">{data.cta}</span>
          <MoveRight className="w-3.5 h-3.5" />

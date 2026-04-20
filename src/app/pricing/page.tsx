@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ShieldAlert, Cpu, Check } from "lucide-react";
 
 export const metadata = {
   title: "Harga Layanan",
@@ -8,16 +7,16 @@ export const metadata = {
 };
 
 const pricingPackages = [
-  { title: "Landing Page", price: "550.000", suffix: "" },
-  { title: "Website Portofolio", price: "900.000", suffix: "" },
-  { title: "Website Profil Bisnis", price: "1.200.000", suffix: "" },
-  { title: "Website Event / Pendaftaran", price: "1.300.000", suffix: "" },
-  { title: "Website Company Profile", price: "1.500.000", suffix: "" },
-  { title: "Website Blog / Artikel", price: "1.800.000", suffix: "" },
-  { title: "Website Katalog Produk", price: "1.800.000", suffix: "" },
-  { title: "Website Toko Online Sederhana", price: "2.800.000", suffix: "" },
-  { title: "Website Custom / Sistem Sederhana", price: "3.500.000", suffix: "" },
-  { title: "Maintenance / Update Website", price: "200.000", suffix: " per bulan" }
+  { title: "Landing Page", price: "550.000", suffix: "", icon: "/icons/ui/globe.svg" },
+  { title: "Website Profil Bisnis", price: "1.200.000", suffix: "", icon: "/icons/ui/briefcase.svg" },
+  { title: "Website Portofolio", price: "900.000", suffix: "", icon: "/icons/ui/image.svg" },
+  { title: "Website Company Profile", price: "1.500.000", suffix: "", icon: "/icons/ui/building.svg" },
+  { title: "Website Blog / Artikel", price: "1.800.000", suffix: "", icon: "/icons/ui/file-text.svg" },
+  { title: "Website Event / Pendaftaran", price: "1.300.000", suffix: "", icon: "/icons/ui/calendar.svg" },
+  { title: "Website Katalog Produk", price: "1.800.000", suffix: "", icon: "/icons/ui/box.svg" },
+  { title: "Website Toko Online Sederhana", price: "2.800.000", suffix: "", icon: "/icons/ui/shopping-cart.svg" },
+  { title: "Website Custom / Sistem Sederhana", price: "3.500.000", suffix: "", icon: "/icons/ui/settings.svg" },
+  { title: "Maintenance / Update Website", price: "200.000", suffix: " per bulan", icon: "/icons/ui/wrench.svg" }
 ];
 
 export default function PricingPage() {
@@ -50,11 +49,14 @@ export default function PricingPage() {
 
            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {pricingPackages.map((pkg, idx) => (
-                 <div key={idx} className="p-8 border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all bg-[#FCFBF9] group">
-                    <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4 flex items-center justify-between">
-                       <span>Pilihan {String(idx + 1).padStart(2, '0')}</span>
+                 <div key={idx} className="p-8 border border-gray-200 hover:border-gray-300 hover:shadow-sm transition-all bg-[#FCFBF9] group flex flex-col justify-between">
+                    <div>
+                      <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-6 flex items-center justify-between">
+                         <span>Pilihan {String(idx + 1).padStart(2, '0')}</span>
+                         <Image src={pkg.icon} width={20} height={20} alt={pkg.title} className="opacity-40 group-hover:opacity-100 transition-opacity" />
+                      </div>
+                      <h4 className="font-bold font-heading text-lg text-[#18181A] mb-8 group-hover:text-[var(--color-highlight)] transition-colors">{pkg.title}</h4>
                     </div>
-                    <h4 className="font-bold font-heading text-lg text-[#18181A] mb-8 group-hover:text-[var(--color-highlight)] transition-colors">{pkg.title}</h4>
                     <div>
                        <div className="text-[11px] font-bold uppercase tracking-wider text-[#94A3B8] mb-1">Mulai Dari</div>
                        <div className="flex items-end gap-1">
@@ -92,14 +94,14 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Educational Block: Kenapa Harga Berbeda */}
+     {/* Educational Block: Kenapa Harga Berbeda */}
       <section className="py-24 bg-[#FCFBF9] border-t border-gray-200/80">
         <div className="container mx-auto px-6 max-w-5xl">
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24">
              
              <div>
                <div className="w-12 h-12 bg-white border border-gray-200 flex items-center justify-center mb-8 shadow-sm">
-                 <ShieldAlert className="w-5 h-5 text-[#18181A]" />
+                 <Image src="/icons/ui/shield.svg" width={20} height={20} alt="Shield" className="opacity-80" />
                </div>
                <h3 className="text-2xl font-bold font-heading text-[#18181A] mb-4">Kenapa Harga Bisa Berbeda?</h3>
                <p className="text-[#52525B] leading-relaxed font-light text-[15px] mb-6">
@@ -112,7 +114,7 @@ export default function PricingPage() {
 
              <div>
                <div className="w-12 h-12 bg-white border border-gray-200 flex items-center justify-center mb-8 shadow-sm">
-                 <Cpu className="w-5 h-5 text-[#18181A]" />
+                 <Image src="/icons/ui/server.svg" width={20} height={20} alt="Server" className="opacity-80" />
                </div>
                <h3 className="text-2xl font-bold font-heading text-[#18181A] mb-4">Kapan Cukup Vercel, Kapan Perlu Tambah Supabase/VPS?</h3>
                <p className="text-[#52525B] leading-relaxed font-light text-[15px] mb-6">

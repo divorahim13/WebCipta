@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Check, Monitor, Zap, Search, MessageSquare, Briefcase, Code2, MoveRight, Lock, Webhook, LineChart, MonitorSmartphone } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { NextJsIcon, ReactIcon, TailwindIcon, TypescriptIcon, VercelIcon, NodeJsIcon, SupabaseIcon, PostgreSqlIcon, PrismaIcon, GithubIcon, WhatsAppIcon } from "@/components/TechIcons";
 
 export default function Home() {
   return (
@@ -178,13 +177,13 @@ export default function Home() {
                <h4 className="text-[11px] font-bold text-[#94A3B8] uppercase tracking-wider mb-4 border-b border-gray-100 pb-2">Frontend</h4>
                <div className="flex flex-wrap gap-2">
                  {[
-                   { name: "Next.js", icon: <NextJsIcon className="w-4 h-4 text-black" /> },
-                   { name: "React", icon: <ReactIcon className="w-4 h-4" /> },
-                   { name: "Tailwind CSS", icon: <TailwindIcon className="w-4 h-4" /> },
-                   { name: "TypeScript", icon: <TypescriptIcon className="w-4 h-4" /> }
+                   { name: "Next.js", icon: "/icons/tech/nextjs.svg" },
+                   { name: "React", icon: "/icons/tech/react.svg" },
+                   { name: "Tailwind CSS", icon: "/icons/tech/tailwindcss.svg" },
+                   { name: "TypeScript", icon: "/icons/tech/typescript.svg" }
                  ].map((t) => (
                    <span key={t.name} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F8FAFC] border border-gray-200 text-[#18181A] text-[12px] font-semibold rounded-sm">
-                      {t.icon} {t.name}
+                      <Image src={t.icon} width={16} height={16} alt={t.name} className="opacity-90" /> {t.name}
                    </span>
                  ))}
                </div>
@@ -195,14 +194,14 @@ export default function Home() {
                <h4 className="text-[11px] font-bold text-[#94A3B8] uppercase tracking-wider mb-4 border-b border-gray-100 pb-2">Backend & Database</h4>
                <div className="flex flex-wrap gap-2">
                  {[
-                   { name: "Node.js", icon: <NodeJsIcon className="w-4 h-4" /> },
-                   { name: "Supabase", icon: <SupabaseIcon className="w-4 h-4" /> },
-                   { name: "PostgreSQL", icon: <PostgreSqlIcon className="w-4 h-4" /> },
-                   { name: "Prisma", icon: <PrismaIcon className="w-4 h-4" /> },
-                   { name: "Auth", icon: <Lock className="w-3.5 h-3.5" /> }
+                   { name: "Node.js", icon: "/icons/tech/nodejs.svg" },
+                   { name: "Supabase", icon: "/icons/tech/supabase.svg" },
+                   { name: "PostgreSQL", icon: "/icons/tech/postgresql.svg" },
+                   { name: "Prisma", icon: "/icons/tech/prisma.svg" },
+                   { name: "Auth", icon: "/icons/ui/key.svg" }
                  ].map((t) => (
                    <span key={t.name} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F8FAFC] border border-gray-200 text-[#18181A] text-[12px] font-semibold rounded-sm">
-                      {t.icon} {t.name}
+                      <Image src={t.icon} width={16} height={16} alt={t.name} className="opacity-90" /> {t.name}
                    </span>
                  ))}
                </div>
@@ -213,14 +212,14 @@ export default function Home() {
                <h4 className="text-[11px] font-bold text-[#94A3B8] uppercase tracking-wider mb-4 border-b border-gray-100 pb-2">Deployment & Workflow</h4>
                <div className="flex flex-wrap gap-2">
                  {[
-                   { name: "Vercel", icon: <VercelIcon className="w-4 h-4 text-black" /> },
-                   { name: "GitHub", icon: <GithubIcon className="w-4 h-4 text-black" /> },
-                   { name: "Responsive", icon: <MonitorSmartphone className="w-3.5 h-3.5" /> },
-                   { name: "SEO", icon: <LineChart className="w-3.5 h-3.5" /> },
-                   { name: "WhatsApp", icon: <WhatsAppIcon className="w-4 h-4" /> }
+                   { name: "Vercel", icon: "/icons/tech/vercel.svg" },
+                   { name: "GitHub", icon: "/icons/tech/github.svg" },
+                   { name: "Responsive", icon: "/icons/ui/smartphone.svg" },
+                   { name: "SEO", icon: "/icons/ui/search.svg" },
+                   { name: "WhatsApp", icon: "/icons/ui/whatsapp.svg" }
                  ].map((t) => (
                    <span key={t.name} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F8FAFC] border border-gray-200 text-[#18181A] text-[12px] font-semibold rounded-sm">
-                      {t.icon} {t.name}
+                      <Image src={t.icon} width={16} height={16} alt={t.name} className="opacity-90" /> {t.name}
                    </span>
                  ))}
                </div>
