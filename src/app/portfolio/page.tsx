@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import PortfolioGallery from "@/components/PortfolioGallery";
 
 export const metadata: Metadata = {
-  title: "Our Work & Portfolio | WebCipta",
+  title: "Featured Web Projects",
   description: "Browse through WebCipta's portfolio of stunning landing pages, dynamic e-commerce sites, and custom software.",
 };
 

@@ -15,7 +15,10 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "WebCipta | Your Partner for Stunning Websites",
+  title: {
+    default: "WebCipta | Your Partner for Stunning Websites",
+    template: "%s | WebCipta",
+  },
   description: "WebCipta is a professional website development agency specializing in modern, high-performance, AI-enhanced web solutions.",
 };
 

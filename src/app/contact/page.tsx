@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us | WebCipta",
+  title: "Contact Us | WebCipta Agency",
   description: "Get in touch with WebCipta to discuss your next web development project.",
 };
 

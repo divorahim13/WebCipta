@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import { Users, Award, Zap, Code2, Sparkles, Database } from "lucide-react";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us | WebCipta",
+  title: "About Us | Web Development Experts",
   description: "Learn about WebCipta, your trusted partner in web development and AI-enhanced solutions.",
 };
 
@@ -33,6 +34,11 @@ export default function AboutPage() {
               <p className="text-muted text-lg leading-relaxed mb-8">
                 Our expertise lies in combining bleeding-edge web frameworks like Next.js with artificial intelligence to deliver websites that don't just look stunning, but also work intelligently behind the scenes to drive your business goals.
               </p>
+              <div className="mb-8">
+                <Link href="/services" className="px-6 py-3 bg-[var(--color-accent)] text-white font-semibold rounded-lg hover:bg-blue-700 transition inline-flex items-center gap-2">
+                  Explore Our Services <Zap size={16} />
+                </Link>
+              </div>
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-start space-x-3">
                   <div className="mt-1 p-2 bg-accent/10 rounded-lg text-[var(--color-accent)]"><Zap size={20} /></div>

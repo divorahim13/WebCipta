@@ -3,6 +3,7 @@
 import { motion, Variants } from 'framer-motion';
 import { ArrowRight, MonitorSmartphone, Cpu, TrendingUp, Star, Quote } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   const fadeInUp: Variants = {
@@ -166,7 +167,7 @@ export default function Home() {
             >
               <div className="h-64 overflow-hidden relative">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
-                <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="E-Commerce Redesign" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                <Image src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Lumina Store E-Commerce Redesign Project Homepage Mockup" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transform group-hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="p-6">
                 <span className="text-xs font-bold text-accent uppercase tracking-wider mb-2 block">E-Commerce</span>
@@ -185,7 +186,7 @@ export default function Home() {
             >
               <div className="h-64 overflow-hidden relative">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="SaaS Dashboards" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                <Image src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="MetricsPro Enterprise SaaS Dashboard Analytics Interface" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transform group-hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="p-6">
                 <span className="text-xs font-bold text-accent uppercase tracking-wider mb-2 block">Enterprise SaaS</span>
@@ -204,7 +205,7 @@ export default function Home() {
             >
               <div className="h-64 overflow-hidden relative">
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10"></div>
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Corporate Site" className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" />
+                <Image src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vanguard Financials Corporate Website Overview Design" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transform group-hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="p-6">
                 <span className="text-xs font-bold text-accent uppercase tracking-wider mb-2 block">Corporate</span>
@@ -241,7 +242,7 @@ export default function Home() {
                 "WebCipta completely transformed our online presence. The new Next.js site is incredibly fast, and the AI chatbot they integrated saves our support team hours every day."
               </p>
               <div className="flex items-center gap-4">
-                <img src="https://i.pravatar.cc/100?img=1" alt="Sarah J." className="w-12 h-12 rounded-full border-2 border-white shadow-sm" />
+                <Image src="https://i.pravatar.cc/100?img=1" alt="Portrait of Sarah Jenkins, CMO at Lumina" width={48} height={48} className="rounded-full border-2 border-white shadow-sm" />
                 <div>
                   <h4 className="font-bold text-gray-900">Sarah Jenkins</h4>
                   <p className="text-sm text-gray-500">CMO @ Lumina</p>
@@ -259,7 +260,7 @@ export default function Home() {
                 "Their design aesthetic is genuinely stunning. We asked for a minimalist, professional look and they over-delivered. Conversion rates are up substantially."
               </p>
               <div className="flex items-center gap-4">
-                <img src="https://i.pravatar.cc/100?img=33" alt="David C." className="w-12 h-12 rounded-full border-2 border-white shadow-sm" />
+                <Image src="https://i.pravatar.cc/100?img=33" alt="Portrait of David Chen, Founder of MetricsPro" width={48} height={48} className="rounded-full border-2 border-white shadow-sm" />
                 <div>
                   <h4 className="font-bold text-gray-900">David Chen</h4>
                   <p className="text-sm text-gray-500">Founder @ MetricsPro</p>
@@ -277,7 +278,7 @@ export default function Home() {
                 "Working with WebCipta was seamless. They understood our enterprise needs and delivered a highly scalable SEO-optimized platform on time and on budget."
               </p>
               <div className="flex items-center gap-4">
-                <img src="https://i.pravatar.cc/100?img=5" alt="Elena M." className="w-12 h-12 rounded-full border-2 border-white shadow-sm" />
+                <Image src="https://i.pravatar.cc/100?img=5" alt="Portrait of Elena Martinez, Director at Vanguard" width={48} height={48} className="rounded-full border-2 border-white shadow-sm" />
                 <div>
                   <h4 className="font-bold text-gray-900">Elena Martinez</h4>
                   <p className="text-sm text-gray-500">Director @ Vanguard</p>

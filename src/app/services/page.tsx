@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Our Services | WebCipta",
+  title: "Web Design & AI Services",
   description: "Explore WebCipta's premium services: Web Design, Custom Development, SEO Optimization, and AI Web Solutions.",
 };
 
