@@ -53,48 +53,48 @@ export default function ContactForm() {
   return (
     <form className="space-y-6" onSubmit={handleSubmit}>
       {success && (
-        <div className="p-4 bg-green-500/10 border border-green-500/20 text-green-600 rounded-xl mb-6 font-medium">
+        <div className="p-4 bg-green-50/50 border border-green-200 text-green-800 text-sm font-medium">
           Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi WhatsApp Anda.
         </div>
       )}
       
       {error && (
-        <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-600 rounded-xl mb-6 font-medium">
+        <div className="p-4 bg-red-50/50 border border-red-200 text-red-800 text-sm font-medium">
           {error}
         </div>
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <label htmlFor="name" className="text-sm font-medium text-foreground">Nama Lengkap *</label>
+          <label htmlFor="name" className="text-xs font-bold tracking-widest uppercase text-gray-500">Nama Lengkap</label>
           <input 
             type="text" 
             id="name" 
             name="name" 
             required 
-            className="w-full px-4 py-3 bg-background border border-muted/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent transition-shadow"
+            className="w-full px-4 py-3 bg-transparent border-b border-gray-300 focus:outline-none focus:border-[#18181A] transition-colors rounded-none placeholder-gray-400"
             placeholder="Budi Santoso"
           />
         </div>
         <div className="space-y-2">
-          <label htmlFor="phone" className="text-sm font-medium text-foreground">Nomor WhatsApp *</label>
+          <label htmlFor="phone" className="text-xs font-bold tracking-widest uppercase text-gray-500">Nomor WhatsApp</label>
           <input 
             type="tel" 
             id="phone" 
             name="phone" 
             required 
-            className="w-full px-4 py-3 bg-background border border-muted/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent transition-shadow"
+            className="w-full px-4 py-3 bg-transparent border-b border-gray-300 focus:outline-none focus:border-[#18181A] transition-colors rounded-none placeholder-gray-400"
             placeholder="08123456789"
           />
         </div>
       </div>
       
       <div className="space-y-2">
-        <label htmlFor="service" className="text-sm font-medium text-foreground">Jenis Website yang Dibutuhkan</label>
+        <label htmlFor="service" className="text-xs font-bold tracking-widest uppercase text-gray-500">Jenis Website</label>
         <select 
           id="service" 
           name="service"
-          className="w-full px-4 py-3 bg-background border border-muted/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent transition-shadow appearance-none"
+          className="w-full px-4 py-3 bg-transparent border-b border-gray-300 focus:outline-none focus:border-[#18181A] transition-colors rounded-none appearance-none text-[#18181A] cursor-pointer"
         >
           <option value="Landing Page">Landing Page</option>
           <option value="Profil Bisnis">Profil Bisnis Lokal</option>
@@ -104,19 +104,19 @@ export default function ContactForm() {
         </select>
       </div>
 
-      <div className="space-y-2">
-        <label htmlFor="message" className="text-sm font-medium text-foreground">Pesan / Pertanyaan *</label>
+      <div className="space-y-2 pt-2">
+        <label htmlFor="message" className="text-xs font-bold tracking-widest uppercase text-gray-500">Pesan / Pertanyaan</label>
         <textarea 
           id="message" 
           name="message" 
-          rows={5} 
+          rows={4} 
           required 
-          className="w-full px-4 py-3 bg-background border border-muted/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:border-transparent transition-shadow resize-none"
-          placeholder="Ceritakan sedikit tentang proyek atau hal yang masih membingungkan Anda..."
+          className="w-full px-4 py-3 bg-transparent border-b border-gray-300 focus:outline-none focus:border-[#18181A] transition-colors rounded-none resize-none placeholder-gray-400"
+          placeholder="Ceritakan gambaran proyek atau hal yang ingin Anda tanyakan..."
         ></textarea>
       </div>
 
-      <Button type="submit" size="lg" className="w-full" disabled={loading}>
+      <Button type="submit" size="lg" className="w-full mt-4" disabled={loading}>
         {loading ? "Mengirim..." : "Kirim Pesan Sekarang"}
       </Button>
     </form>

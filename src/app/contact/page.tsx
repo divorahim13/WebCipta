@@ -9,82 +9,82 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="flex flex-col items-center w-full min-h-screen">
+    <main className="min-h-screen bg-[var(--color-background)] pb-24 selection:bg-indigo-100">
+      
       {/* Header Section */}
-      <section className="w-full py-20 md:py-32 bg-muted/5 border-b border-muted/20">
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-foreground font-heading">
-            Punya Rencana Bikin <span className="text-[var(--color-accent)]">Website?</span>
-          </h1>
-          <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto">
-            Mari konsultasi awal dengan santai. Tanyakan saja apa pun, tim kami siap mengarahkan solusi terbaik sesuai budget bisnis Anda.
-          </p>
+      <section className="bg-[#FCFCFC] pt-40 pb-20 px-6 border-b border-gray-100">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-12 items-end">
+          <div className="md:w-3/5">
+             <span className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4 block">Mulai Diskusi</span>
+             <h1 className="text-4xl md:text-6xl font-black font-heading text-[#18181A] tracking-tight leading-[1.1]">
+               Punya Rencana <br/>Bikin <span className="text-[var(--color-accent)]">Website?</span>
+             </h1>
+          </div>
+          <div className="md:w-2/5 pb-2">
+            <p className="text-[#52525B] text-lg leading-relaxed">
+              Mari konsultasi awal dengan santai. Tanyakan saja apa pun, tim kami siap mengarahkan solusi terbaik sesuai budget Anda.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Main Content Section */}
-      <section className="w-full py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <section className="w-full py-24 bg-white">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="flex flex-col lg:flex-row gap-20">
             
-            {/* Contact Details & Map */}
-            <div className="space-y-12">
-              <div>
-                <h2 className="text-3xl font-bold tracking-tight mb-6 font-heading">Hubungi WebCipta</h2>
-                <p className="text-muted text-lg mb-8">
-                  Apakah Anda sudah punya desain spesifik, atau baru mematangkan ide awal? Tinggalkan pesan, developer kami yang akan merespons langsung.
-                </p>
-              </div>
+            {/* Contact Details & Info */}
+            <div className="lg:w-5/12 space-y-16">
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                <div className="flex items-start">
-                  <div className="bg-[var(--color-accent)]/10 p-3 rounded-full text-[var(--color-accent)] mr-4">
-                    <MapPin size={24} />
+              <div className="space-y-6">
+                <div className="flex items-start gap-5">
+                  <div className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center shrink-0 mt-1">
+                    <MapPin className="w-4 h-4 text-[#18181A]" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg">Lokasi Operasional</h4>
-                    <p className="text-muted">Cibubur dan sekitarnya<br/>Jawa Barat, Indonesia</p>
+                    <h4 className="font-bold text-gray-900 mb-1 font-heading text-lg tracking-tight">Lokasi Operasional</h4>
+                    <p className="text-[#52525B] leading-relaxed">Cibubur dan sekitarnya<br/>Jawa Barat, Indonesia</p>
                   </div>
                 </div>
                 
-                <div className="flex items-start">
-                  <div className="bg-[var(--color-accent)]/10 p-3 rounded-full text-[var(--color-accent)] mr-4">
-                    <Mail size={24} />
+                <div className="flex items-start gap-5">
+                  <div className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center shrink-0 mt-1">
+                    <Mail className="w-4 h-4 text-[#18181A]" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg">Email Kami</h4>
-                    <p className="text-muted">halo@webcipta.com<br/>Terespons 1x24 jam</p>
+                    <h4 className="font-bold text-gray-900 mb-1 font-heading text-lg tracking-tight">Email Beranda</h4>
+                    <p className="text-[#52525B] leading-relaxed">halo@webcipta.com<br/><span className="text-sm text-gray-400">Terespons 1x24 jam</span></p>
                   </div>
                 </div>
                 
-                <div className="flex items-start">
-                  <div className="bg-[var(--color-accent)]/10 p-3 rounded-full text-[var(--color-accent)] mr-4">
-                    <Phone size={24} />
+                <div className="flex items-start gap-5">
+                  <div className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center shrink-0 mt-1">
+                    <Phone className="w-4 h-4 text-[#18181A]" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg">Nomor Telepon / WA</h4>
-                    <p className="text-muted">+62 811 XXXX XXXX<br/>Hanya chat WA (Aktif)</p>
+                    <h4 className="font-bold text-gray-900 mb-1 font-heading text-lg tracking-tight">Telepon / WhatsApp</h4>
+                    <p className="text-[#52525B] leading-relaxed">+62 811 XXXX XXXX<br/><span className="text-sm text-gray-400">Hanya Chat WA (Aktif Penuh)</span></p>
                   </div>
                 </div>
                 
-                <div className="flex items-start">
-                  <div className="bg-[var(--color-accent)]/10 p-3 rounded-full text-[var(--color-accent)] mr-4">
-                    <Clock size={24} />
+                <div className="flex items-start gap-5">
+                  <div className="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center shrink-0 mt-1">
+                    <Clock className="w-4 h-4 text-[#18181A]" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg">Jam Kerja</h4>
-                    <p className="text-muted">Senin - Jumat: 09:00 - 17:00<br/>Sabtu - Minggu: Fleksibel</p>
+                    <h4 className="font-bold text-gray-900 mb-1 font-heading text-lg tracking-tight">Jam Kerja</h4>
+                    <p className="text-[#52525B] leading-relaxed">Senin - Jumat: 09:00 - 17:00<br/><span className="text-sm text-gray-400">Sabtu - Minggu: Fleksibel</span></p>
                   </div>
                 </div>
               </div>
 
-              {/* Map Embed Placeholder */}
-              <div className="w-full h-64 bg-muted/20 rounded-2xl overflow-hidden border border-muted/30">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1m3!1d3022.1422937950147!2d-73.98731968459391!3d40.75889497932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sid!4v1684307406282!5m2!1sen!2sid" 
+              {/* Minimal Map Overlay */}
+              <div className="w-full h-48 bg-gray-50 border border-gray-200 flex items-center justify-center relative overflow-hidden grayscale contrast-125 rounded-2xl">
+                 <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1m3!1d126907.03964126209!2d106.81938531238914!3d-6.381335359437996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6994cfb159fced%3A0xc6cb14df6307ec32!2sCibubur%2C%20Kec.%20Ciracas%2C%20Kota%20Jakarta%20Timur%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" 
                   width="100%" 
                   height="100%" 
-                  style={{ border: 0 }} 
+                  style={{ border: 0, filter: 'grayscale(100%) opacity(70%)' }} 
                   allowFullScreen={false} 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
@@ -92,23 +92,29 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Form Component */}
-            <div className="bg-muted/5 p-8 md:p-10 rounded-3xl border border-muted/20 shadow-xl shadow-black/5">
-              <h3 className="text-2xl font-bold mb-6 font-heading">Kirimkan Deskripsi Kebutuhan Anda</h3>
-              <ContactForm />
-              
-              <div className="mt-10 pt-8 border-t border-muted/20 text-center space-y-4">
-                <h4 className="font-semibold text-lg">Atau butuh ngobrol via Chat?</h4>
-                <p className="text-muted text-sm">Klik di bawah untuk langsung terhubung ke WhatsApp developer kami.</p>
-                <a href="#" className="inline-block w-full sm:w-auto px-8 py-3 bg-green-500 text-white hover:bg-green-600 font-bold rounded-xl transition shadow border border-green-600/50">
-                  Chat WhatsApp Sekarang
-                </a>
+            {/* Form Section */}
+            <div className="lg:w-7/12">
+              <div className="bg-[#FCFCFC] p-8 md:p-12 border border-gray-200">
+                <h3 className="text-2xl font-bold mb-8 font-heading text-[#18181A] tracking-tight">Kirimkan Deskripsi Kebutuhan Anda</h3>
+                <ContactForm />
+                
+                <div className="mt-12 pt-8 border-t border-gray-200">
+                  <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                     <div>
+                        <h4 className="font-bold text-[#18181A] font-heading tracking-tight mb-1">Butuh Ngobrol Langsung?</h4>
+                        <p className="text-[#52525B] text-sm hidden sm:block">Tim kami siap merespons cepat via Chat.</p>
+                     </div>
+                     <a href="#" className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-white border border-[#18181A] text-[#18181A] hover:bg-[#18181A] hover:text-white font-bold transition-colors text-sm">
+                       Chat WhatsApp
+                     </a>
+                  </div>
+                </div>
               </div>
             </div>
 
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }

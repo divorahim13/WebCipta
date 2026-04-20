@@ -3,14 +3,14 @@ import { MessageCircle, Briefcase, Camera, Mail, Phone, MapPin } from 'lucide-re
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 overflow-hidden text-gray-300 py-16 border-t border-gray-800">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
+    <footer className="bg-[#121212] overflow-hidden text-[#A1A1AA] py-20 border-t border-muted/10">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-16">
         {/* Brand & Socials */}
-        <div className="md:col-span-1">
-          <div className="bg-white/10 w-max px-4 py-1 rounded-full mb-6">
-            <h2 className="text-2xl font-bold font-heading text-white">WebCipta</h2>
+        <div className="md:col-span-1 border-r border-[#27272A] pr-8 hidden md:block">
+          <div className="mb-6">
+            <h2 className="text-3xl font-black font-heading text-white tracking-tight">WebCipta<span className="text-indigo-500">.</span></h2>
           </div>
-          <p className="text-gray-400 mb-6 leading-relaxed">
+          <p className="text-sm text-[#A1A1AA] mb-8 leading-relaxed">
             Jasa pembuatan website untuk bisnis, UMKM, dan personal brand. Cepat, rapi, dan terjangkau.
           </p>
           <div className="flex gap-4">
@@ -26,45 +26,64 @@ export default function Footer() {
           </div>
         </div>
 
+        <div className="md:col-span-1 md:-ml-4 block md:hidden">
+          <div className="mb-6">
+            <h2 className="text-3xl font-black font-heading text-white tracking-tight">WebCipta<span className="text-indigo-500">.</span></h2>
+          </div>
+          <p className="text-sm text-[#A1A1AA] mb-6 leading-relaxed">
+            Jasa pembuatan website untuk bisnis, UMKM, dan personal brand. Cepat, rapi, dan terjangkau.
+          </p>
+          <div className="flex gap-4">
+            <a href="#" className="w-10 h-10 rounded-full border border-[#27272A] flex items-center justify-center hover:border-indigo-500 hover:text-white transition-all">
+              <MessageCircle className="w-4 h-4" />
+            </a>
+            <a href="#" className="w-10 h-10 rounded-full border border-[#27272A] flex items-center justify-center hover:border-indigo-500 hover:text-white transition-all">
+              <Briefcase className="w-4 h-4" />
+            </a>
+            <a href="#" className="w-10 h-10 rounded-full border border-[#27272A] flex items-center justify-center hover:border-indigo-500 hover:text-white transition-all">
+               <Camera className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+
         {/* Quick Links */}
-        <div>
-          <h3 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Navigasi</h3>
-          <ul className="space-y-4">
-            <li><Link href="/" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Home</Link></li>
-            <li><Link href="/about" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Tentang</Link></li>
-            <li><Link href="/services" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Layanan</Link></li>
-            <li><Link href="/pricing" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Harga</Link></li>
-            <li><Link href="/faq" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>FAQ</Link></li>
-            <li><Link href="/contact" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Kontak</Link></li>
+        <div className="md:pl-8">
+          <h3 className="text-white font-semibold font-heading mb-6 tracking-wide text-sm">Navigasi Utama</h3>
+          <ul className="space-y-3 text-sm">
+            <li><Link href="/" className="hover:text-white transition-colors">Home</Link></li>
+            <li><Link href="/about" className="hover:text-white transition-colors">Tentang Kami</Link></li>
+            <li><Link href="/services" className="hover:text-white transition-colors">Layanan Website</Link></li>
+            <li><Link href="/pricing" className="hover:text-white transition-colors">Paket & Harga</Link></li>
+            <li><Link href="/faq" className="hover:text-white transition-colors">Tanya Jawab (FAQ)</Link></li>
           </ul>
         </div>
 
         {/* Contact Info */}
-        <div className="md:col-span-2 text-gray-400">
-           <div className="flex items-center justify-between mb-6">
-             <h3 className="text-white font-bold uppercase tracking-wider text-sm">Kontak Kami</h3>
-             <Link href="/contact" className="text-xs font-bold bg-accent/20 text-blue-400 px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-colors">
-               Konsultasi Website
+        <div className="md:col-span-2 text-[#A1A1AA]">
+           <div className="flex items-center justify-between mb-6 pb-6 border-b border-[#27272A]">
+             <h3 className="text-white font-semibold font-heading tracking-wide text-sm">Bicara dengan Kami</h3>
+             <Link href="/contact" className="text-xs font-semibold bg-white text-black px-4 py-2 rounded-full hover:bg-gray-200 transition-all">
+               Mulai Konsultasi
              </Link>
            </div>
-           <ul className="space-y-6">
+           <ul className="space-y-4 text-sm mt-8">
              <li className="flex items-start gap-4">
-               <MapPin className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-               <span>Cibubur dan sekitarnya<br/>Jawa Barat, Indonesia</span>
+               <div className="p-2 rounded-lg bg-[#18181B] border border-[#27272A]"><MapPin className="w-4 h-4 text-white" /></div>
+               <span className="mt-1">Cibubur dan sekitarnya<br/>Jawa Barat, Indonesia</span>
              </li>
              <li className="flex items-center gap-4">
-               <Phone className="w-6 h-6 text-accent flex-shrink-0" />
+               <div className="p-2 rounded-lg bg-[#18181B] border border-[#27272A]"><Phone className="w-4 h-4 text-white" /></div>
                <span>+62 812 3456 7890</span>
              </li>
              <li className="flex items-center gap-4">
-               <Mail className="w-6 h-6 text-accent flex-shrink-0" />
+               <div className="p-2 rounded-lg bg-[#18181B] border border-[#27272A]"><Mail className="w-4 h-4 text-white" /></div>
                <span>hello@webcipta.com</span>
              </li>
            </ul>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-800 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-sm">
+      <div className="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-[#27272A] flex flex-col md:flex-row justify-between items-center text-xs text-[#71717A]">
         <p>&copy; {new Date().getFullYear()} WebCipta. All rights reserved.</p>
         <div className="flex gap-6 mt-4 md:mt-0">
           <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
