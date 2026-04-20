@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MoveRight, Code2, Users, Rocket, ShieldCheck, LineChart, MonitorSmartphone } from "lucide-react";
-import { NextJsIcon, ReactIcon, TailwindIcon, JavascriptIcon, TypescriptIcon, VercelIcon, SupabaseIcon, GithubIcon, WhatsAppIcon } from "@/components/TechIcons";
+import { MoveRight, Code2, Users, Rocket, ShieldCheck, LineChart, MonitorSmartphone, Lock, Webhook } from "lucide-react";
+import { NextJsIcon, ReactIcon, TailwindIcon, TypescriptIcon, VercelIcon, SupabaseIcon, GithubIcon, WhatsAppIcon, NodeJsIcon, PostgreSqlIcon, PrismaIcon } from "@/components/TechIcons";
 
 export const metadata = {
   title: "Tentang Kami",
@@ -127,74 +127,80 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-             {[
-                {
-                   brand: "Next.js",
-                   icon: <NextJsIcon className="w-6 h-6 text-[#18181A] group-hover:scale-110 transition-transform" />,
-                   desc: "Untuk website yang cepat, modern, dan stabil."
-                },
-                {
-                   brand: "React",
-                   icon: <ReactIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />,
-                   desc: "Untuk membangun tampilan website yang interaktif dan fleksibel."
-                },
-                {
-                   brand: "Tailwind CSS",
-                   icon: <TailwindIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />,
-                   desc: "Untuk tampilan antarmuka yang rapi, ringan, dan konsisten."
-                },
-                {
-                   brand: "JavaScript",
-                   icon: <JavascriptIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />,
-                   desc: "Untuk fungsi interaktif pada website."
-                },
-                {
-                   brand: "TypeScript",
-                   icon: <TypescriptIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />,
-                   desc: "Untuk struktur pengembangan yang lebih rapi dan scalable."
-                },
-                {
-                   brand: "Vercel",
-                   icon: <VercelIcon className="w-5 h-5 text-[#18181A] group-hover:scale-110 transition-transform" />,
-                   desc: "Untuk deployment dan hosting modern yang cepat dan efisien."
-                },
-                {
-                   brand: "Supabase",
-                   icon: <SupabaseIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />,
-                   desc: "Untuk kebutuhan data dinamis, form, dashboard ringan, atau sistem berbasis database."
-                },
-                {
-                   brand: "GitHub",
-                   icon: <GithubIcon className="w-6 h-6 text-[#18181A] group-hover:scale-110 transition-transform" />,
-                   desc: "Untuk pengelolaan source code yang rapi dan terstruktur."
-                },
-                {
-                   brand: "WhatsApp Integration",
-                   icon: <WhatsAppIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />,
-                   desc: "Untuk memudahkan calon pelanggan menghubungi bisnis secara langsung."
-                },
-                {
-                   brand: "Technical SEO",
-                   icon: <LineChart className="w-6 h-6 text-indigo-500 group-hover:scale-110 transition-transform" />,
-                   desc: "Agar website lebih siap ditemukan di Google sejak awal."
-                },
-                {
-                   brand: "Responsive Design",
-                   icon: <MonitorSmartphone className="w-6 h-6 text-gray-500 group-hover:scale-110 transition-transform" />,
-                   desc: "Agar website tetap nyaman dibuka di desktop, tablet, dan mobile."
-                }
-             ].map((t) => (
-                <div key={t.brand} className="bg-white border border-gray-200 p-6 shadow-sm hover:shadow-md hover:border-gray-300 transition-all rounded-sm group flex flex-col justify-between">
-                   <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 bg-[#F8FAFC] border border-gray-100 rounded-sm flex items-center justify-center shrink-0">
-                         {t.icon}
-                      </div>
-                      <h4 className="font-bold text-[#18181A] text-[15px]">{t.brand}</h4>
-                   </div>
-                   <p className="text-[#52525B] text-[13px] font-light leading-relaxed">{t.desc}</p>
-                </div>
-             ))}
+          <div className="space-y-16">
+            
+            {/* GROUP A: FRONTEND */}
+            <div>
+               <h4 className="text-[13px] font-bold uppercase tracking-widest text-[#94A3B8] mb-6 border-b border-gray-200 pb-2">Frontend</h4>
+               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                 {[
+                    { brand: "Next.js", icon: <NextJsIcon className="w-7 h-7 text-[#18181A]" />, desc: "untuk website yang cepat, modern, dan stabil" },
+                    { brand: "React", icon: <ReactIcon className="w-7 h-7" />, desc: "untuk tampilan website yang interaktif dan fleksibel" },
+                    { brand: "Tailwind CSS", icon: <TailwindIcon className="w-7 h-7" />, desc: "untuk antarmuka yang rapi, ringan, dan konsisten" },
+                    { brand: "TypeScript", icon: <TypescriptIcon className="w-6 h-6" />, desc: "untuk pengembangan yang lebih rapi dan scalable" }
+                 ].map((t) => (
+                    <div key={t.brand} className="bg-white border border-gray-200/80 p-6 shadow-sm hover:shadow-md hover:border-gray-300 transition-all rounded-md group flex flex-col justify-between">
+                       <div className="mb-4">
+                          {t.icon}
+                       </div>
+                       <div>
+                         <h5 className="font-bold text-[#18181A] text-[15px] mb-1.5">{t.brand}</h5>
+                         <p className="text-[#52525B] text-[13px] font-light leading-relaxed">{t.desc}</p>
+                       </div>
+                    </div>
+                 ))}
+               </div>
+            </div>
+
+            {/* GROUP B: BACKEND & DATABASE */}
+            <div>
+               <h4 className="text-[13px] font-bold uppercase tracking-widest text-[#94A3B8] mb-6 border-b border-gray-200 pb-2">Backend & Database</h4>
+               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                 {[
+                    { brand: "Node.js", icon: <NodeJsIcon className="w-7 h-7" />, desc: "untuk logika backend dan pengolahan data website" },
+                    { brand: "Supabase", icon: <SupabaseIcon className="w-7 h-7" />, desc: "untuk database, autentikasi, dan sistem data dinamis" },
+                    { brand: "PostgreSQL", icon: <PostgreSqlIcon className="w-7 h-7" />, desc: "untuk database yang stabil dan terstruktur" },
+                    { brand: "Prisma", icon: <PrismaIcon className="w-7 h-7" />, desc: "untuk pengelolaan database yang lebih rapi dan efisien" },
+                    { brand: "Authentication", icon: <Lock className="w-6 h-6 text-slate-700" />, desc: "untuk sistem login dan keamanan akses pengguna" },
+                    { brand: "API Integration", icon: <Webhook className="w-6 h-6 text-slate-700" />, desc: "untuk menghubungkan website dengan layanan atau sistem lain" }
+                 ].map((t) => (
+                    <div key={t.brand} className="bg-white border border-gray-200/80 p-6 shadow-sm hover:shadow-md hover:border-gray-300 transition-all rounded-md group flex items-start gap-5">
+                       <div className="shrink-0 mt-0.5 opacity-90 group-hover:opacity-100 transition-opacity">
+                          {t.icon}
+                       </div>
+                       <div>
+                         <h5 className="font-bold text-[#18181A] text-[15px] mb-1.5">{t.brand}</h5>
+                         <p className="text-[#52525B] text-[13px] font-light leading-relaxed">{t.desc}</p>
+                       </div>
+                    </div>
+                 ))}
+               </div>
+            </div>
+
+            {/* GROUP C: DEPLOYMENT & WORKFLOW */}
+            <div>
+               <h4 className="text-[13px] font-bold uppercase tracking-widest text-[#94A3B8] mb-6 border-b border-gray-200 pb-2">Deployment & Workflow</h4>
+               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:grid-cols-5 flex-wrap">
+                 {[
+                    { brand: "Vercel", icon: <VercelIcon className="w-6 h-6 text-black" />, desc: "untuk deployment dan hosting modern yang cepat" },
+                    { brand: "GitHub", icon: <GithubIcon className="w-6 h-6 text-black" />, desc: "untuk pengelolaan source code yang terstruktur" },
+                    { brand: "Responsive Design", icon: <MonitorSmartphone className="w-6 h-6 text-slate-600" />, desc: "agar website nyaman dibuka di desktop, tablet, dan mobile" },
+                    { brand: "Technical SEO", icon: <LineChart className="w-6 h-6 text-slate-600" />, desc: "agar website lebih siap ditemukan di Google" },
+                    { brand: "WhatsApp Integration", icon: <WhatsAppIcon className="w-6 h-6" />, desc: "untuk memudahkan calon pelanggan menghubungi bisnis" }
+                 ].map((t) => (
+                    <div key={t.brand} className="bg-white border border-gray-200/80 p-6 shadow-sm hover:shadow-md hover:border-gray-300 transition-all rounded-md group flex flex-col justify-between">
+                       <div className="mb-4 opacity-90 group-hover:opacity-100 transition-opacity">
+                          {t.icon}
+                       </div>
+                       <div>
+                         <h5 className="font-bold text-[#18181A] text-[14px] mb-1.5">{t.brand}</h5>
+                         <p className="text-[#52525B] text-[12px] font-light leading-relaxed">{t.desc}</p>
+                       </div>
+                    </div>
+                 ))}
+               </div>
+            </div>
+
           </div>
 
           <div className="mt-14 pt-8 border-t border-gray-200/70 text-[14px] text-[#94A3B8] font-light italic">

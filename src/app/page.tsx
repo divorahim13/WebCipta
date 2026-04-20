@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Check, Monitor, Zap, Search, MessageSquare, Briefcase, Code2, MoveRight } from "lucide-react";
+import { ArrowRight, Check, Monitor, Zap, Search, MessageSquare, Briefcase, Code2, MoveRight, Lock, Webhook, LineChart, MonitorSmartphone } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { NextJsIcon, ReactIcon, TailwindIcon, TypescriptIcon, VercelIcon } from "@/components/TechIcons";
+import { NextJsIcon, ReactIcon, TailwindIcon, TypescriptIcon, VercelIcon, NodeJsIcon, SupabaseIcon, PostgreSqlIcon, PrismaIcon, GithubIcon, WhatsAppIcon } from "@/components/TechIcons";
 
 export default function Home() {
   return (
@@ -166,26 +166,68 @@ export default function Home() {
       {/* Technology Stack Section Compact */}
       <section className="py-20 bg-[#F8FAFC] border-t border-b border-gray-200/80">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="max-w-3xl mb-12">
             <h2 className="text-[11px] font-bold tracking-[0.2em] text-[var(--color-highlight)] uppercase mb-4">Fondasi Website</h2>
             <h3 className="text-3xl font-bold font-heading text-[#18181A] mb-4">Teknologi yang Kami Gunakan</h3>
             <p className="text-[#52525B] font-light">WebCipta membangun website dengan teknologi modern yang ringan, cepat, dan relevan untuk kebutuhan bisnis saat ini.</p>
           </div>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-            {[
-              { name: "Next.js", icon: <NextJsIcon className="w-5 h-5 text-black" /> },
-              { name: "React", icon: <ReactIcon className="w-5 h-5" /> },
-              { name: "Tailwind CSS", icon: <TailwindIcon className="w-5 h-5" /> },
-              { name: "TypeScript", icon: <TypescriptIcon className="w-5 h-5" /> },
-              { name: "Vercel", icon: <VercelIcon className="w-4 h-4 text-black" /> }
-            ].map((tech) => (
-              <div key={tech.name} className="flex items-center gap-2.5 px-6 py-3 bg-white border border-gray-200 shadow-sm rounded-sm text-sm font-semibold text-[#1C1B1A] group hover:border-gray-300 transition-colors">
-                {tech.icon}
-                <span>{tech.name}</span>
-              </div>
-            ))}
+
+          <div className="grid md:grid-cols-3 gap-8 md:gap-4 lg:gap-8">
+            {/* FRONTEND */}
+            <div className="bg-white border border-gray-200 p-6 rounded-md shadow-sm">
+               <h4 className="text-[11px] font-bold text-[#94A3B8] uppercase tracking-wider mb-4 border-b border-gray-100 pb-2">Frontend</h4>
+               <div className="flex flex-wrap gap-2">
+                 {[
+                   { name: "Next.js", icon: <NextJsIcon className="w-4 h-4 text-black" /> },
+                   { name: "React", icon: <ReactIcon className="w-4 h-4" /> },
+                   { name: "Tailwind CSS", icon: <TailwindIcon className="w-4 h-4" /> },
+                   { name: "TypeScript", icon: <TypescriptIcon className="w-4 h-4" /> }
+                 ].map((t) => (
+                   <span key={t.name} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F8FAFC] border border-gray-200 text-[#18181A] text-[12px] font-semibold rounded-sm">
+                      {t.icon} {t.name}
+                   </span>
+                 ))}
+               </div>
+            </div>
+
+            {/* BACKEND & DATABASE */}
+            <div className="bg-white border border-gray-200 p-6 rounded-md shadow-sm">
+               <h4 className="text-[11px] font-bold text-[#94A3B8] uppercase tracking-wider mb-4 border-b border-gray-100 pb-2">Backend & Database</h4>
+               <div className="flex flex-wrap gap-2">
+                 {[
+                   { name: "Node.js", icon: <NodeJsIcon className="w-4 h-4" /> },
+                   { name: "Supabase", icon: <SupabaseIcon className="w-4 h-4" /> },
+                   { name: "PostgreSQL", icon: <PostgreSqlIcon className="w-4 h-4" /> },
+                   { name: "Prisma", icon: <PrismaIcon className="w-4 h-4" /> },
+                   { name: "Auth", icon: <Lock className="w-3.5 h-3.5" /> }
+                 ].map((t) => (
+                   <span key={t.name} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F8FAFC] border border-gray-200 text-[#18181A] text-[12px] font-semibold rounded-sm">
+                      {t.icon} {t.name}
+                   </span>
+                 ))}
+               </div>
+            </div>
+
+            {/* DEPLOYMENT & WORKFLOW */}
+            <div className="bg-white border border-gray-200 p-6 rounded-md shadow-sm">
+               <h4 className="text-[11px] font-bold text-[#94A3B8] uppercase tracking-wider mb-4 border-b border-gray-100 pb-2">Deployment & Workflow</h4>
+               <div className="flex flex-wrap gap-2">
+                 {[
+                   { name: "Vercel", icon: <VercelIcon className="w-4 h-4 text-black" /> },
+                   { name: "GitHub", icon: <GithubIcon className="w-4 h-4 text-black" /> },
+                   { name: "Responsive", icon: <MonitorSmartphone className="w-3.5 h-3.5" /> },
+                   { name: "SEO", icon: <LineChart className="w-3.5 h-3.5" /> },
+                   { name: "WhatsApp", icon: <WhatsAppIcon className="w-4 h-4" /> }
+                 ].map((t) => (
+                   <span key={t.name} className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F8FAFC] border border-gray-200 text-[#18181A] text-[12px] font-semibold rounded-sm">
+                      {t.icon} {t.name}
+                   </span>
+                 ))}
+               </div>
+            </div>
           </div>
-          <div className="mt-12 text-center text-[13px] text-[#94A3B8] font-light">
+
+          <div className="mt-12 text-center md:text-left text-[13px] text-[#94A3B8] font-light">
              Teknologi yang tepat membantu website tetap cepat, rapi, dan lebih siap berkembang sesuai kebutuhan bisnis.
           </div>
         </div>
