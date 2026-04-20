@@ -1,0 +1,79 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
+import { ReactNode } from "react";
+import {
+  EASE_OUT,
+  DUR_BASE,
+  DUR_SLOW,
+  Y_BASE,
+  Y_HERO,
+  Y_MOBILE,
+  VIEWPORT_ONCE,
+} from "./variants";
+
+interface FadeUpProps {
+  children: ReactNode;
+  delay?: number;
+  /** Use "slow" for hero-level items, "base" (default) for section content */
+  speed?: "base" | "slow" | "fast";
+  /** Y travel in px — defaults to Y_BASE */
+  distance?: number;
+  className?: string;
+  /** If false, animates on mount (for hero). If true (default), triggers on scroll. */
+  inView?: boolean;
+}
+
+export default function FadeUp({
+  children,
+  delay = 0,
+  speed = "base",
+  distance,
+  className,
+  inView = true,
+}: FadeUpProps) {
+  const shouldReduce = useReducedMotion();
+
+  const dur = speed === "slow" ? DUR_SLOW : speed === "fast" ? 0.28 : DUR_BASE;
+  const yDist = shouldReduce ? 0 : (distance ?? (speed === "slow" ? Y_HERO : Y_BASE));
+
+  // A tiny override for mobile via CSS variable trick is handled in globals.css
+  // We apply Y_MOBILE only for small screens via isMobile check on client
+  const variant = {
+    hidden: { opacity: 0, y: shouldReduce ? 0 : yDist },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: shouldReduce ? 0.01 : dur,
+        ease: EASE_OUT,
+        delay: shouldReduce ? 0 : delay,
+      },
+    },
+  };
+
+  if (inView) {
+    return (
+      <motion.div
+        className={className}
+        variants={variant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={VIEWPORT_ONCE}
+      >
+        {children}
+      </motion.div>
+    );
+  }
+
+  return (
+    <motion.div
+      className={className}
+      variants={variant}
+      initial="hidden"
+      animate="visible"
+    >
+      {children}
+    </motion.div>
+  );
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/motion/PageTransition";
 import "./globals.css";
 
 const inter = Inter({
@@ -35,11 +36,12 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-sans transition-colors duration-300">
         <NavBar />
         <main className="flex-1 w-full m-0 p-0">
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
         </main>
         <Footer />
       </body>
     </html>
   );
 }
-

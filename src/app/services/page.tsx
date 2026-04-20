@@ -1,6 +1,10 @@
+
 import Link from "next/link";
-import Image from "next/image";
-import { MoveRight, CheckCircle2 } from "lucide-react";
+import { MoveRight } from "lucide-react";
+import FadeUp from "@/components/motion/FadeUp";
+import StaggerContainer, { StaggerItem } from "@/components/motion/StaggerContainer";
+import ServiceCard from "./ServiceCard";
+
 
 export const metadata = {
   title: "Layanan WebCipta | Jasa Pembuatan Website Profesional Cibubur",
@@ -190,85 +194,6 @@ const serviceData = [
   },
 ];
 
-const ServiceCard = ({ data }: { data: typeof serviceData[0] }) => (
-  <div className="bg-white border border-gray-200 hover:border-[#18181A] hover:shadow-[0_8px_40px_rgb(0,0,0,0.06)] transition-all duration-300 flex flex-col group">
-    {/* Card Header */}
-    <div className="p-8 pb-6 border-b border-gray-100">
-      <div className="flex items-start justify-between mb-6">
-        <div className="w-14 h-14 bg-[#F8FAFC] border border-gray-100 flex items-center justify-center shrink-0 group-hover:bg-[#18181A] group-hover:border-[#18181A] transition-all duration-300">
-          <Image
-            src={data.icon}
-            alt={data.title}
-            width={26}
-            height={26}
-            className="group-hover:invert transition-all duration-300"
-          />
-        </div>
-        <div className="flex flex-col items-end gap-2">
-          <span className="text-[10px] font-bold text-[#94A3B8] tracking-widest uppercase">{data.id}</span>
-          {data.tag && (
-            <span className={`font-bold uppercase tracking-wider px-2.5 py-1 ${
-              data.tag === "Opsional" 
-                ? "text-[12px] bg-[var(--color-highlight)] text-white" 
-                : "text-[10px] bg-[#18181A] text-white"
-            }`}>
-              {data.tag}
-            </span>
-          )}
-        </div>
-      </div>
-      <h3 className="text-xl font-bold font-heading text-[#18181A] mb-3 leading-tight">{data.title}</h3>
-      <p className="text-[13px] text-[#52525B] leading-relaxed font-light">{data.desc}</p>
-    </div>
-
-    {/* Card Body */}
-    <div className="p-8 flex flex-col grow">
-      {/* Target */}
-      <div className="mb-6">
-        <div className="text-[10px] font-bold uppercase tracking-widest text-[#94A3B8] mb-2">Cocok Untuk</div>
-        <p className="text-[13px] text-[#18181A] font-medium leading-relaxed">{data.target}</p>
-      </div>
-
-      {/* Includes */}
-      <div className="mb-6 grow">
-        <div className="text-[10px] font-bold uppercase tracking-widest text-[#94A3B8] mb-3">Sudah Termasuk</div>
-        <ul className="space-y-2">
-          {data.includes.map((item, i) => (
-            <li key={i} className="flex items-start gap-2.5 text-[13px] text-[#52525B]">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#18181A] shrink-0 mt-0.5" />
-              <span className="leading-tight">{item}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Setup + Price */}
-      <div className="pt-5 border-t border-gray-100 space-y-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <div className="text-[10px] font-bold uppercase tracking-widest text-[#94A3B8] mb-1">Setup</div>
-            <p className="text-[12px] text-[#52525B]">{data.setup}</p>
-          </div>
-          <div className="text-right">
-            <div className="text-[10px] font-bold uppercase tracking-widest text-[#94A3B8] mb-1">Estimasi Harga</div>
-            <p className="text-[13px] font-bold text-[#18181A]">{data.price}</p>
-          </div>
-        </div>
-
-        <Link
-          href="/pricing"
-          className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#18181A] hover:text-[var(--color-highlight)] transition-colors group/link"
-        >
-          <span className="border-b border-transparent group-hover/link:border-[var(--color-highlight)] transition-colors pb-0.5">
-            {data.cta}
-          </span>
-          <MoveRight className="w-3.5 h-3.5" />
-        </Link>
-      </div>
-    </div>
-  </div>
-);
-
 export default function ServicesPage() {
   return (
     <>
@@ -277,17 +202,23 @@ export default function ServicesPage() {
         <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(to_bottom,white,transparent)] -z-10 opacity-70"></div>
         <div className="container mx-auto px-6 max-w-7xl pt-8">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[var(--color-highlight)] mb-6">
-              <span className="w-6 h-px bg-[var(--color-highlight)]"></span>
-              Katalog Layanan
-            </div>
-            <h1 className="text-5xl md:text-6xl font-black font-heading text-[#18181A] mb-8 leading-[1.05] tracking-tight">
-              Website yang Tepat <br />
-              <span className="text-[var(--color-highlight)]">untuk Bisnis Anda.</span>
-            </h1>
-            <p className="text-lg md:text-xl text-[#52525B] leading-relaxed font-light max-w-2xl">
-              Dari landing page sederhana hingga sistem custom — setiap layanan dirancang presisi sesuai kebutuhan bisnis, bukan paket generik yang dipaksakan.
-            </p>
+            <FadeUp inView={false}>
+              <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[var(--color-highlight)] mb-6">
+                <span className="w-6 h-px bg-[var(--color-highlight)]"></span>
+                Katalog Layanan
+              </div>
+            </FadeUp>
+            <FadeUp inView={false} delay={0.1}>
+              <h1 className="text-5xl md:text-6xl font-black font-heading text-[#18181A] mb-8 leading-[1.05] tracking-tight">
+                Website yang Tepat <br />
+                <span className="text-[var(--color-highlight)]">untuk Bisnis Anda.</span>
+              </h1>
+            </FadeUp>
+            <FadeUp inView={false} delay={0.2}>
+              <p className="text-lg md:text-xl text-[#52525B] leading-relaxed font-light max-w-2xl">
+                Dari landing page sederhana hingga sistem custom — setiap layanan dirancang presisi sesuai kebutuhan bisnis, bukan paket generik yang dipaksakan.
+              </p>
+            </FadeUp>
           </div>
 
           {/* Stats bar */}
@@ -316,11 +247,13 @@ export default function ServicesPage() {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" stagger={0.07}>
             {serviceData.map((s) => (
-              <ServiceCard key={s.id} data={s} />
+              <StaggerItem key={s.id}>
+                <ServiceCard data={s} />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 

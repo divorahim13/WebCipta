@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MoveRight, CheckCircle2 } from "lucide-react";
+import FadeUp from "@/components/motion/FadeUp";
+import StaggerContainer, { StaggerItem } from "@/components/motion/StaggerContainer";
+
 
 export const metadata = {
   title: "Harga Layanan WebCipta | Transparan & Tanpa Biaya Tersembunyi",
@@ -223,28 +226,36 @@ export default function PricingPage() {
 
         <div className="container mx-auto px-6 max-w-7xl pt-8">
           <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[var(--color-highlight)] mb-6">
-              <span className="w-6 h-px bg-[var(--color-highlight)]"></span>
-              Harga Layanan
-            </div>
-            <h1 className="text-5xl md:text-6xl font-black font-heading text-[#18181A] mb-8 leading-[1.05] tracking-tight">
-              Harga Jelas. <br />
-              <span className="text-[var(--color-highlight)]">Tanpa Kejutan.</span>
-            </h1>
-            <p className="text-lg md:text-xl text-[#52525B] leading-relaxed font-light max-w-2xl">
-              Semua harga disampaikan transparan sejak awal. Tidak ada biaya tersembunyi, tidak ada markup mendadak — hanya investasi yang proporsional dengan kebutuhan bisnis Anda.
-            </p>
+            <FadeUp inView={false}>
+              <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-[var(--color-highlight)] mb-6">
+                <span className="w-6 h-px bg-[var(--color-highlight)]" />
+                Harga Layanan
+              </div>
+            </FadeUp>
+            <FadeUp inView={false} delay={0.1}>
+              <h1 className="text-5xl md:text-6xl font-black font-heading text-[#18181A] mb-8 leading-[1.05] tracking-tight">
+                Harga Jelas. <br />
+                <span className="text-[var(--color-highlight)]">Tanpa Kejutan.</span>
+              </h1>
+            </FadeUp>
+            <FadeUp inView={false} delay={0.2}>
+              <p className="text-lg md:text-xl text-[#52525B] leading-relaxed font-light max-w-2xl">
+                Semua harga disampaikan transparan sejak awal. Tidak ada biaya tersembunyi, tidak ada markup mendadak — hanya investasi yang proporsional dengan kebutuhan bisnis Anda.
+              </p>
+            </FadeUp>
 
             {/* Trust signals */}
-            <div className="flex flex-wrap gap-6 mt-12">
-              {[
-                "✓ Harga final disetujui sebelum pengerjaan",
-                "✓ Tidak ada biaya tersembunyi",
-                "✓ Konsultasi gratis sebelum commit",
-              ].map((t) => (
-                <span key={t} className="text-[13px] text-[#52525B] font-medium">{t}</span>
-              ))}
-            </div>
+            <FadeUp inView={false} delay={0.3}>
+              <div className="flex flex-wrap gap-6 mt-12">
+                {[
+                  "✓ Harga final disetujui sebelum pengerjaan",
+                  "✓ Tidak ada biaya tersembunyi",
+                  "✓ Konsultasi gratis sebelum commit",
+                ].map((t) => (
+                  <span key={t} className="text-[13px] text-[#52525B] font-medium">{t}</span>
+                ))}
+              </div>
+            </FadeUp>
           </div>
         </div>
       </section>
@@ -252,16 +263,16 @@ export default function PricingPage() {
       {/* Pricing Grid */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="text-center mb-16">
+          <FadeUp className="text-center mb-16">
             <h2 className="text-[11px] font-bold tracking-[0.2em] text-[#94A3B8] uppercase mb-3">10 Paket Tersedia</h2>
             <h3 className="text-3xl md:text-4xl font-bold font-heading text-[#18181A]">Pilih Sesuai Kebutuhan</h3>
             <p className="text-[#52525B] font-light mt-4 max-w-xl mx-auto">Semua estimasi di bawah adalah titik awal — harga final didiskusikan bersama sebelum proyek dimulai.</p>
-          </div>
+          </FadeUp>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-5" stagger={0.07}>
             {pricingPackages.map((pkg) => (
+              <StaggerItem key={pkg.id}>
               <div
-                key={pkg.id}
                 className={`relative border ${pkg.highlight ? "border-[#18181A] shadow-[0_0_0_1px_#18181A]" : "border-gray-200 hover:border-gray-300"} ${pkg.color} transition-all hover:shadow-md flex flex-col group`}
               >
                 {pkg.tag && (
@@ -325,30 +336,35 @@ export default function PricingPage() {
                   </div>
                 </div>
               </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
       {/* Important Notes */}
       <section className="py-16 bg-[#F8FAFC] border-t border-gray-200">
         <div className="container mx-auto px-6 max-w-4xl">
-          <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#94A3B8] mb-6">Catatan Penting</h3>
-          <div className="grid md:grid-cols-2 gap-4">
+          <FadeUp>
+            <h3 className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#94A3B8] mb-6">Catatan Penting</h3>
+          </FadeUp>
+          <StaggerContainer className="grid md:grid-cols-2 gap-4" stagger={0.09}>
             {[
               { icon: "/icons/ui/note-domain.svg", text: "Biaya domain (.com/.id) tidak termasuk dalam paket — dibayar langsung ke registrar, sekitar Rp120–180rb/tahun." },
               { icon: "/icons/ui/note-price.svg", text: "Harga final disampaikan setelah diskusi kebutuhan. Tidak ada perubahan harga mendadak di tengah proyek." },
               { icon: "/icons/ui/note-feature.svg", text: "Fitur tambahan yang tidak ada dalam paket standar akan dikalkulasi dan diinformasikan sebelum dikerjakan." },
               { icon: "/icons/ui/note-consult.svg", text: "Konsultasi awal sepenuhnya gratis — tidak ada kewajiban untuk melanjutkan ke tahap proyek." },
             ].map((note, i) => (
-              <div key={i} className="flex gap-4 p-5 bg-white border border-gray-200">
-                <span className="shrink-0 mt-0.5">
-                  <Image src={note.icon} alt="Note icon" width={20} height={20} />
-                </span>
-                <p className="text-[13px] text-[#52525B] leading-relaxed font-light">{note.text}</p>
-              </div>
+              <StaggerItem key={i}>
+                <div className="flex gap-4 p-5 bg-white border border-gray-200">
+                  <span className="shrink-0 mt-0.5">
+                    <Image src={note.icon} alt="Note icon" width={20} height={20} />
+                  </span>
+                  <p className="text-[13px] text-[#52525B] leading-relaxed font-light">{note.text}</p>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
