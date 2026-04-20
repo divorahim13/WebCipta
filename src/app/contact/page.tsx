@@ -96,6 +96,14 @@ export default function ContactPage() {
             <div className="bg-muted/5 p-8 md:p-10 rounded-3xl border border-muted/20 shadow-xl shadow-black/5">
               <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
               <ContactForm />
+              
+              <div className="mt-10 pt-8 border-t border-muted/20 text-center space-y-4">
+                <h4 className="font-semibold text-lg">Not sure what you need?</h4>
+                <p className="text-muted text-sm">Schedule a quick 15-minute call with our lead strategist.</p>
+                <button className="w-full sm:w-auto px-8 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 font-bold rounded-xl transition shadow border border-muted/30">
+                  Get a Free Consultation
+                </button>
+              </div>
             </div>
 
           </div>
