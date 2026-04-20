@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Check, Monitor, Zap, Search, MessageSquare, Briefcase, Code2, MoveRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { NextJsIcon, ReactIcon, TailwindIcon, TypescriptIcon, VercelIcon } from "@/components/TechIcons";
 
 export default function Home() {
   return (
@@ -171,11 +172,21 @@ export default function Home() {
             <p className="text-[#52525B] font-light">WebCipta membangun website dengan teknologi modern yang ringan, cepat, dan relevan untuk kebutuhan bisnis saat ini.</p>
           </div>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-            {["Next.js", "React", "Tailwind CSS", "TypeScript", "Vercel", "Technical SEO"].map((tech) => (
-              <div key={tech} className="px-6 py-3 bg-white border border-gray-200 shadow-sm rounded-sm text-sm font-semibold text-[#1C1B1A]">
-                {tech}
+            {[
+              { name: "Next.js", icon: <NextJsIcon className="w-5 h-5 text-black" /> },
+              { name: "React", icon: <ReactIcon className="w-5 h-5" /> },
+              { name: "Tailwind CSS", icon: <TailwindIcon className="w-5 h-5" /> },
+              { name: "TypeScript", icon: <TypescriptIcon className="w-5 h-5" /> },
+              { name: "Vercel", icon: <VercelIcon className="w-4 h-4 text-black" /> }
+            ].map((tech) => (
+              <div key={tech.name} className="flex items-center gap-2.5 px-6 py-3 bg-white border border-gray-200 shadow-sm rounded-sm text-sm font-semibold text-[#1C1B1A] group hover:border-gray-300 transition-colors">
+                {tech.icon}
+                <span>{tech.name}</span>
               </div>
             ))}
+          </div>
+          <div className="mt-12 text-center text-[13px] text-[#94A3B8] font-light">
+             Teknologi yang tepat membantu website tetap cepat, rapi, dan lebih siap berkembang sesuai kebutuhan bisnis.
           </div>
         </div>
       </section>

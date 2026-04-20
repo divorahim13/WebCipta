@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { MoveRight, Code2, Users, Rocket, ShieldCheck } from "lucide-react";
+import { MoveRight, Code2, Users, Rocket, ShieldCheck, LineChart, MonitorSmartphone } from "lucide-react";
+import { NextJsIcon, ReactIcon, TailwindIcon, JavascriptIcon, TypescriptIcon, VercelIcon, SupabaseIcon, GithubIcon, WhatsAppIcon } from "@/components/TechIcons";
 
 export const metadata = {
   title: "Tentang Kami",
@@ -110,6 +111,95 @@ export default function AboutPage() {
             </div>
           </div>
 
+        </div>
+      </section>
+
+      {/* Tech Stack Full Dedicated Section */}
+      <section className="py-24 bg-[#FAFAFA] border-t border-gray-200/60 shadow-inner">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="max-w-3xl mb-16">
+            <h2 className="text-[11px] font-bold tracking-[0.2em] text-[var(--color-highlight)] uppercase mb-4 block">Infrastruktur Modern</h2>
+            <h3 className="text-3xl md:text-4xl font-bold font-heading text-[#18181A] mb-6 leading-tight">
+              Teknologi yang Kami Gunakan
+            </h3>
+            <p className="text-[#52525B] font-light leading-relaxed text-lg">
+               WebCipta membangun website dengan teknologi modern yang ringan, cepat, dan relevan untuk kebutuhan bisnis saat ini. Teknologi yang digunakan dipilih agar website tetap nyaman diakses, mudah dikembangkan, dan siap mendukung kebutuhan bisnis secara jangka panjang.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+             {[
+                {
+                   brand: "Next.js",
+                   icon: <NextJsIcon className="w-6 h-6 text-[#18181A] group-hover:scale-110 transition-transform" />,
+                   desc: "Untuk website yang cepat, modern, dan stabil."
+                },
+                {
+                   brand: "React",
+                   icon: <ReactIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />,
+                   desc: "Untuk membangun tampilan website yang interaktif dan fleksibel."
+                },
+                {
+                   brand: "Tailwind CSS",
+                   icon: <TailwindIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />,
+                   desc: "Untuk tampilan antarmuka yang rapi, ringan, dan konsisten."
+                },
+                {
+                   brand: "JavaScript",
+                   icon: <JavascriptIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />,
+                   desc: "Untuk fungsi interaktif pada website."
+                },
+                {
+                   brand: "TypeScript",
+                   icon: <TypescriptIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />,
+                   desc: "Untuk struktur pengembangan yang lebih rapi dan scalable."
+                },
+                {
+                   brand: "Vercel",
+                   icon: <VercelIcon className="w-5 h-5 text-[#18181A] group-hover:scale-110 transition-transform" />,
+                   desc: "Untuk deployment dan hosting modern yang cepat dan efisien."
+                },
+                {
+                   brand: "Supabase",
+                   icon: <SupabaseIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />,
+                   desc: "Untuk kebutuhan data dinamis, form, dashboard ringan, atau sistem berbasis database."
+                },
+                {
+                   brand: "GitHub",
+                   icon: <GithubIcon className="w-6 h-6 text-[#18181A] group-hover:scale-110 transition-transform" />,
+                   desc: "Untuk pengelolaan source code yang rapi dan terstruktur."
+                },
+                {
+                   brand: "WhatsApp Integration",
+                   icon: <WhatsAppIcon className="w-6 h-6 group-hover:scale-110 transition-transform" />,
+                   desc: "Untuk memudahkan calon pelanggan menghubungi bisnis secara langsung."
+                },
+                {
+                   brand: "Technical SEO",
+                   icon: <LineChart className="w-6 h-6 text-indigo-500 group-hover:scale-110 transition-transform" />,
+                   desc: "Agar website lebih siap ditemukan di Google sejak awal."
+                },
+                {
+                   brand: "Responsive Design",
+                   icon: <MonitorSmartphone className="w-6 h-6 text-gray-500 group-hover:scale-110 transition-transform" />,
+                   desc: "Agar website tetap nyaman dibuka di desktop, tablet, dan mobile."
+                }
+             ].map((t) => (
+                <div key={t.brand} className="bg-white border border-gray-200 p-6 shadow-sm hover:shadow-md hover:border-gray-300 transition-all rounded-sm group flex flex-col justify-between">
+                   <div className="flex items-center gap-4 mb-4">
+                      <div className="w-12 h-12 bg-[#F8FAFC] border border-gray-100 rounded-sm flex items-center justify-center shrink-0">
+                         {t.icon}
+                      </div>
+                      <h4 className="font-bold text-[#18181A] text-[15px]">{t.brand}</h4>
+                   </div>
+                   <p className="text-[#52525B] text-[13px] font-light leading-relaxed">{t.desc}</p>
+                </div>
+             ))}
+          </div>
+
+          <div className="mt-14 pt-8 border-t border-gray-200/70 text-[14px] text-[#94A3B8] font-light italic">
+             Teknologi yang tepat membantu website tetap cepat, rapi, dan lebih siap berkembang sesuai kebutuhan bisnis.
+          </div>
         </div>
       </section>
 

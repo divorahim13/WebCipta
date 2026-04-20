@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MoveRight } from "lucide-react";
+import { VercelIcon, SupabaseIcon } from "@/components/TechIcons";
 
 export const metadata = {
   title: "Katalog Layanan",
@@ -124,8 +125,27 @@ const ServiceBlock = ({ data }: { data: any }) => (
          </ul>
        </div>
        <div>
-         <div className="text-[11px] font-bold uppercase tracking-wider text-[#94A3B8] mb-1">Setup Teknologi</div>
-         <p className="text-[13px] text-[#18181A] font-medium">{data.setup}</p>
+         <div className="text-[11px] font-bold uppercase tracking-wider text-[#94A3B8] mb-2">Setup Teknologi</div>
+         <div className="flex flex-wrap gap-2">
+            {data.setup.includes("Vercel") && (
+               <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-white border border-gray-200 text-[#1C1B1A] text-[11px] font-bold rounded shadow-sm">
+                  <VercelIcon className="w-3 h-3 text-black" />
+                  Vercel
+               </span>
+            )}
+            {data.setup.includes("Supabase") && (
+               <span className="inline-flex items-center gap-1.5 px-2 py-1 bg-white border border-gray-200 text-[#1C1B1A] text-[11px] font-bold rounded shadow-sm">
+                  <SupabaseIcon className="w-3.5 h-3.5" />
+                  Supabase
+               </span>
+            )}
+            {!data.setup.includes("Vercel") && !data.setup.includes("Supabase") && (
+               <span className="text-[13px] text-[#18181A] font-medium">{data.setup}</span>
+            )}
+            {/* Show extra context without plain text look if necessary */}
+            {data.setup.includes("jika butuh") && <span className="text-[11px] text-[#94A3B8] mt-1.5 block w-full italic">*(Jika dibutuhkan fungsionalitas kompleks)*</span>}
+            {data.setup.includes("VPS") && <span className="inline-flex items-center px-2 py-1 bg-white border border-gray-200 text-[11px] font-bold rounded shadow-sm">VPS Server</span>}
+         </div>
        </div>
     </div>
 
