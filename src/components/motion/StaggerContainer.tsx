@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 import { staggerContainerVariant, fadeUpVariant, VIEWPORT_ONCE } from "./variants";
+import { useIsClient } from "@/hooks/useIsClient";
 
 interface StaggerContainerProps {
   children: ReactNode;
@@ -16,7 +17,7 @@ interface StaggerContainerProps {
 /**
  * Parent container that staggers children reveal.
  * Children must use `motion.div` with `variants={fadeUpVariant}` (or similar).
- * Or wrap each child in <FadeUpItem>.
+ * Or wrap each child in <StaggerItem>.
  */
 export default function StaggerContainer({
   children,
@@ -26,6 +27,12 @@ export default function StaggerContainer({
   inView = true,
 }: StaggerContainerProps) {
   const shouldReduce = useReducedMotion();
+  const isClient = useIsClient();
+
+  // Before hydration: render as plain div to avoid skipping animation
+  if (!isClient) {
+    return <div className={className}>{children}</div>;
+  }
 
   const container = staggerContainerVariant(
     shouldReduce ? 0 : stagger,
