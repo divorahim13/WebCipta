@@ -11,7 +11,7 @@ export default function Footer() {
             <h2 className="text-2xl font-bold font-heading text-white">WebCipta</h2>
           </div>
           <p className="text-gray-400 mb-6 leading-relaxed">
-            We build beautiful & functional websites powered by AI-driven solutions to elevate your business.
+            Jasa pembuatan website untuk bisnis, UMKM, dan personal brand. Cepat, rapi, dan terjangkau.
           </p>
           <div className="flex gap-4">
             <a href="#" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-accent hover:text-white transition-colors">
@@ -28,24 +28,29 @@ export default function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h3>
+          <h3 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Navigasi</h3>
           <ul className="space-y-4">
             <li><Link href="/" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Home</Link></li>
-            <li><Link href="/about" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>About</Link></li>
-            <li><Link href="/services" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Services</Link></li>
-            <li><Link href="/portfolio" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Portfolio</Link></li>
-            <li><Link href="/contact" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Contact</Link></li>
-            <li><Link href="/blog" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Blog</Link></li>
+            <li><Link href="/about" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Tentang</Link></li>
+            <li><Link href="/services" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Layanan</Link></li>
+            <li><Link href="/pricing" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Harga</Link></li>
+            <li><Link href="/faq" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>FAQ</Link></li>
+            <li><Link href="/contact" className="hover:text-white transition-colors flex items-center gap-2"><span className="w-1 h-1 bg-accent rounded-full mb-0.5"></span>Kontak</Link></li>
           </ul>
         </div>
 
         {/* Contact Info */}
         <div className="md:col-span-2 text-gray-400">
-           <h3 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact Us</h3>
+           <div className="flex items-center justify-between mb-6">
+             <h3 className="text-white font-bold uppercase tracking-wider text-sm">Kontak Kami</h3>
+             <Link href="/contact" className="text-xs font-bold bg-accent/20 text-blue-400 px-3 py-1.5 rounded-full hover:bg-accent hover:text-white transition-colors">
+               Konsultasi Website
+             </Link>
+           </div>
            <ul className="space-y-6">
              <li className="flex items-start gap-4">
                <MapPin className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-               <span>123 Innovation Drive, Tech District<br/>Jakarta, Indonesia 12190</span>
+               <span>Cibubur dan sekitarnya<br/>Jawa Barat, Indonesia</span>
              </li>
              <li className="flex items-center gap-4">
                <Phone className="w-6 h-6 text-accent flex-shrink-0" />

@@ -1,141 +1,123 @@
-import { Metadata } from "next";
-import { Users, Award, Zap, Code2, Sparkles, Database } from "lucide-react";
-import Link from "next/link";
+import { Metadata } from 'next';
+import { ArrowRight, Code2, Cpu, LineChart, ShieldCheck } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: "About Us | Web Development Experts",
-  description: "Learn about WebCipta, your trusted partner in web development and AI-enhanced solutions.",
+  title: 'Tentang WebCipta | Solo Developer Website Cibubur',
+  description: 'Mengenal WebCipta. Solo developer agency yang fokus melayani UMKM, personal brand, dan bisnis lokal Cibubur dengan harga terjangkau.',
 };
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col items-center w-full">
-      {/* Header Section */}
-      <section className="w-full py-20 md:py-32 bg-muted/5 border-b border-muted/20">
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-foreground">
-            About <span className="text-[var(--color-accent)]">WebCipta</span>
-          </h1>
-          <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto">
-            We are a dedicated team of developers, designers, and innovators passionate about crafting modern, intelligent web solutions.
-          </p>
-        </div>
-      </section>
-
-      {/* Expertise Section */}
-      <section className="w-full py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight mb-6">Pioneering the AI-Enhanced Web</h2>
-              <p className="text-muted text-lg leading-relaxed mb-6">
-                Established with the vision of bridging the gap between aesthetics and advanced technology, WebCipta brings a fresh perspective to digital experiences.
-              </p>
-              <p className="text-muted text-lg leading-relaxed mb-8">
-                Our expertise lies in combining bleeding-edge web frameworks like Next.js with artificial intelligence to deliver websites that don't just look stunning, but also work intelligently behind the scenes to drive your business goals.
-              </p>
-              <div className="mb-8">
-                <Link href="/services" className="px-6 py-3 bg-[var(--color-accent)] text-white font-semibold rounded-lg hover:bg-blue-700 transition inline-flex items-center gap-2">
-                  Explore Our Services <Zap size={16} />
-                </Link>
-              </div>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="flex items-start space-x-3">
-                  <div className="mt-1 p-2 bg-accent/10 rounded-lg text-[var(--color-accent)]"><Zap size={20} /></div>
-                  <div>
-                    <h4 className="font-semibold">Performance First</h4>
-                    <span className="text-sm text-muted">Optimized core web vitals.</span>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="mt-1 p-2 bg-accent/10 rounded-lg text-[var(--color-accent)]"><Sparkles size={20} /></div>
-                  <div>
-                    <h4 className="font-semibold">AI Integrated</h4>
-                    <span className="text-sm text-muted">Smart automation & bots.</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-6 relative">
-              {/* Abstract decorative graphic */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-[var(--color-accent)]/20 to-transparent blur-3xl -z-10 rounded-full" />
-              <div className="space-y-6">
-                <div className="bg-muted/5 border border-muted/20 p-8 rounded-2xl flex flex-col items-center justify-center text-center">
-                  <Code2 size={40} className="text-[var(--color-accent)] mb-4" />
-                  <h3 className="font-bold">Frontend Excellence</h3>
-                </div>
-                <div className="bg-muted/5 border border-muted/20 p-8 rounded-2xl flex flex-col items-center justify-center text-center">
-                  <Users size={40} className="text-[var(--color-accent)] mb-4" />
-                  <h3 className="font-bold">User-Centric UI/UX</h3>
-                </div>
-              </div>
-              <div className="space-y-6 mt-12">
-                <div className="bg-muted/5 border border-muted/20 p-8 rounded-2xl flex flex-col items-center justify-center text-center">
-                  <Database size={40} className="text-[var(--color-accent)] mb-4" />
-                  <h3 className="font-bold">Robust Backends</h3>
-                </div>
-                <div className="bg-muted/5 border border-muted/20 p-8 rounded-2xl flex flex-col items-center justify-center text-center">
-                  <Award size={40} className="text-[var(--color-accent)] mb-4" />
-                  <h3 className="font-bold">Award-Winning Quality</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="w-full py-24 bg-muted/5 border-y border-muted/20">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight mb-4">Meet the Team</h2>
-            <p className="text-muted max-w-2xl mx-auto">
-              The creative minds and technical experts dedicated to building your digital success.
+    <main className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 bg-blue-50 h-full -skew-x-12 transform origin-top-right"></div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="max-w-3xl">
+            <h1 className="text-5xl md:text-6xl font-bold font-heading text-gray-900 mb-6">
+              Di Balik Layar <span className="text-accent">WebCipta</span>
+            </h1>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Membantu bisnis lokal Anda maju ke ranah digital melalui sentuhan website yang terstruktur, personal, dan efisien secara biaya.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Team Member 1 */}
-            <div className="bg-background rounded-2xl p-6 border border-muted/20 text-center hover:border-[var(--color-accent)]/50 transition-colors">
-              <div className="w-24 h-24 mx-auto bg-gradient-to-tr from-[var(--color-accent)] to-blue-400 rounded-full mb-6 flex items-center justify-center text-white text-3xl font-bold">A</div>
-              <h3 className="text-xl font-bold mb-1">Alex Mercer</h3>
-              <p className="text-[var(--color-accent)] text-sm font-medium mb-3">Lead Developer & Founder</p>
-              <p className="text-muted text-sm px-4">Specializes in Next.js architectures and full-stack system design.</p>
-            </div>
-            
-            {/* Team Member 2 */}
-            <div className="bg-background rounded-2xl p-6 border border-muted/20 text-center hover:border-[var(--color-accent)]/50 transition-colors">
-              <div className="w-24 h-24 mx-auto bg-gradient-to-tr from-[var(--color-accent)] to-teal-400 rounded-full mb-6 flex items-center justify-center text-white text-3xl font-bold">S</div>
-              <h3 className="text-xl font-bold mb-1">Sarah Chen</h3>
-              <p className="text-[var(--color-accent)] text-sm font-medium mb-3">Creative Director</p>
-              <p className="text-muted text-sm px-4">Award-winning UI/UX designer obsessed with minimalist aesthetics.</p>
-            </div>
+        </div>
+      </section>
 
-            {/* Team Member 3 */}
-            <div className="bg-background rounded-2xl p-6 border border-muted/20 text-center hover:border-[var(--color-accent)]/50 transition-colors">
-              <div className="w-24 h-24 mx-auto bg-gradient-to-tr from-[var(--color-accent)] to-indigo-400 rounded-full mb-6 flex items-center justify-center text-white text-3xl font-bold">M</div>
-              <h3 className="text-xl font-bold mb-1">Marcus Thorne</h3>
-              <p className="text-[var(--color-accent)] text-sm font-medium mb-3">AI Integrations Specialist</p>
-              <p className="text-muted text-sm px-4">Expert in bringing LLMs and intelligent automations into web apps.</p>
+      {/* Story Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-16 items-center">
+          <div className="md:w-1/2">
+            <div className="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
+              <Image 
+                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                alt="Meja Kerja WebCipta"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-blue-900/10"></div>
+            </div>
+          </div>
+          <div className="md:w-1/2">
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-6">Bukan Agency Besar yang Mahal</h2>
+            <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
+              <p>
+                WebCipta berawal dari keresahan melihat banyaknya pebisnis lokal, UMKM, dan profesional di sekitar Cibubur yang ingin punya website sendiri, tapi tertahan oleh harga jasa agency yang bisa mencapai belasan hingga puluhan juta.
+              </p>
+              <p>
+                Di sisi lain, memakai pembuat website otomatis (builder) atau CMS yang berat seringkali merepotkan, hasilnya kaku, dan lambat saat diakses.
+              </p>
+              <p>
+                <strong>WebCipta hadir sebagai solo developer agency.</strong> Semua pekerjaan, mulai dari analisis kebutuhan, kustomisasi layout, sampai peluncuran domain diproses langsung oleh satu pihak. Komunikasi lebih lancar tanpa harus lewat banyak divisi perantara.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Trust Builders / Testimonials */}
-      <section className="w-full py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-7xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight mb-12">Trusted By Innovators</h2>
-          
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale">
-            <div className="text-2xl font-bold font-mono">TechNova</div>
-            <div className="text-2xl font-bold font-serif italic">Lumina Studio</div>
-            <div className="text-2xl font-bold tracking-widest">NEXUS</div>
-            <div className="text-2xl font-bold uppercase">Quantum AI</div>
+      {/* Values Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold font-heading text-gray-900 mb-4">Nilai Tambah Kami</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              Prinsip yang dipegang untuk memastikan hasil terbaik.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <Code2 className="w-8 h-8 text-white" />,
+                title: "Kode Bersih",
+                desc: "Website dibangun mandiri (custom-coded), tidak bergantung total pada CMS berat yang memperlambat loading."
+              },
+              {
+                icon: <Cpu className="w-8 h-8 text-white" />,
+                title: "Ditenagai AI",
+                desc: "Memanfaatkan asisten AI untuk memotong waktu *development* dan riset teks berulang sehingga harga jadi super terjangkau."
+              },
+              {
+                icon: <LineChart className="w-8 h-8 text-white" />,
+                title: "Orientasi SEO",
+                desc: "Dari struktur dokumen sampai kata kunci sudah disesuaikan secara natural agar mudah dibaca Google."
+              },
+              {
+                icon: <ShieldCheck className="w-8 h-8 text-white" />,
+                title: "Harga Jujur",
+                desc: "Tidak ada biaya layanan bulanan semu. Semua dijabarkan transparan di awal."
+              }
+            ].map((value, idx) => (
+              <div key={idx} className="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:shadow-xl transition-all group">
+                <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-6 group-hover:-translate-y-2 transition-transform shadow-lg">
+                  {value.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
+                <p className="text-gray-600 leading-relaxed text-sm">{value.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
-    </div>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-accent text-white">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 font-heading">Mari Berkolaborasi!</h2>
+          <p className="text-xl mb-10 text-blue-100">
+            Anda punya impian digital, kami yang akan mewujudkannya dalam bentuk barisan kode rapi.
+          </p>
+          <Link 
+            href="/contact" 
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-accent font-bold rounded-full hover:bg-gray-100 transition-colors shadow-xl"
+          >
+            Mulai Diskusi <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
+      </section>
+
+    </main>
   );
 }

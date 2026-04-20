@@ -29,14 +29,14 @@ export default function NavBar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
           <Link href="/" className="hover:text-[var(--color-accent)] transition-colors">Home</Link>
-          <Link href="/about" className="hover:text-[var(--color-accent)] transition-colors">About</Link>
-          <Link href="/services" className="hover:text-[var(--color-accent)] transition-colors">Services</Link>
-          <Link href="/portfolio" className="hover:text-[var(--color-accent)] transition-colors">Portfolio</Link>
-          <Link href="/blog" className="hover:text-[var(--color-accent)] transition-colors">Blog</Link>
+          <Link href="/about" className="hover:text-[var(--color-accent)] transition-colors">Tentang</Link>
+          <Link href="/services" className="hover:text-[var(--color-accent)] transition-colors">Layanan</Link>
+          <Link href="/pricing" className="hover:text-[var(--color-accent)] transition-colors">Harga</Link>
+          <Link href="/faq" className="hover:text-[var(--color-accent)] transition-colors">FAQ</Link>
           <Link href="/contact">
-            <Button size="sm">Get Started</Button>
+            <Button size="sm">Konsultasi Gratis</Button>
           </Link>
         </nav>
 
@@ -54,12 +54,12 @@ export default function NavBar() {
         <div className="md:hidden bg-background border-b border-muted/20 absolute w-full left-0">
           <div className="flex flex-col px-4 py-4 space-y-4 shadow-lg">
             <Link href="/" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">Home</Link>
-            <Link href="/about" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">About</Link>
-            <Link href="/services" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">Services</Link>
-            <Link href="/portfolio" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">Portfolio</Link>
-            <Link href="/blog" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">Blog</Link>
+            <Link href="/about" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">Tentang</Link>
+            <Link href="/services" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">Layanan</Link>
+            <Link href="/pricing" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">Harga</Link>
+            <Link href="/faq" onClick={() => setIsOpen(false)} className="block px-2 py-1 text-sm font-medium hover:text-[var(--color-accent)]">FAQ</Link>
             <Link href="/contact" onClick={() => setIsOpen(false)} className="block py-2">
-              <Button className="w-full">Get Started</Button>
+              <Button className="w-full">Konsultasi Gratis</Button>
             </Link>
           </div>
         </div>

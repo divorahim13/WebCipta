@@ -3,8 +3,8 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us | WebCipta Agency",
-  description: "Get in touch with WebCipta to discuss your next web development project.",
+  title: "Kontak Konsultasi | WebCipta Cibubur",
+  description: "Ada pertanyaan? Ingin mulai buat website? Hubungi WebCipta, agency website dengan harga terjangkau di Cibubur.",
 };
 
 export default function ContactPage() {
@@ -13,11 +13,11 @@ export default function ContactPage() {
       {/* Header Section */}
       <section className="w-full py-20 md:py-32 bg-muted/5 border-b border-muted/20">
         <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-foreground">
-            Let's <span className="text-[var(--color-accent)]">Talk</span>
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-foreground font-heading">
+            Punya Rencana Bikin <span className="text-[var(--color-accent)]">Website?</span>
           </h1>
           <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto">
-            Ready to start your digital transformation? Reach out to us, and let's craft something amazing together.
+            Mari konsultasi awal dengan santai. Tanyakan saja apa pun, tim kami siap mengarahkan solusi terbaik sesuai budget bisnis Anda.
           </p>
         </div>
       </section>
@@ -30,9 +30,9 @@ export default function ContactPage() {
             {/* Contact Details & Map */}
             <div className="space-y-12">
               <div>
-                <h2 className="text-3xl font-bold tracking-tight mb-6">Get in Touch</h2>
+                <h2 className="text-3xl font-bold tracking-tight mb-6 font-heading">Hubungi WebCipta</h2>
                 <p className="text-muted text-lg mb-8">
-                  Whether you have a specific project in mind, need advice on AI integration, or just want to explore what's possible — our team is here to help.
+                  Apakah Anda sudah punya desain spesifik, atau baru mematangkan ide awal? Tinggalkan pesan, developer kami yang akan merespons langsung.
                 </p>
               </div>
               
@@ -42,8 +42,8 @@ export default function ContactPage() {
                     <MapPin size={24} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg">Location</h4>
-                    <p className="text-muted">123 Innovation Drive<br/>Tech City, NY 10001</p>
+                    <h4 className="font-semibold text-lg">Lokasi Operasional</h4>
+                    <p className="text-muted">Cibubur dan sekitarnya<br/>Jawa Barat, Indonesia</p>
                   </div>
                 </div>
                 
@@ -52,8 +52,8 @@ export default function ContactPage() {
                     <Mail size={24} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg">Email Us</h4>
-                    <p className="text-muted">hello@webcipta.com<br/>support@webcipta.com</p>
+                    <h4 className="font-semibold text-lg">Email Kami</h4>
+                    <p className="text-muted">halo@webcipta.com<br/>Terespons 1x24 jam</p>
                   </div>
                 </div>
                 
@@ -62,8 +62,8 @@ export default function ContactPage() {
                     <Phone size={24} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg">Call Us</h4>
-                    <p className="text-muted">+1 (234) 567-890<br/>Mon-Fri, 9am - 6pm EST</p>
+                    <h4 className="font-semibold text-lg">Nomor Telepon / WA</h4>
+                    <p className="text-muted">+62 811 XXXX XXXX<br/>Hanya chat WA (Aktif)</p>
                   </div>
                 </div>
                 
@@ -72,8 +72,8 @@ export default function ContactPage() {
                     <Clock size={24} />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg">Working Hours</h4>
-                    <p className="text-muted">Mon - Fri: 9AM - 6PM<br/>Weekend: Closed</p>
+                    <h4 className="font-semibold text-lg">Jam Kerja</h4>
+                    <p className="text-muted">Senin - Jumat: 09:00 - 17:00<br/>Sabtu - Minggu: Fleksibel</p>
                   </div>
                 </div>
               </div>
@@ -94,15 +94,15 @@ export default function ContactPage() {
 
             {/* Form Component */}
             <div className="bg-muted/5 p-8 md:p-10 rounded-3xl border border-muted/20 shadow-xl shadow-black/5">
-              <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
+              <h3 className="text-2xl font-bold mb-6 font-heading">Kirimkan Deskripsi Kebutuhan Anda</h3>
               <ContactForm />
               
               <div className="mt-10 pt-8 border-t border-muted/20 text-center space-y-4">
-                <h4 className="font-semibold text-lg">Not sure what you need?</h4>
-                <p className="text-muted text-sm">Schedule a quick 15-minute call with our lead strategist.</p>
-                <button className="w-full sm:w-auto px-8 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/80 font-bold rounded-xl transition shadow border border-muted/30">
-                  Get a Free Consultation
-                </button>
+                <h4 className="font-semibold text-lg">Atau butuh ngobrol via Chat?</h4>
+                <p className="text-muted text-sm">Klik di bawah untuk langsung terhubung ke WhatsApp developer kami.</p>
+                <a href="#" className="inline-block w-full sm:w-auto px-8 py-3 bg-green-500 text-white hover:bg-green-600 font-bold rounded-xl transition shadow border border-green-600/50">
+                  Chat WhatsApp Sekarang
+                </a>
               </div>
             </div>
 

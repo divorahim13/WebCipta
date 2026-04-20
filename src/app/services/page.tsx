@@ -1,160 +1,137 @@
-import { Metadata } from "next";
-import { MonitorSmartphone, Code, Search, Sparkles, CheckCircle2 } from "lucide-react";
-import { Button } from "@/components/ui/Button";
-import Link from "next/link";
+import { Metadata } from 'next';
+import { ArrowRight, CheckCircle2, Globe, LayoutTemplate, Briefcase, Building2, BookOpen, CalendarCheck, ShoppingBag, Store, Code } from 'lucide-react';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: "Web Design & AI Services",
-  description: "Explore WebCipta's premium services: Web Design, Custom Development, SEO Optimization, and AI Web Solutions.",
+  title: 'Layanan Pembuatan Website | WebCipta Cibubur',
+  description: 'Pilihan layanan pembuatan website di WebCipta. Mulai dari Landing Page Rp550rb untuk bisnis lokal, profil perusahaan, sampai toko online sederhana.',
 };
 
 export default function ServicesPage() {
+  const services = [
+    {
+      icon: <Globe className="w-8 h-8 text-accent" />,
+      title: "Landing Page",
+      desc: "Promosi 1 halaman, fokus pada penjualan langsung sebuah produk, event, atau campaign iklan.",
+      features: ["Satu halaman minim klik", "Fokus Call To Action (WA)", "Copywriting terstruktur"]
+    },
+    {
+      icon: <Store className="w-8 h-8 text-accent" />,
+      title: "Website Profil Bisnis",
+      desc: "Menunjukkan detail jam buka, lokasi Maps, galeri, dan kontak. Cocok untuk kafe, klinik, salon, atau toko lokal.",
+      features: ["Integrasi Maps", "Jam Operasional", "Galeri Tempat"]
+    },
+    {
+      icon: <Briefcase className="w-8 h-8 text-accent" />,
+      title: "Website Portofolio",
+      desc: "Bagi desainer, fotografer, kreator, dan freelancer untuk showcase karya agar terlihat profesional.",
+      features: ["Layout Grid Estetik", "Lightbox Foto", "Tautan Sosmed"]
+    },
+    {
+      icon: <Building2 className="w-8 h-8 text-accent" />,
+      title: "Company Profile",
+      desc: "Perusahaan formal yang butuh mendaftar list klien, history layanan perusahaan, visi misi dll.",
+      features: ["Halaman Berjenjang", "Halaman Tentang Kami Khusus", "List Klien"]
+    },
+    {
+      icon: <BookOpen className="w-8 h-8 text-accent" />,
+      title: "Blog / Artikel",
+      desc: "Website edukasi massal untuk mempromosikan media Anda sendiri atau optimasi traffic organik jangka panjang.",
+      features: ["Sistem Mini-CMS Artikel", "Kategorisasi Konten", "SEO Optimized"]
+    },
+    {
+      icon: <CalendarCheck className="w-8 h-8 text-accent" />,
+      title: "Event & Pendaftaran",
+      desc: "Seminar, agenda turnamen, atau lokakarya. Info tiket, rincian susunan acara, dan form kehadiran.",
+      features: ["Formulir Pendaftaran", "Jadwal interaktif", "Integrasi Database Cepat"]
+    },
+    {
+      icon: <ShoppingBag className="w-8 h-8 text-accent" />,
+      title: "Katalog Produk",
+      desc: "Tampilkan lusinan hingga ratusan foto produk estetik. Pengguna baru dialihkan ke WhatsApp saat ingin beli.",
+      features: ["Katalog tanpa keranjang belanja", "Tombol Tanya Admin WA", "Filter Produk simpel"]
+    },
+    {
+      icon: <Store className="w-8 h-8 text-accent" />,
+      title: "Toko Online Sederhana",
+      desc: "Punya keranjang belanja ringan. Pembeli mendata alamat secara langsung bagi bisnis produk fisik.",
+      features: ["Sistem Keranjang", "Perhitungan Ongkir ringkas", "List Riwayat Transaksi Lokal"]
+    },
+    {
+      icon: <Code className="w-8 h-8 text-accent" />,
+      title: "Custom Sistem",
+      desc: "Tergantung pesanan aplikasi internal, dashboard admin, atau website interaktif butuh logika tinggi.",
+      features: ["Supabase Database", "Authentication", "Fullstack NextJS App"]
+    }
+  ];
+
   return (
-    <div className="flex flex-col items-center w-full">
-      {/* Header Section */}
-      <section className="w-full py-20 md:py-32 bg-muted/5 border-b border-muted/20">
-        <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-foreground">
-            Our <span className="text-[var(--color-accent)]">Services</span>
-          </h1>
-          <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto">
-            Comprehensive digital solutions designed to elevate your brand, engage your audience, and drive measurable results.
+    <main className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
+      <section className="bg-gray-900 text-white pt-32 pb-20 px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6">Pilihan Layanan WebCipta</h1>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            Tidak perlu bayar fitur mahal jika tak pernah Anda gunakan. Pilih paket website fungsional yang memang menjawab masalah bisnis Anda.
           </p>
         </div>
       </section>
 
-      {/* Services Breakdown */}
-      <section className="w-full py-24 bg-background">
-        <div className="container mx-auto px-4 max-w-7xl space-y-24">
-          
-          {/* 1. Web Design */}
-          <div id="web-design" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 bg-muted/5 p-8 rounded-2xl border border-muted/20">
-              <div className="flex justify-between items-end mb-6">
-                <div>
-                  <span className="text-[var(--color-accent)] font-semibold mb-2 block">Starting at</span>
-                  <h3 className="text-3xl font-bold">$1,500</h3>
+      {/* Services List */}
+      <section className="py-24 px-6 md:px-12 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, idx) => (
+              <div key={idx} className="bg-white border text-gray-800 border-gray-100 p-8 rounded-3xl hover:shadow-2xl transition-all duration-300 group relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
+                <div className="mb-6 bg-white p-3 inline-block rounded-2xl shadow-sm border border-gray-50 group-hover:bg-accent group-hover:text-white transition-colors">
+                   {/* We wrap the cloned icon to inherit colors nicely or depend on raw class */}
+                   <div className="group-hover:text-white transition-colors">
+                     {service.icon}
+                   </div>
                 </div>
+                <h3 className="text-2xl font-bold font-heading mb-4 text-gray-900">{service.title}</h3>
+                <p className="text-gray-600 mb-8 leading-relaxed min-h-[80px]">
+                  {service.desc}
+                </p>
+                
+                <h4 className="text-sm font-bold tracking-wider uppercase text-gray-400 mb-4">Focus Point</h4>
+                <ul className="space-y-3 mb-8">
+                  {service.features.map((feature, fIdx) => (
+                    <li key={fIdx} className="flex items-start gap-3">
+                      <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0" />
+                      <span className="text-gray-700 text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center gap-2 text-accent font-bold hover:gap-4 transition-all"
+                >
+                  Pesan & Konsultasi <ArrowRight className="w-5 h-5" />
+                </Link>
               </div>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center"><CheckCircle2 className="text-[var(--color-accent)] mr-3 h-5 w-5" /> UI/UX Research & Wireframing</li>
-                <li className="flex items-center"><CheckCircle2 className="text-[var(--color-accent)] mr-3 h-5 w-5" /> High-Fidelity Prototypes</li>
-                <li className="flex items-center"><CheckCircle2 className="text-[var(--color-accent)] mr-3 h-5 w-5" /> Responsive Mobile-First Design</li>
-                <li className="flex items-center"><CheckCircle2 className="text-[var(--color-accent)] mr-3 h-5 w-5" /> Brand Identity Integration</li>
-              </ul>
-              <Link href="/contact?service=web-design">
-                <Button className="w-full">Request Quote</Button>
-              </Link>
-            </div>
-            <div className="order-1 md:order-2">
-              <div className="inline-flex p-4 rounded-2xl bg-[var(--color-accent)]/10 text-[var(--color-accent)] mb-6">
-                <MonitorSmartphone size={40} />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Web Design</h2>
-              <p className="text-muted text-lg mb-6 leading-relaxed">
-                We craft visually stunning, user-centric interfaces. Our designs are built on solid UX principles, ensuring that your visitors not only enjoy an aesthetically pleasing experience but also navigate your site intuitively, leading to higher conversion rates.
-              </p>
-            </div>
+            ))}
           </div>
-
-          <hr className="border-muted/20" />
-
-          {/* 2. Custom Development */}
-          <div id="custom-dev" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex p-4 rounded-2xl bg-[var(--color-accent)]/10 text-[var(--color-accent)] mb-6">
-                <Code size={40} />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Custom Development</h2>
-              <p className="text-muted text-lg mb-6 leading-relaxed">
-                Leveraging bleeding-edge frameworks like Next.js and Supabase, we build scalable, secure, and blazing-fast web applications. Move beyond simple templates with dynamic digital products tailored specifically to your complex business needs.
-              </p>
-            </div>
-            <div className="bg-muted/5 p-8 rounded-2xl border border-muted/20">
-              <div className="flex justify-between items-end mb-6">
-                <div>
-                  <span className="text-[var(--color-accent)] font-semibold mb-2 block">Starting at</span>
-                  <h3 className="text-3xl font-bold">$3,000</h3>
-                </div>
-              </div>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center"><CheckCircle2 className="text-[var(--color-accent)] mr-3 h-5 w-5" /> Frontend Engineering (React/Next.js)</li>
-                <li className="flex items-center"><CheckCircle2 className="text-[var(--color-accent)] mr-3 h-5 w-5" /> Custom Backend & API Architecure</li>
-                <li className="flex items-center"><CheckCircle2 className="text-[var(--color-accent)] mr-3 h-5 w-5" /> Database Modeling & Setup (Supabase)</li>
-                <li className="flex items-center"><CheckCircle2 className="text-[var(--color-accent)] mr-3 h-5 w-5" /> Performance & Security Optimization</li>
-              </ul>
-              <Link href="/contact?service=custom-dev">
-                <Button className="w-full">Request Quote</Button>
-              </Link>
-            </div>
-          </div>
-
-          <hr className="border-muted/20" />
-
-          {/* 3. SEO Optimization */}
-          <div id="seo" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1 bg-muted/5 p-8 rounded-2xl border border-muted/20">
-              <div className="flex justify-between items-end mb-6">
-                <div>
-                  <span className="text-[var(--color-accent)] font-semibold mb-2 block">Starting at</span>
-                  <h3 className="text-3xl font-bold">$800<span className="text-lg font-normal text-muted">/mo</span></h3>
-                </div>
-              </div>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center"><CheckCircle2 className="text-[var(--color-accent)] mr-3 h-5 w-5" /> Comprehensive Site Audits</li>
-                <li className="flex items-center"><CheckCircle2 className="text-[var(--color-accent)] mr-3 h-5 w-5" /> Keyword Research & Content Strategy</li>
-                <li className="flex items-center"><CheckCircle2 className="text-[var(--color-accent)] mr-3 h-5 w-5" /> Technical Next.js SEO Metadata</li>
-                <li className="flex items-center"><CheckCircle2 className="text-[var(--color-accent)] mr-3 h-5 w-5" /> Monthly Performance Reporting</li>
-              </ul>
-              <Link href="/contact?service=seo">
-                <Button className="w-full">Request Quote</Button>
-              </Link>
-            </div>
-            <div className="order-1 md:order-2">
-              <div className="inline-flex p-4 rounded-2xl bg-[var(--color-accent)]/10 text-[var(--color-accent)] mb-6">
-                <Search size={40} />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">SEO Optimization</h2>
-              <p className="text-muted text-lg mb-6 leading-relaxed">
-                A beautiful website is useless if no one can find it. We implement robust technical and on-page SEO best practices natively into your codebase to ensure you dominate search rankings and drive organic, high-intent traffic.
-              </p>
-            </div>
-          </div>
-
-          <hr className="border-muted/20" />
-
-          {/* 4. AI Web Solutions */}
-          <div id="ai" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex p-4 rounded-2xl bg-[var(--color-accent)]/10 text-[var(--color-accent)] mb-6">
-                <Sparkles size={40} />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">AI Web Solutions</h2>
-              <p className="text-muted text-lg mb-6 leading-relaxed">
-                Ready for the future? We integrate smart AI features into your existing or new website. From custom-trained LLM customer support chatbots to automated content translation pipelines, we make your website work smarter.
-              </p>
-            </div>
-            <div className="bg-muted/5 p-8 rounded-2xl border border-muted/20">
-              <div className="flex justify-between items-end mb-6">
-                <div>
-                  <span className="text-[var(--color-accent)] font-semibold mb-2 block">Starting at</span>
-                  <h3 className="text-3xl font-bold">$2,500</h3>
-                </div>
-              </div>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center"><CheckCircle2 className="text-[var(--color-accent)] mr-3 h-5 w-5" /> Custom ChatGPT Integration</li>
-                <li className="flex items-center"><CheckCircle2 className="text-[var(--color-accent)] mr-3 h-5 w-5" /> AI Trained on Your Business Logic</li>
-                <li className="flex items-center"><CheckCircle2 className="text-[var(--color-accent)] mr-3 h-5 w-5" /> Generative UI Components</li>
-                <li className="flex items-center"><CheckCircle2 className="text-[var(--color-accent)] mr-3 h-5 w-5" /> Automated Workflows via AI</li>
-              </ul>
-              <Link href="/contact?service=ai">
-                <Button className="w-full">Request Quote</Button>
-              </Link>
-            </div>
-          </div>
-
         </div>
       </section>
-    </div>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gray-50 border-t border-gray-200 text-center px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6 text-gray-900">Masih Ragu Website Seperti Apa yang Cocok?</h2>
+          <p className="text-gray-600 mb-10 text-lg">
+            Tenang, bicarakan saja tujuan bisnis Anda, kami yang akan rekomendasikan strukturnya tanpa paksaan.
+          </p>
+          <Link 
+            href="/contact"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white font-bold rounded-full hover:bg-black transition-colors"
+          >
+            Ngobrol Santai Dulu <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }
